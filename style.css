@@ -311,6 +311,31 @@ html[data-theme="light"] .tag {
   border-color: rgba(12,125,112,.42);
   color: #0a5f55;
 }
+
+/* ---- Kontaktformular ---- */
+.cform { max-width: 560px; margin: 26px auto 0; text-align: left; }
+.cform label { display: block; font-size: .82rem; font-weight: 600; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: .5px; margin: 16px 0 7px; }
+.cform input, .cform textarea {
+  width: 100%; padding: 13px 15px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--bg-panel-2);
+  color: var(--text-primary); font: inherit; font-size: 1rem; transition: border-color .15s;
+}
+.cform input::placeholder, .cform textarea::placeholder { color: var(--text-dim); }
+.cform input:focus, .cform textarea:focus { outline: none; border-color: var(--accent); }
+.cform textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+.cform .btn { width: 100%; justify-content: center; margin-top: 20px; border: 0; cursor: pointer; }
+.cform .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cform-msg { margin-top: 16px; font-size: .96rem; text-align: center; min-height: 1.2em; }
+.cform-msg.ok { color: var(--accent-2); font-weight: 600; }
+.cform-msg.err { color: #ff6b81; }
+
+/* ---- Kontaktdaten (Telefon/Adresse) ---- */
+.contact-details { display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: center;
+  margin-top: 22px; color: var(--text-muted); font-size: 1rem; }
+.contact-details span { display: inline-flex; align-items: center; gap: 8px; }
+.contact-details a { color: var(--text-primary); text-decoration: none; font-weight: 600; }
+.contact-details a:hover { color: var(--accent); }
 html[data-theme="light"] body::before {
   background:
     radial-gradient(900px 500px at 78% -8%, rgba(44,119,214,.10), transparent 60%),
