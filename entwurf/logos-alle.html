@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MikaTec — alle Logo-Dateien</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .lg-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  @media (max-width:900px){ .lg-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .lg-grid{ grid-template-columns:1fr; } }
+  .opt { background:#0c1a2b; border:1px solid var(--border-soft); border-radius:var(--radius); padding:24px 16px; text-align:center; color:#f3e7c8; }
+  .opt img { width:96px; height:96px; }
+  .opt .k { font-weight:800; font-size:1.1rem; margin-top:10px; color:#f6e4b0; }
+  .opt .d { font-size:.78rem; opacity:.7; margin-top:4px; }
+  .opt .file { font-size:.7rem; opacity:.5; margin-top:8px; word-break:break-all; }
+  .opt .wm { margin-top:10px; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .opt .wm img { width:26px; height:26px; }
+  .opt .wm span { font-weight:700; font-size:.95rem; } .opt .wm b{font-weight:800;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="start-link">Start</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="ueber.html">Über mich</a>
+      <a href="kontakt.html" class="nav-cta">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page wrap">
+    <div class="page-head">
+      <span class="sec-kicker">Fertige Dateien</span>
+      <h1>Alle 12 Logos — als SVG erzeugt</h1>
+      <p>Liegen einsatzbereit im Ordner <code>Firma/logos/</code> (mikatec-A.svg … mikatec-L.svg), transparent &amp; beliebig skalierbar. Sag mir den Buchstaben, der es werden soll — dann setze ich ihn als Logo auf die ganze Website.</p>
+    </div>
+    <div class="lg-grid" id="grid"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="logo"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></div>
+    <div>© 2026 MikaTec · Hasan Özel · Deutschland</div>
+  </div>
+</footer>
+
+<script>
+  const DESC = { A:'Goldring außen', B:'Türkis-Kreis gefüllt', C:'Ring mittig', D:'Kreis + Ring',
+    E:'Punktring', F:'Doppel-Goldring', G:'Spitzen heraus', H:'Kreis geviertelt',
+    I:'Quadrat–Kreis–Quadrat', J:'Gezackter Rand', K:'Außen- + Innenring', L:'Stern in Kreis in Achteck' };
+  const grid=document.getElementById('grid');
+  Object.keys(DESC).forEach(k=>{
+    const f=`logos/mikatec-${k}.svg`;
+    const o=document.createElement('div'); o.className='opt';
+    o.innerHTML = `<img src="${f}" alt="${k}">
+      <div class="k">${k}</div>
+      <div class="d">${DESC[k]}</div>
+      <div class="wm"><img src="${f}"><span>Mika<b>Tec</b></span></div>
+      <div class="file">mikatec-${k}.svg</div>`;
+    grid.appendChild(o);
+  });
+</script>
+
+</body>
+</html>

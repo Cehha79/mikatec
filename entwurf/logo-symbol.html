@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MikaTec — Symbol-Logo</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .lg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:900px){ .lg-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:580px){ .lg-grid{ grid-template-columns:1fr; } }
+  .opt { background:var(--bg-panel); border:1px solid var(--border-soft); border-radius:var(--radius); padding:32px 26px; text-align:center; }
+  .opt .badge { display:inline-block; font-size:.75rem; font-weight:700; color:var(--accent-2); letter-spacing:1px; margin-bottom:22px; }
+  .opt .row { display:flex; align-items:center; justify-content:center; gap:16px; min-height:96px; }
+  .opt .word { font-weight:700; font-size:1.5rem; letter-spacing:.3px; color:var(--text-primary); }
+  .opt .word b { font-weight:800; }
+  .opt .desc { color:var(--text-dim); font-size:.86rem; margin-top:20px; }
+  .opt .small { margin-top:14px; display:flex; gap:10px; align-items:center; justify-content:center; color:var(--text-dim); font-size:.78rem; }
+
+  .tile { position:relative; display:grid; place-items:center; overflow:hidden;
+          background:linear-gradient(150deg,#5aa2ff,#6ee7d8);
+          border:1px solid rgba(255,255,255,.4);
+          box-shadow:0 14px 34px -10px rgba(90,162,255,.6),
+                     inset 0 1px 1px rgba(255,255,255,.7),
+                     inset 0 -12px 26px rgba(0,46,92,.4); }
+  .tile.big { width:88px; height:88px; border-radius:26px; }
+  .tile.mini { width:30px; height:30px; border-radius:9px; }
+  .tile::before { content:""; position:absolute; left:0; right:0; top:0; height:50%;
+      background:linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,0)); z-index:2; border-radius:inherit; }
+  .tile svg { position:relative; z-index:3; filter:drop-shadow(0 2px 4px rgba(0,30,60,.45)); }
+  .s { fill:none; stroke:#fff; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+  .sf { fill:#fff; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="start-link">Start</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="ueber.html">Über mich</a>
+      <a href="kontakt.html" class="nav-cta">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page wrap">
+    <div class="page-head">
+      <span class="sec-kicker">Symbol · für Mikail</span>
+      <h1>Ein echtes Zeichen — kein Buchstabe</h1>
+      <p>Abstrakte Symbole auf Glas, modern &amp; dynamisch. Rechts jeweils das Mini-Format. Sag mir die Nummer — oder welche Richtung dir gefällt, dann verfeinere ich nur die.</p>
+    </div>
+
+    <div class="lg-grid">
+
+      <!-- 1 Swoosh / Aufschwung -->
+      <div class="opt">
+        <div class="badge">1 · Aufschwung</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="52" height="52" viewBox="0 0 52 52">
+              <path class="s" d="M10 40 C 18 16, 34 12, 44 12"/>
+              <path class="s" d="M44 12 L36 11 M44 12 L43 20"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="20" viewBox="0 0 52 52"><path class="s" style="stroke-width:6" d="M10 40 C 18 16, 34 12, 44 12"/></svg></span> so klein
+        </div>
+        <div class="desc">Bewegung, Wachstum nach oben</div>
+      </div>
+
+      <!-- 2 Orbit -->
+      <div class="opt">
+        <div class="badge">2 · Orbit</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="52" height="52" viewBox="0 0 52 52">
+              <ellipse class="s" cx="26" cy="26" rx="20" ry="9" transform="rotate(-30 26 26)"/>
+              <circle class="sf" cx="26" cy="26" r="5"/>
+              <circle class="sf" cx="42" cy="17" r="3.5"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="20" viewBox="0 0 52 52"><ellipse class="s" style="stroke-width:6" cx="26" cy="26" rx="20" ry="9" transform="rotate(-30 26 26)"/><circle class="sf" cx="26" cy="26" r="6"/></svg></span> so klein
+        </div>
+        <div class="desc">Technik, Umlaufbahn + Kern</div>
+      </div>
+
+      <!-- 3 Verbundene Knoten -->
+      <div class="opt">
+        <div class="badge">3 · Netzwerk</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="52" height="52" viewBox="0 0 52 52">
+              <path class="s" d="M14 16 L38 12 L40 38 L14 16 M38 12 L40 38"/>
+              <circle class="sf" cx="14" cy="16" r="4.5"/>
+              <circle class="sf" cx="38" cy="12" r="4.5"/>
+              <circle class="sf" cx="40" cy="38" r="4.5"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="20" viewBox="0 0 52 52"><path class="s" style="stroke-width:6" d="M14 16 L38 12 L40 38 L14 16"/><circle class="sf" cx="14" cy="16" r="6"/><circle class="sf" cx="38" cy="12" r="6"/><circle class="sf" cx="40" cy="38" r="6"/></svg></span> so klein
+        </div>
+        <div class="desc">Verbundene Punkte, vernetzt</div>
+      </div>
+
+      <!-- 4 Flügel (Mikail) -->
+      <div class="opt">
+        <div class="badge">4 · Flügel · Mikail</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="54" height="52" viewBox="0 0 54 52">
+              <path class="s" d="M12 18 C 24 18, 30 24, 32 36"/>
+              <path class="s" d="M16 28 C 26 28, 31 32, 33 40"/>
+              <path class="s" d="M22 38 C 29 38, 32 40, 34 44"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="20" viewBox="0 0 54 52"><path class="s" style="stroke-width:6" d="M12 18 C 24 18, 30 24, 32 36"/><path class="s" style="stroke-width:6" d="M18 30 C 27 30, 31 34, 33 41"/></svg></span> so klein
+        </div>
+        <div class="desc">Flügel — Anspielung auf Mikail</div>
+      </div>
+
+      <!-- 5 Würfel (Software bauen) -->
+      <div class="opt">
+        <div class="badge">5 · Würfel</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="50" height="54" viewBox="0 0 50 54">
+              <path class="s" d="M25 6 L43 16 V36 L25 46 L7 36 V16 Z"/>
+              <path class="s" d="M25 6 L25 26 M25 26 L43 16 M25 26 L7 16"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="19" height="20" viewBox="0 0 50 54"><path class="s" style="stroke-width:6" d="M25 6 L43 16 V36 L25 46 L7 36 V16 Z M25 6 L25 26 M25 26 L43 16 M25 26 L7 16"/></svg></span> so klein
+        </div>
+        <div class="desc">3D-Würfel — „bauen", solide</div>
+      </div>
+
+      <!-- 6 Puls-Welle (Gesundheit + Signal) -->
+      <div class="opt">
+        <div class="badge">6 · Puls-Welle</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="56" height="52" viewBox="0 0 56 52">
+              <path class="s" d="M6 28 H18 L24 14 L32 40 L38 24 L42 28 H50"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="19" viewBox="0 0 56 52"><path class="s" style="stroke-width:6" d="M6 28 H17 L24 14 L32 40 L38 24 L42 28 H50"/></svg></span> so klein
+        </div>
+        <div class="desc">Signal/Puls — Brücke zu Medizin</div>
+      </div>
+
+      <!-- 7 Funke / Stern -->
+      <div class="opt">
+        <div class="badge">7 · Funke</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <path class="sf" d="M25 4 C 27 18, 32 23, 46 25 C 32 27, 27 32, 25 46 C 23 32, 18 27, 4 25 C 18 23, 23 18, 25 4 Z"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="19" height="19" viewBox="0 0 50 50"><path class="sf" d="M25 4 C 27 18, 32 23, 46 25 C 32 27, 27 32, 25 46 C 23 32, 18 27, 4 25 C 18 23, 23 18, 25 4 Z"/></svg></span> so klein
+        </div>
+        <div class="desc">Funke/Stern — Energie, KI</div>
+      </div>
+
+      <!-- 8 Doppel-Pfeil vorwärts -->
+      <div class="opt">
+        <div class="badge">8 · Vorwärts</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="52" height="50" viewBox="0 0 52 50">
+              <path class="s" d="M12 12 L26 25 L12 38"/>
+              <path class="s" d="M26 12 L40 25 L26 38" opacity=".75"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="19" viewBox="0 0 52 50"><path class="s" style="stroke-width:6" d="M11 12 L25 25 L11 38"/><path class="s" style="stroke-width:6" d="M27 12 L41 25 L27 38" opacity=".7"/></svg></span> so klein
+        </div>
+        <div class="desc">Dynamik, „nach vorne"</div>
+      </div>
+
+      <!-- 9 Unendlich-Schleife -->
+      <div class="opt">
+        <div class="badge">9 · Schleife</div>
+        <div class="row">
+          <span class="tile big">
+            <svg width="56" height="50" viewBox="0 0 56 50">
+              <path class="s" d="M20 25 C 20 13, 8 13, 8 25 C 8 37, 20 37, 28 25 C 36 13, 48 13, 48 25 C 48 37, 36 37, 28 25"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini"><svg width="20" height="18" viewBox="0 0 56 50"><path class="s" style="stroke-width:6" d="M20 25 C 20 13, 8 13, 8 25 C 8 37, 20 37, 28 25 C 36 13, 48 13, 48 25 C 48 37, 36 37, 28 25"/></svg></span> so klein
+        </div>
+        <div class="desc">Fluss, „läuft ohne Ende"</div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="logo"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></div>
+    <div>© 2026 MikaTec · Hasan Özel · Deutschland</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MikaTec — Glas-Logo</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .lg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:900px){ .lg-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:580px){ .lg-grid{ grid-template-columns:1fr; } }
+  .opt { background:var(--bg-panel); border:1px solid var(--border-soft); border-radius:var(--radius); padding:32px 26px; text-align:center; }
+  .opt .badge { display:inline-block; font-size:.75rem; font-weight:700; color:var(--accent-2); letter-spacing:1px; margin-bottom:22px; }
+  .opt .row { display:flex; align-items:center; justify-content:center; gap:16px; min-height:96px; }
+  .opt .word { font-weight:700; font-size:1.5rem; letter-spacing:.3px; color:var(--text-primary); }
+  .opt .word b { font-weight:800; }
+  .opt .desc { color:var(--text-dim); font-size:.86rem; margin-top:20px; }
+  .opt .small { margin-top:14px; display:flex; gap:10px; align-items:center; justify-content:center; color:var(--text-dim); font-size:.78rem; }
+
+  /* ====== Basis Glas-Kachel ====== */
+  .tile { position:relative; display:grid; place-items:center; color:#fff;
+          font-weight:800; font-family:-apple-system,Segoe UI,Roboto,sans-serif; overflow:hidden; }
+  .tile .m { position:relative; z-index:3; text-shadow:0 2px 6px rgba(0,30,60,.45); }
+  .tile.big { width:88px; height:88px; border-radius:26px; font-size:2.6rem; }
+  .tile.mini { width:30px; height:30px; border-radius:9px; font-size:1rem; }
+
+  /* gemeinsamer Glanz-Streifen oben */
+  .tile.gloss::before { content:""; position:absolute; left:0; right:0; top:0; height:50%;
+      background:linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,0)); z-index:2;
+      border-radius:inherit; }
+
+  /* A — Verlaufs-Glas */
+  .t-a { background:linear-gradient(150deg,#5aa2ff,#6ee7d8);
+         border:1px solid rgba(255,255,255,.4);
+         box-shadow:0 14px 34px -10px rgba(90,162,255,.65),
+                    inset 0 1px 1px rgba(255,255,255,.7),
+                    inset 0 -12px 26px rgba(0,46,92,.4); }
+
+  /* B — Tiefes Glas (Glas über Dunkel) */
+  .t-b { background:linear-gradient(160deg, rgba(90,162,255,.55), rgba(110,231,216,.35)), #0c1622;
+         border:1px solid rgba(255,255,255,.28);
+         box-shadow:0 16px 40px -12px rgba(0,0,0,.7),
+                    inset 0 1px 1px rgba(255,255,255,.55),
+                    inset 0 -10px 22px rgba(0,20,40,.6); }
+
+  /* C — Frosted / durchscheinend (echtes Backdrop-Glas) */
+  .t-c { background:rgba(255,255,255,.10); backdrop-filter:blur(8px) saturate(150%);
+         -webkit-backdrop-filter:blur(8px) saturate(150%);
+         border:1px solid rgba(255,255,255,.35);
+         box-shadow:0 14px 34px -12px rgba(0,0,0,.6),
+                    inset 0 1px 1px rgba(255,255,255,.6); }
+  .t-c .m { background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:none; }
+
+  /* D — Glas-Pille (dynamische M-Linie) */
+  .t-d { background:linear-gradient(150deg,#5aa2ff,#6ee7d8);
+         border:1px solid rgba(255,255,255,.4);
+         box-shadow:0 14px 34px -10px rgba(90,162,255,.65),
+                    inset 0 1px 1px rgba(255,255,255,.7),
+                    inset 0 -12px 26px rgba(0,46,92,.4); }
+
+  /* E — Kreis-Glas */
+  .t-e { border-radius:50% !important;
+         background:linear-gradient(150deg,#5aa2ff,#6ee7d8);
+         border:1px solid rgba(255,255,255,.4);
+         box-shadow:0 14px 34px -10px rgba(90,162,255,.6),
+                    inset 0 2px 2px rgba(255,255,255,.7),
+                    inset 0 -12px 26px rgba(0,46,92,.45); }
+  .t-e.gloss::before { border-radius:50%; }
+
+  /* F — Glas auf Schwarz, Neon-Kante */
+  .t-f { background:linear-gradient(160deg, rgba(20,33,51,.9), rgba(12,22,34,.9));
+         border:1.5px solid transparent;
+         background-clip:padding-box;
+         box-shadow:0 0 0 1px rgba(110,231,216,.5),
+                    0 14px 36px -10px rgba(90,162,255,.5),
+                    inset 0 1px 1px rgba(255,255,255,.25); }
+  .t-f .m { background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:0 0 18px rgba(110,231,216,.5); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="start-link">Start</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="ueber.html">Über mich</a>
+      <a href="kontakt.html" class="nav-cta">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page wrap">
+    <div class="page-head">
+      <span class="sec-kicker">Glas-Logo · für Mikail</span>
+      <h1>Glas-Oberfläche, modern &amp; dynamisch</h1>
+      <p>Alle mit echtem Glas-Look (Glanz, Tiefe, Licht-Kante). Rechts in jeder Karte siehst du das Mini-Format — so klein muss es noch erkennbar sein. Sag mir die Nummer.</p>
+    </div>
+
+    <div class="lg-grid">
+
+      <div class="opt">
+        <div class="badge">1 · Verlaufs-Glas</div>
+        <div class="row">
+          <span class="tile big gloss t-a"><span class="m">M</span></span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small"><span class="tile mini gloss t-a"><span class="m">M</span></span> so klein</div>
+        <div class="desc">Glänzende Kachel, heller Verlauf</div>
+      </div>
+
+      <div class="opt">
+        <div class="badge">2 · Tiefes Glas</div>
+        <div class="row">
+          <span class="tile big gloss t-b"><span class="m">M</span></span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small"><span class="tile mini gloss t-b"><span class="m">M</span></span> so klein</div>
+        <div class="desc">Mehr Tiefe, dunkler Unterton</div>
+      </div>
+
+      <div class="opt">
+        <div class="badge">3 · Frosted / durchscheinend</div>
+        <div class="row">
+          <span class="tile big gloss t-c"><span class="m">M</span></span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small"><span class="tile mini gloss t-c"><span class="m">M</span></span> so klein</div>
+        <div class="desc">Echtes Milchglas, M im Verlauf</div>
+      </div>
+
+      <div class="opt">
+        <div class="badge">4 · Glas-Linie-M</div>
+        <div class="row">
+          <span class="tile big gloss t-d">
+            <svg width="56" height="48" viewBox="0 0 56 48" style="position:relative;z-index:3;">
+              <path d="M8 40 V12 L28 34 L48 12 V40" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 2px 4px rgba(0,30,60,.5))"/>
+            </svg>
+          </span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small">
+          <span class="tile mini gloss t-d"><svg width="20" height="18" viewBox="0 0 56 48"><path d="M8 40 V12 L28 34 L48 12 V40" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> so klein
+        </div>
+        <div class="desc">Dynamisches Strich-M, glänzend</div>
+      </div>
+
+      <div class="opt">
+        <div class="badge">5 · Kreis-Glas</div>
+        <div class="row">
+          <span class="tile big gloss t-e"><span class="m">M</span></span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small"><span class="tile mini gloss t-e" style="border-radius:50%;"><span class="m">M</span></span> so klein</div>
+        <div class="desc">Runde Glas-Linse</div>
+      </div>
+
+      <div class="opt">
+        <div class="badge">6 · Glas auf Schwarz</div>
+        <div class="row">
+          <span class="tile big gloss t-f"><span class="m">M</span></span>
+          <span class="word">Mika<b>Tec</b></span>
+        </div>
+        <div class="small"><span class="tile mini gloss t-f"><span class="m">M</span></span> so klein</div>
+        <div class="desc">Dunkles Glas, leuchtende Kante</div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="logo"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></div>
+    <div>© 2026 MikaTec · Hasan Özel · Deutschland</div>
+  </div>
+</footer>
+
+</body>
+</html>

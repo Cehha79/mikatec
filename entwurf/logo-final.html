@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MikaTec — Logo 61 + Kreis</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .lg-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  @media (max-width:760px){ .lg-grid{ grid-template-columns:1fr; } }
+  .opt { background:#0c1a2b; border:1px solid var(--border-soft); border-radius:var(--radius); padding:34px 26px; text-align:center; color:#f3e7c8; }
+  .opt .badge { display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:1px; margin-bottom:20px; color:#f6e4b0; }
+  .opt .row { display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; min-height:130px; }
+  .opt .word { font-weight:700; font-size:1.7rem; letter-spacing:.5px; }
+  .opt .word b { font-weight:800; }
+  .opt .desc { font-size:.84rem; margin-top:18px; opacity:.7; }
+  .opt .small { margin-top:14px; display:flex; gap:12px; align-items:center; justify-content:center; font-size:.76rem; opacity:.7; }
+  .holder svg { display:block; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="start-link">Start</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="ueber.html">Über mich</a>
+      <a href="kontakt.html" class="nav-cta">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page wrap">
+    <div class="page-head">
+      <span class="sec-kicker">Logo · Nr. 61 + Kreis</span>
+      <h1>Welcher Kreis soll es sein?</h1>
+      <p>Das türkise Doppelquadrat (Nr. 61) — jetzt mit Kreis auf vier Arten. Sag mir A, B, C oder D, dann baue ich genau das als MikaTec-Logo in die ganze Website ein.</p>
+    </div>
+    <div class="lg-grid" id="grid"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="logo"><span class="mark">M</span><span class="name">Mika<b>Tec</b></span></div>
+    <div>© 2026 MikaTec · Hasan Özel · Deutschland</div>
+  </div>
+</footer>
+
+<script>
+  const NS='http://www.w3.org/2000/svg';
+  const GOLD='#e3c178', GOLD2='#f6e4b0';
+  const T1='rgba(31,138,138,.85)', T2='rgba(43,197,188,.6)', TD='rgba(12,47,56,.92)', TFILL='rgba(21,97,107,.55)';
+  function el(sz){ const s=document.createElementNS(NS,'svg'); s.setAttribute('viewBox','0 0 100 100'); s.setAttribute('width',sz); s.setAttribute('height',sz); return s; }
+  function P(d,fill,stroke,sw){ const p=document.createElementNS(NS,'path'); p.setAttribute('d',d); p.setAttribute('fill',fill||'none'); if(stroke){p.setAttribute('stroke',stroke);p.setAttribute('stroke-width',sw||1);p.setAttribute('stroke-linejoin','round');} return p; }
+  function C(cx,cy,r,fill,stroke,sw){ const c=document.createElementNS(NS,'circle'); c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r); c.setAttribute('fill',fill||'none'); if(stroke){c.setAttribute('stroke',stroke);c.setAttribute('stroke-width',sw||1);} return c; }
+  const pt=(cx,cy,r,a)=>[cx+r*Math.cos(a), cy+r*Math.sin(a)];
+  function poly(cx,cy,n,r,rot){ let d=''; for(let i=0;i<n;i++){const a=(rot||0)-Math.PI/2+i*2*Math.PI/n; const[x,y]=pt(cx,cy,r,a); d+=(i?'L':'M')+x.toFixed(2)+','+y.toFixed(2);} return d+'Z'; }
+
+  // das Doppelquadrat von Nr. 61
+  function squares(s,scale){
+    const r=38*(scale||1);
+    s.appendChild(P(poly(50,50,4,r,0), T1, GOLD,1.3));
+    s.appendChild(P(poly(50,50,4,r,Math.PI/4), T2, GOLD,1.3));
+    s.appendChild(P(poly(50,50,4,16*(scale||1),0), TD, GOLD2,1));
+    s.appendChild(P(poly(50,50,4,5*(scale||1),Math.PI/4), GOLD2, null));
+  }
+
+  const VARS = [
+    { name:'A · Goldring außen', build:(s)=>{
+        C; squares(s,1);
+        s.insertBefore(C(50,50,46,'none',GOLD,1.4), s.firstChild);
+        s.insertBefore(C(50,50,42,'none',GOLD2,.6), s.firstChild);
+      }, desc:'Stern im goldenen Ring' },
+    { name:'B · Türkis-Kreis gefüllt', build:(s)=>{
+        s.appendChild(C(50,50,45,TFILL,GOLD,1.2));
+        squares(s,.92);
+      }, desc:'Kreisscheibe als Hintergrund' },
+    { name:'C · Ring mittig', build:(s)=>{
+        squares(s,1);
+        s.appendChild(C(50,50,23,'none',GOLD,1.4));
+        s.appendChild(C(50,50,20,'none',GOLD2,.7));
+      }, desc:'Kreis um die Mitte gelegt' },
+    { name:'D · Kreis + Ring (beides)', build:(s)=>{
+        s.appendChild(C(50,50,45,TFILL,GOLD,1.2));
+        squares(s,.9);
+        s.appendChild(C(50,50,22,'none',GOLD2,.9));
+      }, desc:'Scheibe hinten + feiner Innenring' },
+
+    { name:'E · Punktring', build:(s)=>{
+        squares(s,.92);
+        for(let i=0;i<16;i++){ const a=-Math.PI/2+i*2*Math.PI/16; const[x,y]=pt(50,50,45,a); s.appendChild(C(x,y,1.5,GOLD)); }
+        s.insertBefore(C(50,50,47,'none',GOLD2,.6), s.firstChild);
+      }, desc:'Stern + Kranz aus Gold-Punkten' },
+
+    { name:'F · Doppel-Goldring', build:(s)=>{
+        s.appendChild(C(50,50,46,'none',GOLD,1.6));
+        s.appendChild(C(50,50,42,'none',GOLD,1));
+        s.appendChild(C(50,50,40,'none',GOLD2,.5));
+        squares(s,.82);
+      }, desc:'Zwei Ringe, Stern innen' },
+
+    { name:'G · Scheibe + Spitzen heraus', build:(s)=>{
+        s.appendChild(C(50,50,34,TFILL,GOLD,1.2));
+        squares(s,1);
+        s.appendChild(C(50,50,46,'none',GOLD,1.2));
+      }, desc:'Sternspitzen ragen aus der Scheibe' },
+
+    { name:'H · Kreis geviertelt', build:(s)=>{
+        s.appendChild(C(50,50,45,TFILL,GOLD,1.2));
+        s.appendChild(P('M50,7 V93 M7,50 H93','none','rgba(246,228,176,.5)',.8));
+        squares(s,.78);
+      }, desc:'Scheibe mit Fadenkreuz, Stern mittig' },
+
+    { name:'I · Quadrat im Kreis im Quadrat', build:(s)=>{
+        s.appendChild(P(poly(50,50,4,44,Math.PI/4),'none',GOLD,1.3));
+        s.appendChild(C(50,50,38,TFILL,GOLD,1.1));
+        s.appendChild(P(poly(50,50,4,26,Math.PI/4),T1,GOLD,1.1));
+        s.appendChild(P(poly(50,50,4,26,0),T2,GOLD,1.1));
+        s.appendChild(P(poly(50,50,4,9,Math.PI/4),TD,GOLD2,1));
+      }, desc:'Verschachtelt: eckig–rund–eckig' },
+
+    { name:'J · Gezackter Kreisrand', build:(s)=>{
+        for(let i=0;i<24;i++){ const a=-Math.PI/2+i*2*Math.PI/24; const[x,y]=pt(50,50,47,a); s.appendChild(C(x,y,1.2,GOLD)); }
+        s.appendChild(C(50,50,40,TFILL,GOLD,1.1));
+        squares(s,.82);
+      }, desc:'Sonnen-Rand um die Scheibe' },
+
+    { name:'K · Ring + Mittelring', build:(s)=>{
+        s.appendChild(C(50,50,46,'none',GOLD,1.4));
+        squares(s,.92);
+        s.appendChild(C(50,50,24,'none',GOLD,1.2));
+        s.appendChild(C(50,50,21,'none',GOLD2,.6));
+      }, desc:'Außenring + Innenring um den Stern' },
+
+    { name:'L · Achteck + Kreis', build:(s)=>{
+        s.appendChild(P(poly(50,50,8,46,0),'none',GOLD,1.2));
+        s.appendChild(C(50,50,40,TFILL,GOLD,1));
+        squares(s,.8);
+      }, desc:'Stern in Kreis in Achteck' }
+  ];
+
+  const grid=document.getElementById('grid');
+  VARS.forEach(v=>{
+    const card=document.createElement('div'); card.className='opt';
+    const b=document.createElement('div'); b.className='badge'; b.textContent=v.name;
+    const row=document.createElement('div'); row.className='row';
+    const big=document.createElement('span'); big.className='holder'; const bs=el(118); v.build(bs); big.appendChild(bs);
+    const w=document.createElement('span'); w.className='word'; w.innerHTML='Mika<b>Tec</b>';
+    row.appendChild(big); row.appendChild(w);
+    const small=document.createElement('div'); small.className='small';
+    const mini=document.createElement('span'); mini.className='holder'; const ms=el(32); v.build(ms); mini.appendChild(ms);
+    small.appendChild(mini); small.appendChild(document.createTextNode(' so klein'));
+    const d=document.createElement('div'); d.className='desc'; d.textContent=v.desc;
+    card.appendChild(b); card.appendChild(row); card.appendChild(small); card.appendChild(d);
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
