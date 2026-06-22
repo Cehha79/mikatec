@@ -246,11 +246,11 @@ main > section + section { border-top: 1px solid var(--border-soft); }
   border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px;
   box-shadow: var(--shadow-sm);
 }
-.facts .row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border-soft); }
+.facts .row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--border-soft); }
 .facts .row:last-child { border-bottom: 0; padding-bottom: 0; }
 .facts .row:first-child { padding-top: 0; }
-.facts .k { color: var(--text-dim); font-size: .92rem; }
-.facts .v { font-weight: 700; font-size: .95rem; }
+.facts .k { color: var(--text-dim); font-size: .78rem; text-transform: uppercase; letter-spacing: .6px; flex: none; }
+.facts .v { font-weight: 700; font-size: .95rem; text-align: right; }
 
 /* ---- Kontakt ---- */
 .contact-box {
@@ -300,6 +300,7 @@ html[data-theme="light"] {
   --text-muted:   #44566a;
   --text-dim:     #6b7d90;
   --accent:       #2c77d6;
+  --accent-2:     #0f8f80;
   --accent-soft:  rgba(44,119,214,.12);
   --shadow:       0 24px 60px -22px rgba(40,70,110,.30);
   --shadow-sm:    0 10px 28px -14px rgba(40,70,110,.25);
