@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kontakt — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=34">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="Kontakt zu MikaTec — erzähl mir unverbindlich von deinem Projekt. Gespräch, Angebot, Umsetzung, Übergabe.">
 <meta property="og:type" content="website">
@@ -12,13 +12,13 @@
 <meta property="og:description" content="Hast du ein Projekt im Kopf? Schreib mir — wir finden heraus, was möglich ist.">
 <meta property="og:image" content="logos/mikatec-L4.svg">
 <meta name="twitter:card" content="summary">
-<script src="theme.js?v=3"></script>
+<script src="theme.js?v=34"></script>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></a>
+    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></a><span class="eyebrow nav-badge"><span class="dot"></span> Software-Entwicklung</span>
     <nav class="nav-links">
       <a href="index.html" class="start-link">Start</a>
       <a href="leistungen.html">Leistungen</a>
@@ -31,15 +31,80 @@
 
 <main>
   <div class="page wrap">
-    <div class="contact-box">
-      <h2>Lass uns über dein Projekt sprechen</h2>
-      <p>Egal ob fertige Idee oder erst ein Gedanke — schreib mir, und wir finden heraus, was möglich ist.</p>
-      <a href="mailto:info@mikatec1.com?subject=Projektanfrage%20an%20MikaTec" class="btn btn-primary">E-Mail schreiben →</a>
-      <div class="contact-details">
-        <span>📞 <a href="tel:+491729401795">0172 9401795</a></span>
-        <span>📍 Pontoiser Str. 54 · 71034 Böblingen</span>
+    <div class="contact-box contact-hero">
+      <div class="contact-hero-info">
+        <h2>Lass uns über dein Projekt sprechen</h2>
+        <p>Egal ob fertige Idee oder erst ein Gedanke — schreib mir, und wir finden heraus, was möglich ist.</p>
+        <a href="mailto:info@mikatec1.com?subject=Projektanfrage%20an%20MikaTec" class="btn btn-primary">E-Mail schreiben →</a>
+        <div class="contact-details">
+          <span>📞 <a href="tel:+491729401795">0172 9401795</a></span>
+          <span>📍 Pontoiser Str. 54 · 71034 Böblingen</span>
+        </div>
+      </div>
+      <div class="contact-hero-map">
+        <iframe title="Karte: MikaTec, Pontoiser Str. 54, Böblingen" src="https://www.openstreetmap.org/export/embed.html?bbox=8.9898964%2C48.6739319%2C9.0018964%2C48.6799319&amp;layer=mapnik&amp;marker=48.6769319%2C8.9958964" loading="lazy"></iframe>
+        <a class="map-link" href="https://www.openstreetmap.org/?mlat=48.6769319&amp;mlon=8.9958964#map=17/48.6769319/8.9958964" target="_blank" rel="noopener">Größere Karte ansehen ↗</a>
       </div>
     </div>
+
+    <div style="margin:64px 0 40px;"><span class="divider"><span class="gem"></span></span></div>
+
+    <div class="page-head" style="margin-bottom:28px;">
+      <span class="sec-kicker">Projektanfrage</span>
+      <h2>Schreib mir direkt hier</h2>
+      <p>Fülle kurz aus, worum es geht — ich melde mich zeitnah persönlich zurück.</p>
+    </div>
+
+    <form class="form" action="https://formsubmit.co/info@mikatec1.com" method="POST">
+      <input type="hidden" name="_subject" value="Neue Projektanfrage über mikatec1.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://mikatec1.com/kontakt.html">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" name="Name" required>
+        </div>
+        <div class="form-field">
+          <label for="f-email">E-Mail</label>
+          <input id="f-email" type="email" name="E-Mail" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="f-phone">Telefon (optional)</label>
+          <input id="f-phone" type="tel" name="Telefon">
+        </div>
+        <div class="form-field">
+          <label for="f-art">Art des Projekts</label>
+          <select id="f-art" name="Art des Projekts">
+            <option>Noch unklar / Beratung</option>
+            <option>Desktop-App</option>
+            <option>Web-Anwendung</option>
+            <option>Mobile-App</option>
+            <option>KI-Integration</option>
+            <option>Datenvisualisierung &amp; Dashboards</option>
+            <option>Sicherheit &amp; Verschlüsselung</option>
+            <option>Branchen- &amp; Spezialsoftware</option>
+            <option>Automatisierung &amp; Tools</option>
+            <option>Erweiterungen, Widgets &amp; Mini-Tools</option>
+            <option>Design-System</option>
+            <option>Wartung &amp; Weiterentwicklung</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="f-msg">Deine Nachricht</label>
+        <textarea id="f-msg" name="Nachricht" required placeholder="Was brauchst du, für wen ist es und bis wann?"></textarea>
+      </div>
+      <label class="form-consent">
+        <input type="checkbox" required>
+        <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span>
+      </label>
+      <button type="submit" class="btn btn-primary">Anfrage senden →</button>
+    </form>
 
     <div style="margin:64px 0 40px;"><span class="divider"><span class="gem"></span></span></div>
 

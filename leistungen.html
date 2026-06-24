@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leistungen — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=34">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="Leistungen von MikaTec: Desktop-Apps, Web-Anwendungen, KI-Integration, Branchensoftware, Automatisierung und Design-Systeme.">
 <meta property="og:type" content="website">
@@ -12,13 +12,13 @@
 <meta property="og:description" content="Desktop, Web, KI, Spezialsoftware, Automatisierung und Design — aus einer Hand.">
 <meta property="og:image" content="logos/mikatec-L4.svg">
 <meta name="twitter:card" content="summary">
-<script src="theme.js?v=3"></script>
+<script src="theme.js?v=34"></script>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></a>
+    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></a><span class="eyebrow nav-badge"><span class="dot"></span> Software-Entwicklung</span>
     <nav class="nav-links">
       <a href="index.html" class="start-link">Start</a>
       <a href="leistungen.html" class="active">Leistungen</a>
@@ -33,54 +33,446 @@
   <div class="page wrap">
     <div class="page-head">
       <span class="sec-kicker">Leistungen</span>
-      <h1>Das baue ich für dich</h1>
-      <p>Von der ersten Idee bis zur fertig ausgelieferten Anwendung — ein Ansprechpartner für den gesamten Weg.</p>
+      <h1>Vom Konzept bis zur fertigen Software</h1>
+      <p>Individuelle Anwendungen für Desktop, Web und Mobil — ein Ansprechpartner von der ersten Idee bis zur Übergabe.</p>
     </div>
 
-    <div class="grid cols-3">
-      <div class="card"><div class="ico">🖥️</div><h3>Desktop-Apps</h3><p>Native Anwendungen für Mac, Windows und Linux — vom Entwurf bis zum fertigen, signierten Installer.</p>
-        <ul><li>Electron-Apps für alle Systeme</li><li>Code-Signierung &amp; Installer</li><li>Automatische Updates möglich</li></ul></div>
-      <div class="card"><div class="ico">🌐</div><h3>Web-Anwendungen</h3><p>Schnelle, durchdachte Web-Apps und Dashboards — von der einzelnen Seite bis zum kompletten Werkzeug.</p>
-        <ul><li>Responsive auf jedem Gerät</li><li>Dashboards &amp; Datenansichten</li><li>Anbindung an Live-Daten/APIs</li></ul></div>
-      <div class="card"><div class="ico">🤖</div><h3>KI-Integration</h3><p>KI- und Prompt-gestützte Anwendungen, in bestehende Abläufe eingebunden.</p>
-        <ul><li>KI in bestehende Abläufe einbinden</li><li>Prompt-Werkzeuge &amp; Assistenten</li><li>Texte, Auswertung, Automatik</li></ul></div>
-      <div class="card"><div class="ico">🏥</div><h3>Branchen- &amp; Spezialsoftware</h3><p>Fachanwendungen mit Branchenwissen aus der Praxis — z.&nbsp;B. im Gesundheits-/Pflegebereich (Erfahrung mit MediFox&nbsp;Dan, Vivendi, Senso) oder medizinische Bildgebung (DICOM/NIfTI).</p>
-        <ul><li>Branchen- &amp; Praxiswissen</li><li>Erfahrung mit Fachsystemen</li><li>komplexe Fachlogik sauber umgesetzt</li></ul></div>
-      <div class="card"><div class="ico">⚙️</div><h3>Automatisierung &amp; Tools</h3><p>Werkzeuge, die wiederkehrende Arbeit abnehmen — Daten ordnen, umbenennen, auswerten.</p>
-        <ul><li>Datei- &amp; Datenverwaltung</li><li>Stapel-Verarbeitung großer Mengen</li><li>Skripte für lästige Routine</li></ul></div>
-      <div class="card"><div class="ico">🎨</div><h3>Design-Systeme</h3><p>Saubere, einheitliche Oberflächen und Design-Tokens als Basis.</p>
-        <ul><li>Konsistente Oberflächen</li><li>Wiederverwendbare Design-Tokens</li><li>Klar, ruhig, hochwertig</li></ul></div>
+    <div class="grid cols-3 svc-grid">
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="web">
+        <div class="ico">🌐</div><h3>Web-Anwendungen</h3>
+        <p class="svc-short">Schnelle Web-Apps und Online-Werkzeuge, die im Browser laufen — ohne Installation, auf jedem Gerät.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Schnelle, durchdachte Web-Apps, die im Browser laufen — ohne Installation, sofort nutzbar auf jedem Gerät. Von der einzelnen Seite bis zum kompletten Online-Werkzeug.</p>
+          <ul>
+            <li>Responsive — passt sich Handy, Tablet &amp; Desktop automatisch an</li>
+            <li>Dashboards &amp; Datenansichten mit Live-Diagrammen (ECharts, uPlot)</li>
+            <li>Anbindung an Live-Daten &amp; APIs — Daten aus anderen Systemen einbinden</li>
+            <li>Login &amp; Benutzerkonten — mehrere Nutzer mit Rollen und Rechten</li>
+            <li>Online-Formulare — Eingaben erfassen, prüfen und weiterverarbeiten</li>
+            <li>Interaktive Karten mit eigenen Daten und Markierungen (MapLibre GL)</li>
+            <li>Video &amp; Audio direkt im Browser, auch als Stream (ffmpeg/HLS)</li>
+            <li>3D &amp; Grafik im Browser (WebGL) — bis hin zu medizinischer Bildgebung (Cornerstone3D)</li>
+            <li>Installierbar als App (PWA) — Icon auf dem Homescreen, funktioniert offline</li>
+            <li>Schnell &amp; modern gebaut (Vite) — kurze Ladezeiten</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex">
+                <div class="ex-shot ex-atlas"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🌐</div></div>
+                <figcaption>Netz-Atlas — interaktiver Internet-Atlas <a href="https://cehha79.github.io/netz-atlas/" target="_blank" rel="noopener">Live ansehen ↗</a></figcaption>
+              </figure>
+              <figure class="ex">
+                <div class="ex-shot ex-map"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🗺️</div></div>
+                <figcaption>AKA Map — interaktive Weltkarte <span class="ex-tag">eigenes Projekt</span></figcaption>
+              </figure>
+              <figure class="ex">
+                <div class="ex-shot ex-dash"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📊</div></div>
+                <figcaption>Analyse-Dashboard <span class="ex-tag">Beispiel</span></figcaption>
+              </figure>
+              <figure class="ex">
+                <div class="ex-shot ex-shop"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🛒</div></div>
+                <figcaption>Online-Shop <span class="ex-tag">Beispiel</span></figcaption>
+              </figure>
+              <figure class="ex">
+                <div class="ex-shot ex-book"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📅</div></div>
+                <figcaption>Buchungs- &amp; Terminportal <span class="ex-tag">Beispiel</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="beratung">
+        <div class="ico">💡</div><h3>Beratung &amp; Konzept</h3>
+        <p class="svc-short">Vor dem ersten Code: klären, was wirklich gebraucht wird — und was sich lohnt.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Bevor gebaut wird, klären wir gemeinsam Ziel, Umfang und Machbarkeit. So entsteht eine Lösung, die zu deinem Vorhaben und Budget passt — statt am Bedarf vorbei.</p>
+          <ul>
+            <li>Idee schärfen &amp; Anforderungen klären</li>
+            <li>Machbarkeit &amp; Aufwand realistisch einschätzen</li>
+            <li>Passende Technik &amp; Plattform empfehlen</li>
+            <li>Konzept, Skizzen &amp; klarer Projektplan</li>
+            <li>Festes Angebot mit Umfang und Preis</li>
+            <li>Unabhängige zweite Meinung zu bestehenden Plänen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="desktop">
+        <div class="ico">🖥️</div><h3>Desktop-Apps</h3>
+        <p class="svc-short">Eigenständige Programme für Mac, Windows &amp; Linux — vom Entwurf bis zum fertigen, signierten Installer.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Eigenständige Programme für Mac, Windows und Linux, die ohne Browser laufen und sich wie eine echte Anwendung anfühlen — von der ersten Idee bis zum fertigen, signierten Installer.</p>
+          <ul>
+            <li>Auf Basis von Electron, Flutter, Node.js &amp; Python — je nachdem, was am besten passt</li>
+            <li>Laufen offline, mit Zugriff auf Dateien, Ordner &amp; lokale Geräte</li>
+            <li>Daten lokal speichern in eigener Datenbank (SQLite)</li>
+            <li>Große Datenmengen verarbeiten, Diagramme &amp; Auswertungen direkt in der App</li>
+            <li>Medien &amp; Bilder anzeigen, abspielen, konvertieren</li>
+            <li>Verschlüsselung sensibler Daten (AES-256)</li>
+            <li>Export &amp; Druck (PDF, Excel/CSV) für Berichte und Listen</li>
+            <li>Schnittstellen zu anderen Programmen und Systemen (APIs)</li>
+            <li>Signierter Installer für jedes System + automatische Updates</li>
+            <li>Wartung &amp; Support nach der Übergabe</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🎬</div></div><figcaption>AKA-Player — Video-Player &amp; Stream-Empfänger <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🔒</div></div><figcaption>AKA-Tresor — verschlüsselter Daten-Tresor <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🩻</div></div><figcaption>Viewer AKA — medizinischer Bild-Viewer <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📦</div></div><figcaption>Warenwirtschaft &amp; Lager <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g4"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🧾</div></div><figcaption>Kassensystem <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="mobile">
+        <div class="ico">📱</div><h3>Mobile-Apps</h3>
+        <p class="svc-short">Eine App, die auf allen mobilen Geräten läuft — aus einer gemeinsamen Basis (iOS &amp; Android).</p>
+        <div class="svc-devices">
+          <span class="tag">📱 Smartphone</span>
+          <span class="tag">📲 Tablet</span>
+          <span class="tag">⌚ Smartwatch</span>
+        </div>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Mobile Apps für iOS und Android, die sich nativ anfühlen — entwickelt aus einer gemeinsamen Codebasis, damit beide Plattformen gepflegt bleiben, ohne alles doppelt zu bauen.</p>
+          <ul>
+            <li>Auf Basis von Flutter, Capacitor &amp; PWA — eine Codebasis für iOS und Android</li>
+            <li>Native Bedienung &amp; Gefühl auf jedem Gerät</li>
+            <li>Offline nutzbar, mit lokaler Datenspeicherung</li>
+            <li>Zugriff auf Kamera, Standort, Sensoren &amp; Benachrichtigungen</li>
+            <li>Anbindung an Live-Daten &amp; APIs</li>
+            <li>Smartphone, Tablet und Smartwatch — alle aus derselben Basis</li>
+            <li>Veröffentlichung im App Store &amp; bei Google Play</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g2"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🌦️</div></div><figcaption>AKA-Wetter — Wetter-App <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📈</div></div><figcaption>ASA — Finanz &amp; Trading <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📱</div></div><figcaption>AKA — Cross-Platform-App <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🏃</div></div><figcaption>Fitness- &amp; Aktivitäts-Tracker <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g4"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🛵</div></div><figcaption>Liefer- &amp; Bestell-App <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="ki">
+        <div class="ico">🤖</div><h3>KI-Integration</h3>
+        <p class="svc-short">Künstliche Intelligenz dort eingebaut, wo sie echte Arbeit abnimmt — nicht als Spielerei.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Künstliche Intelligenz sinnvoll in deine Programme und Abläufe eingebaut — dort, wo sie echte Arbeit abnimmt, nicht als Spielerei.</p>
+          <ul>
+            <li>KI in bestehende Software einbinden — ohne alles neu zu bauen</li>
+            <li>Texte erstellen &amp; zusammenfassen — Berichte, E-Mails, Beschreibungen</li>
+            <li>Dokumente auswerten — Inhalte aus PDFs, Tabellen und Bildern herausziehen</li>
+            <li>Daten sortieren &amp; einordnen (Klassifizierung, automatisches Verschlagworten)</li>
+            <li>Assistenten &amp; Chatbots — Fragen zu deinen eigenen Daten beantworten</li>
+            <li>Bilder &amp; Sprache erkennen und verarbeiten</li>
+            <li>Automatische Abläufe — KI erledigt wiederkehrende Schritte im Hintergrund</li>
+            <li>Anbindung moderner KI-Modelle (z.&nbsp;B. Claude, ChatGPT) über deren Schnittstellen</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">💬</div></div><figcaption>Klick &amp; Frag KI <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🧮</div></div><figcaption>KI-Steuer — Steuer-Assistent <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📄</div></div><figcaption>Dokumenten-Assistent <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🤖</div></div><figcaption>Support-Chatbot <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="daten">
+        <div class="ico">📊</div><h3>Datenvisualisierung &amp; Dashboards</h3>
+        <p class="svc-short">Zahlen verständlich machen — Diagramme, Dashboards und Live-Auswertungen.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Aus rohen Daten werden klare Bilder: Dashboards und Diagramme, die auf einen Blick zeigen, worauf es ankommt — bei Bedarf live aktualisiert.</p>
+          <ul>
+            <li>Übersichtliche Dashboards für Desktop &amp; Web</li>
+            <li>Interaktive Diagramme (ECharts, uPlot)</li>
+            <li>Live-Daten in Echtzeit darstellen</li>
+            <li>Große Datenmengen schnell &amp; flüssig anzeigen</li>
+            <li>Karten- &amp; Geo-Visualisierung (MapLibre GL)</li>
+            <li>Berichte &amp; Auswertungen zum Export (PDF, Excel)</li>
+            <li>3D-Visualisierung komplexer Daten (WebGL)</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📈</div></div><figcaption>ASA — Finanz &amp; Trading <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-atlas"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🌐</div></div><figcaption>Netz-Atlas — Internet-Atlas <a href="https://cehha79.github.io/netz-atlas/" target="_blank" rel="noopener">Live ansehen ↗</a></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🌀</div></div><figcaption>Simula — 3D-Visualisierung <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📊</div></div><figcaption>Verkaufs-Dashboard <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📡</div></div><figcaption>Sensor-Monitoring <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="sicherheit">
+        <div class="ico">🔒</div><h3>Sicherheit &amp; Verschlüsselung</h3>
+        <p class="svc-short">Sensible Daten schützen — starke Verschlüsselung und sichere Speicherung.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Wo es um vertrauliche Daten geht, zählt Sicherheit von Anfang an: starke Verschlüsselung, sichere Speicherung und Lösungen, die auch offline funktionieren.</p>
+          <ul>
+            <li>Starke Verschlüsselung sensibler Daten (AES-256)</li>
+            <li>Sichere Speicherung von Passwörtern &amp; Zugangsdaten</li>
+            <li>Offline-Lösungen ohne Cloud-Zwang</li>
+            <li>Verschlüsselte Datenbanken &amp; Dateien</li>
+            <li>Datenschutz von Anfang an mitgedacht</li>
+            <li>Sichere Übertragung über Schnittstellen</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🔒</div></div><figcaption>AKA-Tresor — verschlüsselter Tresor <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">💾</div></div><figcaption>Speicher-Werkstatt — Verschlüsseln &amp; Klonen <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🔑</div></div><figcaption>Passwort-Manager <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🗄️</div></div><figcaption>Verschlüsselte Backups <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g4"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📁</div></div><figcaption>Sichere Dokumentenablage <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="branche">
+        <div class="ico">🏥</div><h3>Branchen- &amp; Spezialsoftware</h3>
+        <p class="svc-short">Fachanwendungen für besondere Anforderungen — mit echtem Praxiswissen aus der Branche.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Fachanwendungen für besondere Anforderungen, die Standardsoftware nicht abdeckt — gebaut mit echtem Praxiswissen aus der jeweiligen Branche.</p>
+          <ul>
+            <li>Branchen- &amp; Praxiswissen — über 20 Jahre Berufserfahrung, u.&nbsp;a. im Gesundheits- &amp; Pflegebereich</li>
+            <li>Erfahrung mit Fachsystemen wie MediFox&nbsp;Dan, Vivendi und Senso</li>
+            <li>Medizinische Bildgebung — DICOM/NIfTI anzeigen und verarbeiten</li>
+            <li>Komplexe Fachlogik sauber und nachvollziehbar umgesetzt</li>
+            <li>Datenschutz &amp; Verschlüsselung für sensible Daten (AES-256)</li>
+            <li>Anbindung an vorhandene Systeme und Schnittstellen</li>
+            <li>Auswertungen &amp; Berichte nach deinen fachlichen Vorgaben</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🩻</div></div><figcaption>Viewer AKA — medizinische Bildgebung <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g2"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🏥</div></div><figcaption>Pflege-Dokumentation <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">💊</div></div><figcaption>Praxis- &amp; Terminverwaltung <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g4"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🔧</div></div><figcaption>Werkstatt- &amp; Auftragssystem <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="automatisierung" data-projects="bibliothek-manager,speicher-werkstatt,flotten-monitor">
+        <div class="ico">⚙️</div><h3>Automatisierung &amp; Tools</h3>
+        <p class="svc-short">Werkzeuge, die wiederkehrende Arbeit abnehmen — Daten ordnen, umwandeln, auswerten.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Kleine, scharf zugeschnittene Werkzeuge, die wiederkehrende Arbeit abnehmen — damit du dich auf das Wesentliche konzentrieren kannst.</p>
+          <ul>
+            <li>Datei- &amp; Datenverwaltung — ordnen, umbenennen, sortieren, aufräumen</li>
+            <li>Stapel-Verarbeitung großer Mengen auf einen Klick</li>
+            <li>Daten umwandeln zwischen Formaten (Excel, CSV, PDF, JSON …)</li>
+            <li>Daten aus Webseiten &amp; Dokumenten automatisch auslesen</li>
+            <li>Wiederkehrende Abläufe als Skript — läuft von selbst, auch nach Zeitplan</li>
+            <li>Berichte &amp; Auswertungen automatisch erzeugen</li>
+            <li>Schnittstellen zwischen Programmen, die sonst nicht zusammenarbeiten</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="widgets">
+        <div class="ico">🧩</div><h3>Erweiterungen, Widgets &amp; Mini-Tools</h3>
+        <p class="svc-short">Kleine, scharf umrissene Funktionen — schnell gebaut, leicht einzubinden, sofort nützlich.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Nicht jedes Vorhaben braucht ein großes Programm. Oft reicht ein kleiner Baustein, der genau eine Sache gut macht — schnell umgesetzt und leicht in Bestehendes integriert.</p>
+          <ul>
+            <li>Widgets für Web, Desktop &amp; Homescreen (Wetter, Uhr, Rechner, Status …)</li>
+            <li>Mini-Tools für genau eine Aufgabe</li>
+            <li>Plugins &amp; Erweiterungen für vorhandene Software</li>
+            <li>Browser-Erweiterungen</li>
+            <li>Einbettbare Bausteine für bestehende Seiten</li>
+            <li>Schnell umgesetzt, klar im Umfang</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g5"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">📖</div></div><figcaption>Codex-Datenbank — Offline-Nachschlagewerk <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g2"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🌦️</div></div><figcaption>Wetter-Widget <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🧮</div></div><figcaption>Rechner-Tool <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">⏱️</div></div><figcaption>Countdown / Timer <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🧩</div></div><figcaption>Browser-Erweiterung <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="design">
+        <div class="ico">🎨</div><h3>Design-Systeme</h3>
+        <p class="svc-short">Einheitliches, durchdachtes Aussehen für deine Software — alles aus einem Guss.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Durchdachtes, einheitliches Aussehen für deine Software — damit alles aus einem Guss wirkt und auch bei Erweiterungen konsistent bleibt.</p>
+          <ul>
+            <li>Konsistente Oberflächen — gleiche Farben, Abstände und Schriften überall</li>
+            <li>Wiederverwendbare Design-Tokens als zentrale Basis (eine Änderung wirkt überall)</li>
+            <li>Hell- &amp; Dunkelmodus umschaltbar</li>
+            <li>Responsive Layouts — sehen auf jedem Gerät gut aus</li>
+            <li>Eigene Symbole, Logos &amp; SVG-Grafiken</li>
+            <li>Barrierefreiheit mitgedacht (Kontraste, Lesbarkeit, Bedienung)</li>
+            <li>Klar, ruhig, hochwertig — Gestaltung mit System statt Geschmackssache</li>
+          </ul>
+          <div class="web-examples">
+            <h3 class="ex-title">Beispiele — was möglich ist</h3>
+            <div class="ex-grid">
+              <figure class="ex"><div class="ex-shot ex-g6"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🧱</div></div><figcaption>App Studio — Komponenten-Werkstatt <span class="ex-tag">eigenes Projekt</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g3"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🎨</div></div><figcaption>Komponenten-Bibliothek <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g4"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🖌️</div></div><figcaption>Marken-Styleguide <span class="ex-tag">Beispiel</span></figcaption></figure>
+              <figure class="ex"><div class="ex-shot ex-g1"><div class="ex-bar"><span></span><span></span><span></span></div><div class="ex-canvas">🎛️</div></div><figcaption>Design-Tokens &amp; Theming <span class="ex-tag">Beispiel</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card svc" tabindex="0" role="button" aria-haspopup="dialog" data-svc="wartung" data-projects="asa-finanz,viewer-aka,flotten-monitor">
+        <div class="ico">🛠️</div><h3>Wartung &amp; Weiterentwicklung</h3>
+        <p class="svc-short">Bestehende Software pflegen, erweitern und fertigstellen — nicht nur Neues bauen.</p>
+        <span class="svc-more">Mehr erfahren →</span>
+        <div class="svc-detail" hidden>
+          <p class="lead">Auch fertige oder begonnene Software braucht Pflege. Ich übernehme bestehende Projekte, baue sie aus, behebe Fehler und halte sie aktuell.</p>
+          <ul>
+            <li>Bestehende Software erweitern &amp; verbessern</li>
+            <li>Angefangene Projekte fertigstellen</li>
+            <li>Fehler finden &amp; beheben (Bugfixing)</li>
+            <li>Updates für neue Betriebssystem-Versionen</li>
+            <li>Sicherheits- &amp; Abhängigkeits-Aktualisierungen</li>
+            <li>Neue Funktionen nachrüsten</li>
+            <li>Laufende Betreuung nach Absprache</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div style="margin:64px 0 36px;"><span class="divider"><span class="gem"></span></span></div>
 
-    <div class="page-head" style="margin-bottom:32px;">
+    <div class="page-head" style="margin-bottom:22px;">
       <span class="sec-kicker">Werkzeugkasten</span>
-      <h2>Technologien, mit denen ich arbeite</h2>
-      <p>Bewährte Werkzeuge — ausgewählt nach dem, was dein Projekt wirklich braucht, nicht nach Mode.</p>
     </div>
-    <div class="tech-wrap">
-      <span class="tech">Electron</span>
-      <span class="tech">JavaScript</span>
-      <span class="tech">HTML5 &amp; CSS3</span>
-      <span class="tech">Node.js</span>
-      <span class="tech">Python</span>
-      <span class="tech">SVG &amp; Canvas</span>
-      <span class="tech">REST-APIs</span>
-      <span class="tech">SQLite</span>
-      <span class="tech">Git</span>
-      <span class="tech">DICOM / NIfTI</span>
-      <span class="tech">Flutter &amp; Dart</span>
-      <span class="tech">Capacitor</span>
-      <span class="tech">PWA</span>
-      <span class="tech">Vite</span>
-      <span class="tech">MapLibre GL</span>
-      <span class="tech">Cornerstone3D</span>
-      <span class="tech">ffmpeg / HLS</span>
-      <span class="tech">ECharts / uPlot</span>
-      <span class="tech">AES-256</span>
-      <span class="tech">WebGL</span>
+    <details class="tech-collapse">
+      <summary class="tech-bar">
+        <span class="tech-bar-label">
+          <span class="tech-bar-title">Technologien, mit denen ich arbeite</span>
+          <span class="tech-bar-sub">Bewährte Werkzeuge — ausgewählt nach dem, was dein Projekt wirklich braucht, nicht nach Mode.</span>
+        </span>
+        <span class="tech-chevron" aria-hidden="true">▾</span>
+      </summary>
+    <div class="tech-groups">
+      <div class="tech-group">
+        <h4 class="tech-group-title">Sprachen</h4>
+        <div class="tech-wrap">
+          <span class="tech">JavaScript</span>
+          <span class="tech">TypeScript</span>
+          <span class="tech">Python</span>
+          <span class="tech">Dart</span>
+          <span class="tech">SQL</span>
+          <span class="tech">HTML5 &amp; CSS3</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Frontend &amp; UI</h4>
+        <div class="tech-wrap">
+          <span class="tech">React</span>
+          <span class="tech">Tailwind CSS</span>
+          <span class="tech">Vite</span>
+          <span class="tech">SVG &amp; Canvas</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Desktop &amp; Mobile</h4>
+        <div class="tech-wrap">
+          <span class="tech">Electron</span>
+          <span class="tech">Tauri</span>
+          <span class="tech">Flutter</span>
+          <span class="tech">Capacitor</span>
+          <span class="tech">PWA</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Backend &amp; Datenbanken</h4>
+        <div class="tech-wrap">
+          <span class="tech">Node.js</span>
+          <span class="tech">Express</span>
+          <span class="tech">REST-APIs</span>
+          <span class="tech">WebSockets</span>
+          <span class="tech">SQLite</span>
+          <span class="tech">PostgreSQL</span>
+          <span class="tech">MySQL</span>
+          <span class="tech">Supabase</span>
+          <span class="tech">Firebase</span>
+          <span class="tech">pgvector</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Visualisierung, 3D &amp; Karten</h4>
+        <div class="tech-wrap">
+          <span class="tech">ECharts / uPlot</span>
+          <span class="tech">MapLibre GL</span>
+          <span class="tech">Three.js</span>
+          <span class="tech">WebGL</span>
+          <span class="tech">Cornerstone3D</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Medien &amp; Bildgebung</h4>
+        <div class="tech-wrap">
+          <span class="tech">ffmpeg / HLS</span>
+          <span class="tech">WebRTC</span>
+          <span class="tech">DICOM / NIfTI</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">KI &amp; Schnittstellen</h4>
+        <div class="tech-wrap">
+          <span class="tech">Claude API</span>
+          <span class="tech">OpenAI API</span>
+          <span class="tech">Ollama (lokale KI)</span>
+          <span class="tech">RAG / Embeddings</span>
+          <span class="tech">JSON</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Sicherheit</h4>
+        <div class="tech-wrap">
+          <span class="tech">AES-256</span>
+          <span class="tech">OAuth 2.0</span>
+          <span class="tech">JWT</span>
+          <span class="tech">HTTPS / TLS</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Cloud, Hosting &amp; DevOps</h4>
+        <div class="tech-wrap">
+          <span class="tech">Docker</span>
+          <span class="tech">GitHub Actions</span>
+          <span class="tech">Vercel</span>
+          <span class="tech">Netlify</span>
+          <span class="tech">GitHub Pages</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4 class="tech-group-title">Werkzeuge</h4>
+        <div class="tech-wrap">
+          <span class="tech">Git</span>
+          <span class="tech">GitHub</span>
+          <span class="tech">npm</span>
+          <span class="tech">VS Code</span>
+          <span class="tech">Figma</span>
+        </div>
+      </div>
     </div>
+    </details>
 
     <div style="margin:64px 0 36px;"><span class="divider"><span class="gem"></span></span></div>
 
@@ -99,11 +491,17 @@
 
     <div style="margin:64px 0 36px;"><span class="divider"><span class="gem"></span></span></div>
 
-    <div class="page-head" style="margin-bottom:36px;">
+    <div class="page-head" style="margin-bottom:22px;">
       <span class="sec-kicker">Häufige Fragen</span>
-      <h2>Gut zu wissen</h2>
-      <p>Die wichtigsten Fragen vorab — offen beantwortet.</p>
     </div>
+    <details class="tech-collapse faq-collapse">
+      <summary class="tech-bar">
+        <span class="tech-bar-label">
+          <span class="tech-bar-title">Gut zu wissen</span>
+          <span class="tech-bar-sub">Die wichtigsten Fragen vorab — offen beantwortet.</span>
+        </span>
+        <span class="tech-chevron" aria-hidden="true">▾</span>
+      </summary>
     <div class="faq">
       <details>
         <summary>Was kostet ein Projekt?</summary>
@@ -130,6 +528,7 @@
         <div class="a">Gespräch → Angebot → Umsetzung mit Zwischenständen → Übergabe. Du bist in jedem Schritt informiert.</div>
       </details>
     </div>
+    </details>
   </div>
 </main>
 
@@ -139,6 +538,103 @@
     <div>© 2026 MikaTec · Hasan Tepegöz · Deutschland · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
+
+<div class="modal" id="svcModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+    <button class="modal-x" type="button" data-close aria-label="Schließen">×</button>
+    <div class="modal-head"><span class="ico" id="svcModalIco"></span><h2 id="svcModalTitle"></h2></div>
+    <div class="modal-body" id="svcModalBody"></div>
+    <div class="modal-proj-wrap" id="svcModalProjWrap" hidden>
+      <h3 class="modal-sub">Passende Projekte</h3>
+      <div class="modal-proj" id="svcModalProj"></div>
+      <a href="projekte.html" class="btn btn-ghost modal-allproj">Alle Projekte ansehen →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var PROJECTS = {
+    'netz-atlas':         { ico:'🌐', title:'Netz-Atlas',            desc:'Interaktiver Atlas des weltweiten Internets: Seekabel-Karte, 3D-Globus und Live-Daten.', link:'https://cehha79.github.io/netz-atlas/' },
+    'aka-tresor':         { ico:'🔒', title:'AKA-Tresor',            desc:'Sicherer Offline-Tresor für Schlüssel und Zugangsdaten — stark verschlüsselt (AES-256).' },
+    'aka-player':         { ico:'🎬', title:'AKA-Player',            desc:'Universeller Video-Player & Stream-Empfänger für praktisch jedes Format.' },
+    'aka-wetter':         { ico:'🌦️', title:'AKA-Wetter',            desc:'Wetter-App mit Vorhersage — plattformübergreifend für Desktop, Web und Mobil.' },
+    'ki-steuer':          { ico:'🧮', title:'KI-Steuer',             desc:'KI-gestützter Steuer-Assistent: erklärt Regeln verständlich und hilft bei den Unterlagen.' },
+    'asa-repair':         { ico:'🛠️', title:'ASA Repair',            desc:'Diagnose- & Reparatur-Werkzeug für Handys und Tablets über echte Geräte-Schnittstellen.' },
+    'viewer-aka':         { ico:'🩻', title:'Viewer AKA',            desc:'Betrachter für medizinische Bilddaten (DICOM/NIfTI) mit 3D/MPR, Messungen und Befunden.' },
+    'asa-finanz':         { ico:'📈', title:'ASA — Finanz & Trading', desc:'Finanz- & Trading-Plattform mit Live-Marktdaten und Rechnern — Web, Desktop, Mobil & Watch.' },
+    'speicher-werkstatt': { ico:'💾', title:'Speicher-Werkstatt',    desc:'Werkzeug zum Testen, Verschlüsseln, Formatieren und Klonen externer Speicher.' },
+    'flotten-monitor':    { ico:'📡', title:'Flotten-Monitor',       desc:'Zentrale Live-Überwachung vieler PCs, Macs und Netzwerk-Geräte aus einer Oberfläche.' },
+    'aka-map':            { ico:'🗺️', title:'AKA Map — Weltkarte',   desc:'Flüssige interaktive Weltkarte auf moderner Vektor-Technik (MapLibre GL).' },
+    'klick-frag-ki':      { ico:'💬', title:'Klick & Frag KI',       desc:'App, die gute KI-Anfragen per Baustein-Klick kinderleicht macht.' },
+    'app-studio':         { ico:'🧱', title:'App Studio',            desc:'Werkstatt, um Oberflächen-Komponenten für Web, Desktop und Mobil zu bauen und zu testen.' },
+    'bibliothek-manager': { ico:'📚', title:'Bibliothek-Manager',    desc:'Python-Werkzeug zum Ordnen tausender Bücher & Hörbücher.' },
+    'codex':              { ico:'📖', title:'Codex-Datenbank',       desc:'Offline nutzbares HTML-Nachschlagewerk — Referenzen schnell auffindbar.' },
+    'simula':             { ico:'🌀', title:'Simula',                desc:'3D-Visualisierung mathematischer Muster, etwa einer Primzahl-Spirale.' },
+    'aka':                { ico:'📱', title:'AKA',                   desc:'Plattformübergreifendes App-Projekt der Reihe, mit Flutter gedacht — Details folgen.' }
+  };
+
+  var modal    = document.getElementById('svcModal');
+  if (!modal) return;
+  var mIco     = document.getElementById('svcModalIco');
+  var mTitle   = document.getElementById('svcModalTitle');
+  var mBody    = document.getElementById('svcModalBody');
+  var mProjWrap= document.getElementById('svcModalProjWrap');
+  var mProj    = document.getElementById('svcModalProj');
+  var lastFocus= null;
+
+  function projectCard(key) {
+    var p = PROJECTS[key];
+    if (!p) return '';
+    var link = p.link
+      ? '<a class="mp-link" href="' + p.link + '" target="_blank" rel="noopener">Live ansehen ↗</a>'
+      : '';
+    return '<div class="mp-card"><div class="mp-ico">' + p.ico + '</div>' +
+           '<div class="mp-txt"><strong>' + p.title + '</strong><span>' + p.desc + '</span>' + link + '</div></div>';
+  }
+
+  function open(card) {
+    lastFocus = document.activeElement;
+    mIco.textContent   = card.querySelector('.ico').textContent;
+    mTitle.textContent = card.querySelector('h3').textContent;
+    var detail = card.querySelector('.svc-detail');
+    mBody.innerHTML = detail ? detail.innerHTML : '';
+
+    var keys = (card.getAttribute('data-projects') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var html = keys.map(projectCard).join('');
+    if (html) { mProj.innerHTML = html; mProjWrap.hidden = false; }
+    else { mProj.innerHTML = ''; mProjWrap.hidden = true; }
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { modal.classList.add('open'); });
+    var x = modal.querySelector('.modal-x');
+    if (x) x.focus();
+  }
+
+  function close() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function () { modal.hidden = true; }, 200);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.svc').forEach(function (card) {
+    card.addEventListener('click', function () { open(card); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+    });
+  });
+
+  modal.addEventListener('click', function (e) {
+    if (e.target.hasAttribute('data-close')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+</script>
 
 </body>
 </html>

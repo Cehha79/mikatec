@@ -69,10 +69,14 @@ Hinweis: Das Skript legt die Dateien neben sich in `logos/` an. Zum Aktualisiere
 ## OFFEN / To-do (vor dem Online-Stellen)
 
 1. **Impressum ausfüllen** (`impressum.html`) — alle `[…]`-Felder: Anschrift, Telefon, USt-IdNr. bzw. Kleinunternehmer-Hinweis. **Anschrift ist in DE Pflicht.**
-2. **Datenschutz prüfen** (`datenschutz.html`) — Anschrift + **Hosting-Anbieter** eintragen. Text passt nur für eine Seite OHNE Tracking/Google-Schriften/Formular.
-3. **Texte gegenlesen** — besonders „Über mich" / „Mein Weg".
-4. **Unsichere Projekt-Beschreibungen** verifizieren: App Studio vs. Komponenten-Studio, GEO, Simula, FID-Dokumentation, „Sensible Daten".
-5. **Online stellen** — Hosting wählen und Dateien hochladen. Für Open-Graph-Bild später eine absolute URL auf ein PNG/JPG setzen (SVG wird nicht überall als Vorschaubild angezeigt).
+2. **Datenschutz prüfen** (`datenschutz.html`) — Verantwortlicher/Hosting sind eingetragen. Enthält jetzt **Abschnitt 5 zum Kontaktformular (FormSubmit)**. Vor Online-Stellung rechtlich gegenlesen.
+3. **Anfrageformular aktivieren** (`kontakt.html`) — nutzt **FormSubmit** (`action="https://formsubmit.co/info@mikatec1.com"`). **Beim allerersten Absenden** schickt FormSubmit eine Bestätigungs-Mail an `info@mikatec1.com`; erst nach Klick auf den Link werden Anfragen zugestellt. Funktioniert nur auf der **live gehosteten** Seite, nicht beim lokalen Öffnen.
+4. **Texte gegenlesen** — besonders „Über mich" / „Mein Weg".
+5. **Technologie-Liste prüfen** (`leistungen.html`) — enthält Technik, die noch nicht aktiv genutzt wird (z. B. React, Supabase, RAG, Docker, Tauri). Vor Online-Stellung ehrlich kürzen oder als „in Einarbeitung" kennzeichnen.
+6. **Unsichere Projekt-Beschreibungen** verifizieren: App Studio vs. Komponenten-Studio, GEO, Simula, FID-Dokumentation, „Sensible Daten".
+7. **Beispiel-Galerien (`leistungen.html`)** — die Vorschauen in den Leistungs-Masken („Beispiele — was möglich ist") sind aktuell **stilisierte Mockups** (`.web-examples` / `.ex-shot`), keine echten Screenshots. Später durch echte **Screenshot-PNGs** ersetzen.
+8. **Demo-Downloads (später)** — echte eigene Apps als herunterladbare Demos einbinden (Download-Links/Installer in den jeweiligen Leistungs-Masken).
+9. **Online stellen** — Hosting wählen und Dateien hochladen. Für Open-Graph-Bild später eine absolute URL auf ein PNG/JPG setzen (SVG wird nicht überall als Vorschaubild angezeigt).
 
 ---
 

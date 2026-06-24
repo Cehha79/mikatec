@@ -1,2 +1,6 @@
 *.log
 .DS_Store
+
+# Prüf-Werkzeug — nur lokal für mich, NICHT online
+_pruefen.html
+vendor/
