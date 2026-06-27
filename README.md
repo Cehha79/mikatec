@@ -70,7 +70,7 @@ Hinweis: Das Skript legt die Dateien neben sich in `logos/` an. Zum Aktualisiere
 
 1. **Impressum ausfüllen** (`impressum.html`) — alle `[…]`-Felder: Anschrift, Telefon, USt-IdNr. bzw. Kleinunternehmer-Hinweis. **Anschrift ist in DE Pflicht.**
 2. **Datenschutz prüfen** (`datenschutz.html`) — Verantwortlicher/Hosting sind eingetragen. Enthält jetzt **Abschnitt 5 zum Kontaktformular (FormSubmit)**. Vor Online-Stellung rechtlich gegenlesen.
-3. **Anfrageformular aktivieren** (`kontakt.html`) — nutzt **FormSubmit** (`action="https://formsubmit.co/info@mikatec1.com"`). **Beim allerersten Absenden** schickt FormSubmit eine Bestätigungs-Mail an `info@mikatec1.com`; erst nach Klick auf den Link werden Anfragen zugestellt. Funktioniert nur auf der **live gehosteten** Seite, nicht beim lokalen Öffnen.
+3. **Anfrageformular aktivieren** (`kontakt.html`) — nutzt **FormSubmit** (`action="https://formsubmit.co/info@mika-tec.com"`). **Beim allerersten Absenden** schickt FormSubmit eine Bestätigungs-Mail an `info@mika-tec.com`; erst nach Klick auf den Link werden Anfragen zugestellt. Funktioniert nur auf der **live gehosteten** Seite, nicht beim lokalen Öffnen.
 4. **Texte gegenlesen** — besonders „Über mich" / „Mein Weg".
 5. **Technologie-Liste prüfen** (`leistungen.html`) — enthält Technik, die noch nicht aktiv genutzt wird (z. B. React, Supabase, RAG, Docker, Tauri). Vor Online-Stellung ehrlich kürzen oder als „in Einarbeitung" kennzeichnen.
 6. **Unsichere Projekt-Beschreibungen** verifizieren: App Studio vs. Komponenten-Studio, GEO, Simula, FID-Dokumentation, „Sensible Daten".

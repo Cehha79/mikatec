@@ -8,7 +8,7 @@ Statische Mehrseiten-Website für **MikaTec** (selbstständige Software-Entwickl
 
 - **Ansehen / testen:** `index.html` im Browser öffnen — kein Tooling nötig.
 - **Bearbeiten:** HTML-Dateien direkt; das gesamte Aussehen liegt zentral in `style.css`.
-- **Hosting:** GitHub Pages, Domain `mikatec1.com` (`CNAME`, `.nojekyll`). Was committet und gepusht wird, geht live.
+- **Hosting:** GitHub Pages, Domain `mika-tec.com` (`CNAME`, `.nojekyll`). Was committet und gepusht wird, geht live.
 
 ## Architektur
 
