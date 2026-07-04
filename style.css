@@ -325,17 +325,17 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 @media (max-width: 900px){ .pk-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px){ .pk-grid, .pk-grid.pk-2 { grid-template-columns: 1fr; } }
 .pk {
-  display: grid; grid-template-columns: 58px 1fr; gap: 6px 20px;
-  align-items: start; padding: 22px 26px; min-height: 158px;
+  display: grid; grid-template-columns: 76px 1fr; gap: 6px 22px;
+  align-items: stretch; padding: 22px 26px; min-height: 162px;
   text-align: left; cursor: pointer;
   background: var(--bg-panel); border: 1px solid var(--border-soft); border-radius: var(--radius);
   transition: border-color .2s ease, transform .2s ease;
 }
 .pk:hover { border-color: rgba(227,193,120,.45); transform: translateY(-2px); }
 .pk .app-icon {
-  width: 58px; height: 58px; border-radius: 13px; flex: none; align-self: start;
+  width: 76px; height: 76px; border-radius: 16px; flex: none; align-self: center;
   object-fit: contain; background: var(--bg-panel-2);
-  border: 1px solid var(--border-soft); padding: 7px;
+  border: 1px solid var(--border-soft); padding: 9px;
 }
 .pk-body { display: flex; flex-direction: column; gap: 8px; min-width: 0; height: 100%; }
 .pk-top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
