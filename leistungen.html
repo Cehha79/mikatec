@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leistungen — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=36">
+<link rel="stylesheet" href="style.css?v=37">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="Leistungen von MikaTec: Desktop-Apps, Web-Anwendungen, KI-Integration, Branchensoftware, Automatisierung und Design-Systeme.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Desktop, Web, KI, Spezialsoftware, Automatisierung und Design — aus einer Hand.">
 <meta property="og:image" content="https://mika-tec.com/bilder/aka-bauelemente.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=36"></script>
+<script src="theme.js?v=37"></script>
 </head>
 <body>
 
@@ -725,6 +725,14 @@
   var tabsWrap = document.getElementById('techTabs');
   if (!matrix || !tabsWrap) return;
   var gruppen = Array.prototype.slice.call(matrix.querySelectorAll('.tech-group'));
+  // Chips je Gruppe alphabetisch sortieren — saubere, feste Ordnung
+  gruppen.forEach(function (g) {
+    var wrap = g.querySelector('.tech-wrap');
+    if (!wrap) return;
+    Array.prototype.slice.call(wrap.children)
+      .sort(function (a, b) { return a.textContent.localeCompare(b.textContent, 'de'); })
+      .forEach(function (chip) { wrap.appendChild(chip); });
+  });
   gruppen.forEach(function (g, i) {
     var titel = g.querySelector('.tech-group-title');
     var b = document.createElement('button');
