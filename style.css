@@ -321,8 +321,9 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 
 /* Projekt-Kacheln (Überblick) */
 .pk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pk-grid.pk-2 { grid-template-columns: 1fr 1fr; margin-bottom: 10px; }
 @media (max-width: 900px){ .pk-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px){ .pk-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px){ .pk-grid, .pk-grid.pk-2 { grid-template-columns: 1fr; } }
 .pk {
   display: flex; flex-direction: column; gap: 7px; padding: 18px 20px;
   background: var(--bg-panel); border: 1px solid var(--border-soft); border-radius: var(--radius);
