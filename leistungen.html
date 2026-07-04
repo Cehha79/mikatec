@@ -444,18 +444,13 @@
 
     <div style="margin:64px 0 36px;"><span class="divider"><span class="gem"></span></span></div>
 
-    <div class="page-head" style="margin-bottom:22px;">
+    <div class="page-head" style="margin-bottom:36px;">
       <span class="sec-kicker">Werkzeugkasten</span>
+      <h2>Technologien, mit denen ich arbeite</h2>
+      <p>Bewährte Werkzeuge — ausgewählt nach dem, was dein Projekt wirklich braucht, nicht nach Mode.</p>
     </div>
-    <details class="tech-collapse">
-      <summary class="tech-bar">
-        <span class="tech-bar-label">
-          <span class="tech-bar-title">Technologien, mit denen ich arbeite</span>
-          <span class="tech-bar-sub">Bewährte Werkzeuge — ausgewählt nach dem, was dein Projekt wirklich braucht, nicht nach Mode.</span>
-        </span>
-        <span class="tech-chevron" aria-hidden="true">▾</span>
-      </summary>
-    <div class="tech-groups">
+    <div class="tech-tabs" id="techTabs" aria-label="Technologie-Kategorien"></div>
+    <div class="tech-groups tech-matrix" id="techMatrix">
       <div class="tech-group">
         <h4 class="tech-group-title">Sprachen</h4>
         <div class="tech-wrap">
@@ -559,7 +554,6 @@
         </div>
       </div>
     </div>
-    </details>
 
     <div style="margin:64px 0 36px;"><span class="divider"><span class="gem"></span></span></div>
 
@@ -723,6 +717,29 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.hidden) close();
   });
+})();
+
+// Werkzeugkasten: Kategorie-Reiter
+(function () {
+  var matrix = document.getElementById('techMatrix');
+  var tabsWrap = document.getElementById('techTabs');
+  if (!matrix || !tabsWrap) return;
+  var gruppen = Array.prototype.slice.call(matrix.querySelectorAll('.tech-group'));
+  gruppen.forEach(function (g, i) {
+    var titel = g.querySelector('.tech-group-title');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tech-tab' + (i === 0 ? ' an' : '');
+    b.textContent = titel ? titel.textContent : ('Gruppe ' + (i + 1));
+    b.addEventListener('click', function () {
+      tabsWrap.querySelectorAll('.tech-tab').forEach(function (t) { t.classList.remove('an'); });
+      gruppen.forEach(function (x) { x.classList.remove('an'); });
+      b.classList.add('an');
+      g.classList.add('an');
+    });
+    tabsWrap.appendChild(b);
+  });
+  if (gruppen[0]) gruppen[0].classList.add('an');
 })();
 </script>
 

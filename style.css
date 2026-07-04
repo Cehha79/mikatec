@@ -708,6 +708,25 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 }
 .tech-collapse[open] .tech-chevron { transform: rotate(180deg); }
 .tech-collapse .tech-groups { margin-top: 16px; }
+
+/* Werkzeugkasten mit Kategorie-Reitern */
+.tech-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+.tech-tab {
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .8px; text-transform: uppercase;
+  color: var(--text-muted); background: var(--bg-panel); border: 1px solid var(--border-soft);
+  padding: 8px 14px; border-radius: 8px; cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.tech-tab:hover { border-color: var(--gold); color: var(--text-primary); }
+.tech-tab.an { color: var(--gold-pale); background: var(--gold-dim); border-color: rgba(227,193,120,.4); }
+.tech-groups.tech-matrix { display: block; max-width: 900px; margin: 0 auto; }
+.tech-groups.tech-matrix .tech-group { display: none; grid-template-columns: 1fr; gap: 0; padding: 24px 28px; min-height: 108px; }
+.tech-groups.tech-matrix .tech-group.an { display: block; }
+.tech-groups.tech-matrix .tech-group-title { display: none; }
+.tech-groups.tech-matrix .tech-group .tech-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 100%; }
+.tech-groups.tech-matrix .tech { padding: 8px 14px; font-size: .84rem; white-space: nowrap; }
+/* ohne JavaScript: alles offen zeigen */
+.no-js .tech-groups.tech-matrix .tech-group { display: block; }
 .tech-groups { width: 100%; margin: 0; display: flex; flex-direction: column; gap: 16px; }
 .tech-group {
   display: grid; grid-template-columns: 240px 1fr;
