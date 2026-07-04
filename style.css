@@ -405,6 +405,16 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 .nx-btn:hover { background: rgba(227,193,120,.2); border-color: var(--gold); }
 .nx-btn.prev { left: 12px; }
 .nx-btn.next { right: 12px; }
+.nx-btn.voll { top: 12px; right: 12px; transform: none; width: 36px; height: 36px; border-radius: 9px; font-size: .95rem; }
+
+/* Vollbild-Modus der Galerie */
+.nx-slider:fullscreen { background: #04060a; padding: 4vh 4vw; display: flex; flex-direction: column; justify-content: center; }
+.nx-slider:fullscreen .nx-track { border-radius: 10px; }
+.nx-slider:fullscreen .nx-slide { aspect-ratio: auto; height: 84vh; }
+.nx-slider:fullscreen .nx-slide video, .nx-slider:fullscreen .nx-slide img { object-fit: contain; background: #000; }
+.nx-slider:fullscreen .nx-btn { width: 52px; height: 52px; font-size: 1.5rem; }
+.nx-slider:fullscreen .nx-btn.voll { width: 44px; height: 44px; font-size: 1.1rem; }
+.nx-slider:fullscreen .nx-hint { display: none; }
 .nx-dots { display: flex; justify-content: center; gap: 9px; margin-top: 16px; }
 .nx-dot {
   width: 8px; height: 8px; padding: 0; cursor: pointer; border-radius: 0;

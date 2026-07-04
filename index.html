@@ -174,7 +174,7 @@
               Bewusst ein großes Ziel: Hier zeige ich den Weg dorthin — Schritt für Schritt, ehrlich als Werkstatt-Einblick.
             </p>
           </div>
-          <div class="nx-slider">
+          <div class="nx-slider" id="nxSlider">
             <div class="nx-track" id="nxTrack">
               <div class="nx-slide">
                 <video autoplay muted loop playsinline preload="metadata" poster="bilder/nexus-struktur.png">
@@ -183,8 +183,30 @@
                 <span class="cap">Struktur-Netz · 2.323 Knoten · 9 Schalen</span>
               </div>
               <div class="nx-slide">
+                <video muted loop playsinline preload="metadata" poster="bilder/nexus-signal-poster.jpg">
+                  <source src="bilder/nexus-signal-loop.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Signal-Simulation · ein Impuls läuft durchs Netz</span>
+              </div>
+              <div class="nx-slide">
+                <video muted loop playsinline preload="metadata" poster="bilder/nexus-signal-poster.jpg">
+                  <source src="bilder/nexus-zusammen-loop.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Zusammenarbeit · Knoten verbinden sich</span>
+              </div>
+              <div class="nx-slide">
+                <video muted loop playsinline preload="metadata" poster="bilder/nexus-kern.png">
+                  <source src="bilder/nexus-kernflug.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Kamera-Flug · hinein zum KI-Kern</span>
+              </div>
+              <div class="nx-slide">
+                <img src="bilder/nexus-kern.png" alt="K1 — der goldene KI-Kern in Nahaufnahme" loading="lazy">
+                <span class="cap">K1 · der KI-Kern · Nahaufnahme</span>
+              </div>
+              <div class="nx-slide">
                 <img src="bilder/nexus-struktur.png" alt="NEXUS Struktur-Netz — Gesamtansicht mit Steuer-Panelen" loading="lazy">
-                <span class="cap">Struktur-Netz · Gesamtansicht</span>
+                <span class="cap">Struktur-Netz · Gesamtansicht in der App</span>
               </div>
               <div class="nx-slide">
                 <video muted loop playsinline preload="metadata" poster="bilder/nexus-wuerfel.png">
@@ -199,8 +221,9 @@
             </div>
             <button class="nx-btn prev" type="button" aria-label="Vorheriges">‹</button>
             <button class="nx-btn next" type="button" aria-label="Nächstes">›</button>
+            <button class="nx-btn voll" type="button" id="nxVoll" aria-label="Vollbild" title="Vollbild">⛶</button>
             <div class="nx-dots" id="nxDots"></div>
-            <div class="nx-hint">wischen oder blättern</div>
+            <div class="nx-hint">wischen · blättern · vollbild</div>
           </div>
         </div>
       </div>
@@ -266,6 +289,31 @@
   }
   document.querySelector('.nx-btn.prev').addEventListener('click', function () { geheZu(aktiv() - 1); });
   document.querySelector('.nx-btn.next').addEventListener('click', function () { geheZu(aktiv() + 1); });
+
+  // Vollbild an/aus (mit Safari-Fallback); nach dem Wechsel wieder sauber einrasten
+  var slider = document.getElementById('nxSlider');
+  var vollBtn = document.getElementById('nxVoll');
+  var merkIndex = 0;
+  function imVollbild() { return document.fullscreenElement || document.webkitFullscreenElement; }
+  vollBtn.addEventListener('click', function () {
+    merkIndex = aktiv();
+    if (imVollbild()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    } else {
+      (slider.requestFullscreen || slider.webkitRequestFullscreen).call(slider);
+    }
+  });
+  ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) {
+    document.addEventListener(ev, function () {
+      vollBtn.textContent = imVollbild() ? '✕' : '⛶';
+      setTimeout(function () { track.scrollTo({ left: merkIndex * track.clientWidth }); }, 150);
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!imVollbild()) return;
+    if (e.key === 'ArrowRight') geheZu(aktiv() + 1);
+    if (e.key === 'ArrowLeft') geheZu(aktiv() - 1);
+  });
 
   // Punkte mitführen + nur das sichtbare Video abspielen (spart Strom)
   var t;
