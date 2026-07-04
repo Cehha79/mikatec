@@ -594,6 +594,8 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
   font-family: var(--mono); font-size: .68rem; letter-spacing: 1.2px;
   color: var(--text-dim);
 }
+.svc-breit { grid-column: 1 / -1; border-color: rgba(227,193,120,.28); }
+.svc-breit .svc-short { max-width: 900px; }
 .svc { cursor: pointer; }
 .svc:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .svc .svc-short { color: var(--text-muted); font-size: .96rem; }
