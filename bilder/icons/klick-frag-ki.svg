@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- Hintergrund-Verlauf wie in der App -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#222a3d"/>
+      <stop offset="0.55" stop-color="#141826"/>
+      <stop offset="1" stop-color="#0d1018"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.62" cy="0.34" r="0.6">
+      <stop offset="0" stop-color="#7c9cff" stop-opacity="0.45"/>
+      <stop offset="0.5" stop-color="#7c9cff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#7c9cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wand" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2c3142"/>
+      <stop offset="1" stop-color="#454c63"/>
+    </linearGradient>
+    <linearGradient id="star" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9c0ff"/>
+      <stop offset="0.55" stop-color="#7c9cff"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle-Hintergrund (macOS-Stil) -->
+  <rect x="92" y="92" width="840" height="840" rx="196" fill="url(#bg)"/>
+  <rect x="92" y="92" width="840" height="840" rx="196" fill="url(#glow)"/>
+  <rect x="94.5" y="94.5" width="835" height="835" rx="194" fill="none"
+        stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
+
+  <!-- Zauberstab -->
+  <g transform="rotate(-38 512 512)">
+    <rect x="476" y="430" width="72" height="430" rx="36" fill="url(#wand)"/>
+    <rect x="476" y="430" width="22" height="430" rx="11" fill="#ffffff" opacity="0.10"/>
+    <!-- helle Ringe am Stab -->
+    <rect x="468" y="566" width="88" height="30" rx="15" fill="#e8eaf0" opacity="0.9"/>
+  </g>
+
+  <!-- großer Stern an der Spitze -->
+  <g transform="translate(648 372)">
+    <path filter="url(#soft)" opacity="0.7" fill="#7c9cff"
+      d="M0,-150 L40,-40 L150,0 L40,40 L0,150 L-40,40 L-150,0 L-40,-40 Z"/>
+    <path fill="url(#star)"
+      d="M0,-128 L34,-34 L128,0 L34,34 L0,128 L-34,34 L-128,0 L-34,-34 Z"/>
+    <circle cx="0" cy="0" r="22" fill="#ffffff" opacity="0.85"/>
+  </g>
+
+  <!-- kleine Funken -->
+  <g fill="#cdd9ff">
+    <path d="M392,300 l14,40 l40,14 l-40,14 l-14,40 l-14,-40 l-40,-14 l40,-14 Z"/>
+    <path opacity="0.85" d="M690,612 l10,28 l28,10 l-28,10 l-10,28 l-10,-28 l-28,-10 l28,-10 Z"/>
+    <circle cx="372" cy="612" r="13" opacity="0.7"/>
+  </g>
+</svg>
