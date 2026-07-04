@@ -319,6 +319,22 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 .spec .v { color: var(--text-muted); font-size: .93rem; }
 .spec .v strong { color: var(--text-primary); font-weight: 650; }
 
+/* Projekt-Kacheln (Überblick) */
+.pk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px){ .pk-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px){ .pk-grid { grid-template-columns: 1fr; } }
+.pk {
+  display: flex; flex-direction: column; gap: 7px; padding: 18px 20px;
+  background: var(--bg-panel); border: 1px solid var(--border-soft); border-radius: var(--radius);
+  transition: border-color .2s ease, transform .2s ease;
+}
+a.pk:hover { border-color: rgba(227,193,120,.45); transform: translateY(-2px); }
+.pk .kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.pk .n { font-weight: 650; color: var(--text-primary); font-size: .98rem; }
+.pk .t { font-family: var(--mono); font-size: .64rem; color: var(--teal-strong); letter-spacing: .4px; white-space: nowrap; }
+.pk .d { color: var(--text-muted); font-size: .88rem; line-height: 1.55; }
+.pk .mehr { font-family: var(--mono); font-size: .68rem; letter-spacing: .6px; color: var(--gold-pale); margin-top: auto; padding-top: 6px; }
+
 /* kompakte Projektliste */
 .proj-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
 @media (max-width: 760px){ .proj-list { grid-template-columns: 1fr; } }

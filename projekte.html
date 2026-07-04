@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projekte — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=38">
+<link rel="stylesheet" href="style.css?v=39">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="Projekte von MikaTec — echte Anwendungen aus der eigenen Werkstatt, gezeigt und erklärt: vom Internet-Atlas bis zum medizinischen Bild-Viewer.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Echte Anwendungen aus der eigenen Werkstatt — gezeigt und erklärt.">
 <meta property="og:image" content="https://mika-tec.com/bilder/netz-atlas.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=38"></script>
+<script src="theme.js?v=39"></script>
 </head>
 <body>
 
@@ -41,12 +41,50 @@
     <div class="page-head">
       <span class="sec-kicker">Werkstatt</span>
       <h1>Projekte — gezeigt und erklärt</h1>
-      <p>Echte Anwendungen aus meiner eigenen Entwicklung. Einige laufen täglich im Einsatz,
-      andere werden gerade aktiv weitergebaut — jedes Bild ist ein echter Screenshot, keine Vorlage.</p>
+      <p>Erst der Überblick über die ganze Werkstatt — darunter sieben Projekte im Detail,
+      mit echten Screenshots statt Vorlagen.</p>
+    </div>
+
+    <div class="pk-grid">
+      <a class="pk" href="#fall-nexus"><span class="kopf"><span class="n">NEXUS</span><span class="t">Groß-Projekt</span></span><span class="d">Verteiltes KI-System — digitales Gehirn für Rechner, Firma und Alltag</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-atlas"><span class="kopf"><span class="n">Netz-Atlas</span><span class="t">Web·live</span></span><span class="d">Interaktiver Atlas des weltweiten Internets mit Live-Messung</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-asa"><span class="kopf"><span class="n">ASA — Finanz &amp; Märkte</span><span class="t">Electron·Echtzeit</span></span><span class="d">Markt-Cockpit mit Live-Kursen über Börsen-Schnittstellen</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-bauelemente"><span class="kopf"><span class="n">AKA Bauelemente</span><span class="t">Electron·PWA</span></span><span class="d">Bibliothek mit 900+ UI-Bausteinen, Live-Vorschau und Export</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-speicher"><span class="kopf"><span class="n">Speicher-Werkstatt</span><span class="t">Electron·System</span></span><span class="d">Externe Speicher prüfen, verschlüsseln, klonen, sicher löschen</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-viewer"><span class="kopf"><span class="n">Viewer AKA</span><span class="t">Electron·DICOM</span></span><span class="d">Medizinische Bilddaten ansehen, messen und befunden — lokal</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <a class="pk" href="#fall-tresor"><span class="kopf"><span class="n">AKA-Tresor</span><span class="t">Electron·AES-256</span></span><span class="d">Verschlüsselter Offline-Tresor für sensible Daten</span><span class="mehr">Zur Fallstudie ↓</span></a>
+      <div class="pk"><span class="kopf"><span class="n">AKA Key</span><span class="t">Electron·Web</span></span><span class="d">Passwörter, API-Schlüssel &amp; Lesezeichen — Schwester-App zum Tresor</span></div>
+      <div class="pk"><span class="kopf"><span class="n">ASA Firma</span><span class="t">Cross-Platform</span></span><span class="d">Firmen-Verwaltung: Kunden, Angebote, Rechnungen, E-Rechnung — verschlüsselt</span></div>
+      <div class="pk"><span class="kopf"><span class="n">ASA Projekte</span><span class="t">Cross-Platform</span></span><span class="d">Projekt-Verwaltung mit Übersicht, Board, Baum und Roadmap</span></div>
+      <div class="pk"><span class="kopf"><span class="n">ASA Repair</span><span class="t">Electron·adb</span></span><span class="d">Diagnose-Werkzeug für Handys &amp; Tablets über echte Geräte-Schnittstellen</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA-Player</span><span class="t">Electron·ffmpeg</span></span><span class="d">Video-Player &amp; Stream-Empfänger, spielt praktisch jedes Format</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA Audix</span><span class="t">Desktop·Mobil</span></span><span class="d">Profi-Musik-Player in höchster Qualität: bit-perfect, High-Res, Gapless</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA-Wetter</span><span class="t">Cross-Platform</span></span><span class="d">Wetter-App mit Vorhersage und Wetter-Wissen</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA KI-Steuer</span><span class="t">KI·Web</span></span><span class="d">KI-gestützter Steuer-Assistent, erklärt Regeln verständlich</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA Map</span><span class="t">MapLibre GL</span></span><span class="d">Interaktive Weltkarte auf moderner Vektor-Technik</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA TUR</span><span class="t">Cross-Platform</span></span><span class="d">Alltags-Begleiter mit Behörden-Lotse für die türkische Community</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Klick &amp; Frag KI</span><span class="t">KI·Produkt</span></span><span class="d">Gute KI-Anfragen per Baustein-Klick zusammenstellen</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Flotten-Monitor</span><span class="t">Electron·Netz</span></span><span class="d">Viele PCs und Macs live aus einer Zentrale überwachen</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Coden</span><span class="t">Cross-Platform</span></span><span class="d">Lern-App fürs Programmieren: Terminal, Git, Werkzeuge — Schritt für Schritt</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Projekt-Explorer</span><span class="t">Python</span></span><span class="d">Zeigt den Aufbau beliebiger Projekte als interaktive Übersicht</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Bibliothek-Manager</span><span class="t">Python</span></span><span class="d">Ordnet und pflegt eine Sammlung mit über 2.900 Titeln</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Codex-Datenbank</span><span class="t">HTML·offline</span></span><span class="d">Offline-Nachschlagewerk für Symbole und Referenzen</span></div>
+      <div class="pk"><span class="kopf"><span class="n">Simula</span><span class="t">Three.js</span></span><span class="d">3D-Visualisierung mathematischer Muster</span></div>
+      <div class="pk"><span class="kopf"><span class="n">FID-Dokumentation</span><span class="t">Desktop</span></span><span class="d">Strukturiertes Schreiben und Dokumentieren</span></div>
+      <div class="pk"><span class="kopf"><span class="n">AKA DNA</span><span class="t">HTML·Wissen</span></span><span class="d">Wissens-Seiten, die DNA und DNS verständlich erklären</span></div>
+      <div class="pk"><span class="kopf"><span class="n">MikaTec-Website</span><span class="t">HTML·CSS·JS</span></span><span class="d">Diese Seite — von Hand gebaut, ohne Baukasten</span></div>
+    </div>
+
+    <div style="margin:72px 0 40px;"><span class="divider"><span class="gem"></span></span></div>
+
+    <div class="page-head" style="margin-bottom:0">
+      <span class="sec-kicker">Im Detail</span>
+      <h2>Sieben Projekte, gezeigt und erklärt</h2>
+      <p>Echte Screenshots, echte Funktionen — einige laufen täglich, andere werden aktiv weitergebaut.</p>
     </div>
 
     <!-- NEXUS · Groß-Projekt -->
-    <div class="case">
+    <div class="case" id="fall-nexus">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">NEXUS · Struktur-Netz · Echtzeit-3D</span></div>
@@ -73,7 +111,7 @@
     </div>
 
     <!-- 01 · Netz-Atlas -->
-    <div class="case">
+    <div class="case" id="fall-atlas">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">netz-atlas · läuft im Browser</span></div>
@@ -100,7 +138,7 @@
     </div>
 
     <!-- 02 · ASA -->
-    <div class="case flip">
+    <div class="case flip" id="fall-asa">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">ASA · Finanz- &amp; Markt-Cockpit</span></div>
@@ -126,7 +164,7 @@
     </div>
 
     <!-- 03 · AKA Bauelemente -->
-    <div class="case">
+    <div class="case" id="fall-bauelemente">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">AKA Bauelemente · Desktop &amp; Web</span></div>
@@ -152,7 +190,7 @@
     </div>
 
     <!-- 04 · Speicher-Werkstatt -->
-    <div class="case flip">
+    <div class="case flip" id="fall-speicher">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">Speicher-Werkstatt · Desktop-App</span></div>
@@ -178,7 +216,7 @@
     </div>
 
     <!-- 05 · Viewer AKA (Struktur-Tafel statt Foto) -->
-    <div class="case">
+    <div class="case" id="fall-viewer">
       <div class="case-media">
         <div class="spec">
           <div class="spec-head"><svg class="ic" style="width:18px;height:18px"><use href="#i-scan"/></svg> Viewer AKA · Funktionsumfang</div>
@@ -204,7 +242,7 @@
     </div>
 
     <!-- 06 · AKA-Tresor (Struktur-Tafel statt Foto) -->
-    <div class="case flip">
+    <div class="case flip" id="fall-tresor">
       <div class="case-media">
         <figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="t">AKA-Tresor · Sperrbildschirm</span></div>
@@ -231,36 +269,6 @@
       </div>
     </div>
 
-    <div style="margin:64px 0 40px;"><span class="divider"><span class="gem"></span></span></div>
-
-    <div class="page-head" style="margin-bottom:36px;">
-      <span class="sec-kicker">Weitere Projekte</span>
-      <h2>Aus derselben Werkstatt</h2>
-      <p>Der aktuelle Stand der Werkstatt, kompakt — zu jedem Projekt erzähle ich auf Anfrage gern mehr.</p>
-    </div>
-
-    <ul class="proj-list">
-      <li><span class="n">AKA Key</span><span class="d">Passwörter, API-Schlüssel &amp; Lesezeichen — Schwester-App zum Tresor</span><span class="t">Electron·Web</span></li>
-      <li><span class="n">ASA Firma</span><span class="d">Firmen-Verwaltung: Kunden, Angebote, Rechnungen, E-Rechnung — verschlüsselt</span><span class="t">Cross-Platform</span></li>
-      <li><span class="n">ASA Projekte</span><span class="d">Projekt-Verwaltung mit Übersicht, Board, Baum und Roadmap</span><span class="t">Cross-Platform</span></li>
-      <li><span class="n">ASA Repair</span><span class="d">Diagnose-Werkzeug für Handys &amp; Tablets über echte Geräte-Schnittstellen</span><span class="t">Electron·adb</span></li>
-      <li><span class="n">AKA-Player</span><span class="d">Video-Player &amp; Stream-Empfänger, spielt praktisch jedes Format</span><span class="t">Electron·ffmpeg</span></li>
-      <li><span class="n">AKA Audix</span><span class="d">Profi-Musik-Player in höchster Qualität: bit-perfect, High-Res, Gapless</span><span class="t">Desktop·Mobil</span></li>
-      <li><span class="n">AKA-Wetter</span><span class="d">Wetter-App mit Vorhersage und Wetter-Wissen</span><span class="t">Cross-Platform</span></li>
-      <li><span class="n">AKA KI-Steuer</span><span class="d">KI-gestützter Steuer-Assistent, erklärt Regeln verständlich</span><span class="t">KI·Web</span></li>
-      <li><span class="n">AKA Map</span><span class="d">Interaktive Weltkarte auf moderner Vektor-Technik</span><span class="t">MapLibre GL</span></li>
-      <li><span class="n">AKA TUR</span><span class="d">Alltags-Begleiter mit Behörden-Lotse für die türkische Community</span><span class="t">Cross-Platform</span></li>
-      <li><span class="n">Klick &amp; Frag KI</span><span class="d">Gute KI-Anfragen per Baustein-Klick zusammenstellen</span><span class="t">KI·Produkt</span></li>
-      <li><span class="n">Flotten-Monitor</span><span class="d">Viele PCs und Macs live aus einer Zentrale überwachen</span><span class="t">Electron·Netz</span></li>
-      <li><span class="n">Coden</span><span class="d">Lern-App fürs Programmieren: Terminal, Git, Werkzeuge — Schritt für Schritt</span><span class="t">Cross-Platform</span></li>
-      <li><span class="n">Projekt-Explorer</span><span class="d">Zeigt den Aufbau beliebiger Projekte als interaktive Übersicht</span><span class="t">Python</span></li>
-      <li><span class="n">Bibliothek-Manager</span><span class="d">Ordnet und pflegt eine Sammlung mit über 2.900 Titeln</span><span class="t">Python</span></li>
-      <li><span class="n">Codex-Datenbank</span><span class="d">Offline-Nachschlagewerk für Symbole und Referenzen</span><span class="t">HTML·offline</span></li>
-      <li><span class="n">Simula</span><span class="d">3D-Visualisierung mathematischer Muster</span><span class="t">Three.js</span></li>
-      <li><span class="n">FID-Dokumentation</span><span class="d">Strukturiertes Schreiben und Dokumentieren</span><span class="t">Desktop</span></li>
-      <li><span class="n">AKA DNA</span><span class="d">Wissens-Seiten, die DNA und DNS verständlich erklären</span><span class="t">HTML·Wissen</span></li>
-      <li><span class="n">MikaTec-Website</span><span class="d">Diese Seite — von Hand gebaut, ohne Baukasten</span><span class="t">HTML·CSS·JS</span></li>
-    </ul>
 
     <div style="margin:72px 0 0">
       <div class="contact-box cta-band">
