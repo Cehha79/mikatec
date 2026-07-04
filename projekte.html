@@ -4,21 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projekte — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=34">
+<link rel="stylesheet" href="style.css?v=35">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
-<meta name="description" content="Ausgewählte Projekte von MikaTec — lauffähige Software vom medizinischen Bild-Viewer bis zu System- und KI-Werkzeugen.">
+<meta name="description" content="Projekte von MikaTec — echte Anwendungen aus der eigenen Werkstatt, gezeigt und erklärt: vom Internet-Atlas bis zum medizinischen Bild-Viewer.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Projekte — MikaTec">
-<meta property="og:description" content="Keine Übungsstücke, sondern lauffähige Software — der Beweis, dass Projekte zu Ende gebracht werden.">
-<meta property="og:image" content="logos/mikatec-L4.svg">
-<meta name="twitter:card" content="summary">
-<script src="theme.js?v=34"></script>
+<meta property="og:description" content="Echte Anwendungen aus der eigenen Werkstatt — gezeigt und erklärt.">
+<meta property="og:image" content="https://mika-tec.com/bilder/netz-atlas.png">
+<meta name="twitter:card" content="summary_large_image">
+<script src="theme.js?v=35"></script>
 </head>
 <body>
 
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 11 13M18 13v6a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 19V8a1.5 1.5 0 0 1 1.5-1.5H11"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M4 12h16"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5"/></symbol>
+</svg>
+
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></a><span class="eyebrow nav-badge"><span class="dot"></span> Software-Entwicklung</span>
+    <a class="logo" href="index.html"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span><span class="nav-badge"><span class="dot"></span> Software-Entwicklung</span></a>
     <nav class="nav-links">
       <a href="index.html" class="start-link">Start</a>
       <a href="leistungen.html">Leistungen</a>
@@ -32,93 +39,207 @@
 <main>
   <div class="page wrap">
     <div class="page-head">
-      <span class="sec-kicker">Arbeiten</span>
-      <h1>Ausgewählte Projekte</h1>
-      <p>Keine Übungsstücke, sondern lauffähige Software — der Beweis, dass ich Projekte zu Ende bringe.</p>
+      <span class="sec-kicker">Werkstatt</span>
+      <h1>Projekte — gezeigt und erklärt</h1>
+      <p>Echte Anwendungen aus meiner eigenen Entwicklung. Einige laufen täglich im Einsatz,
+      andere werden gerade aktiv weitergebaut — jedes Bild ist ein echter Screenshot, keine Vorlage.</p>
     </div>
 
-    <div class="grid cols-3 proj">
-      <div class="card"><div class="ico">🌐</div><h3>Netz-Atlas</h3>
-        <p>Interaktiver Atlas des weltweiten Internets: Seekabel-Weltkarte, drehender 3D-Globus und Live-Verbindungsdaten direkt im Browser.</p>
-        <div class="meta"><span class="tag">Web</span><span class="tag">Live-Daten</span><span class="tag">Karten</span></div>
-        <a href="https://cehha79.github.io/netz-atlas/" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;color:var(--accent);font-size:.9rem;text-decoration:none;font-weight:600">Live ansehen ↗</a></div>
+    <!-- 01 · Netz-Atlas -->
+    <div class="case">
+      <div class="case-media">
+        <figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="t">netz-atlas · läuft im Browser</span></div>
+          <img src="bilder/netz-atlas.png" alt="Netz-Atlas — Seekabel-Weltkarte mit Live-Daten" loading="lazy">
+          <figcaption class="cap">Echter Screenshot</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 01</div>
+        <h3>Netz-Atlas</h3>
+        <div class="case-sub">Web-Anwendung · öffentlich erreichbar</div>
+        <span class="status live">live im Netz</span>
+        <p style="margin-top:14px">Ein interaktiver Atlas des weltweiten Internets: Wie hängt die Welt physisch
+        zusammen — Seekabel, Knotenpunkte, Laufzeiten? Dazu misst die Seite live die eigene
+        Verbindung des Besuchers.</p>
+        <ul class="case-facts">
+          <li><strong>Seekabel-Weltkarte</strong> mit Haupt-Routen und Knotenpunkten</li>
+          <li><strong>Live-Messung</strong> von Ping, Download und Upload direkt im Browser</li>
+          <li>Erkennt Standort, Anbieter und Verbindungstyp des Besuchers</li>
+        </ul>
+        <div class="case-tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span><span class="tag">Live-Daten</span><span class="tag">GitHub Pages</span></div>
+        <a class="case-link" href="https://cehha79.github.io/netz-atlas/" target="_blank" rel="noopener">Selbst ausprobieren <svg class="ic"><use href="#i-ext"/></svg></a>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🔒</div><h3>AKA-Tresor</h3>
-        <p>Sicherer Offline-Tresor für Krypto-Schlüssel, Seed-Phrasen und Zugangsdaten — stark verschlüsselt (AES-256), ganz ohne Internet.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">Sicherheit</span><span class="tag">Verschlüsselung</span></div></div>
+    <!-- 02 · ASA -->
+    <div class="case flip">
+      <div class="case-media">
+        <figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="t">ASA · Finanz- &amp; Markt-Cockpit</span></div>
+          <img src="bilder/asa-trading.png" alt="ASA — Finanz-Cockpit mit Live-Marktdaten" loading="lazy">
+          <figcaption class="cap">Echter Screenshot · Live-Kurse</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 02</div>
+        <h3>ASA — Finanz- &amp; Markt-Cockpit</h3>
+        <div class="case-sub">Web + Desktop · Live-Daten über Börsen-Schnittstellen</div>
+        <span class="status dev">in aktiver Entwicklung</span>
+        <p style="margin-top:14px">Ein Cockpit zum Beobachten, Analysieren und Lernen an den Finanzmärkten:
+        Kurse kommen in Echtzeit über Börsen-Schnittstellen herein — Aktien, ETFs, Devisen,
+        Edelmetalle und Krypto in einer Oberfläche.</p>
+        <ul class="case-facts">
+          <li><strong>Live-Marktdaten</strong> aus mehreren Quellen (u. a. Binance-Schnittstelle)</li>
+          <li>Depot-Übersicht, Alarme, Sparplan- und Steuer-Rechner</li>
+          <li>Markt-Ansichten: Listen, Heatmaps, Stärke-Vergleiche</li>
+        </ul>
+        <div class="case-tags"><span class="tag">Electron</span><span class="tag">REST-APIs</span><span class="tag">Echtzeit</span><span class="tag">Diagramme</span></div>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🎬</div><h3>AKA-Player</h3>
-        <p>Universeller Video-Player &amp; Stream-Empfänger, der praktisch jedes Format abspielt — inklusive Live-Streams.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">Video</span><span class="tag">Streaming</span></div></div>
+    <!-- 03 · AKA Bauelemente -->
+    <div class="case">
+      <div class="case-media">
+        <figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="t">AKA Bauelemente · Desktop &amp; Web</span></div>
+          <img src="bilder/aka-bauelemente.png" alt="AKA Bauelemente — Bibliothek für UI-Bausteine mit Live-Vorschau" loading="lazy">
+          <figcaption class="cap">Echter Screenshot</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 03</div>
+        <h3>AKA Bauelemente</h3>
+        <div class="case-sub">Desktop-App + Web · eigenes Entwickler-Werkzeug</div>
+        <span class="status fertig">täglich im Einsatz</span>
+        <p style="margin-top:14px">Meine eigene Bibliothek für Oberflächen-Bausteine: hunderte geprüfte
+        UI-Elemente mit Live-Vorschau, Code-Ansicht und Export. Damit entstehen neue
+        Anwendungen schneller — und sehen von Anfang an durchdacht aus.</p>
+        <ul class="case-facts">
+          <li><strong>900+ Bausteine</strong> in über 20 Bereichen, durchsuch- und filterbar</li>
+          <li>Live-Vorschau, Code kopieren, Sammlung exportieren/importieren</li>
+          <li>Läuft als Desktop-App, im Browser und auf dem iPad</li>
+        </ul>
+        <div class="case-tags"><span class="tag">Electron</span><span class="tag">PWA</span><span class="tag">Vite</span><span class="tag">Design-System</span></div>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🌦️</div><h3>AKA-Wetter</h3>
-        <p>Wetter-App mit Vorhersage und „Wetter-Wissen" — plattformübergreifend für Desktop, Web und Mobil.</p>
-        <div class="meta"><span class="tag">Cross-Platform</span><span class="tag">Wetter</span><span class="tag">Live-Daten</span></div></div>
+    <!-- 04 · Speicher-Werkstatt -->
+    <div class="case flip">
+      <div class="case-media">
+        <figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="t">Speicher-Werkstatt · Desktop-App</span></div>
+          <img src="bilder/speicher-werkstatt.png" alt="Speicher-Werkstatt — Werkzeug für externe Speicher" loading="lazy">
+          <figcaption class="cap">Echter Screenshot</figcaption>
+        </figure>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 04</div>
+        <h3>Speicher-Werkstatt</h3>
+        <div class="case-sub">Desktop-App für Mac, Windows &amp; Linux</div>
+        <span class="status dev">in aktiver Entwicklung</span>
+        <p style="margin-top:14px">Ein Werkzeugkasten für externe Speicher — USB-Sticks, Festplatten,
+        SSDs und Karten: prüfen, testen, verschlüsseln, klonen und sicher löschen,
+        alles in einer Oberfläche mit Live-Monitor.</p>
+        <ul class="case-facts">
+          <li>Geräte-Erkennung mit <strong>Sensorik und Live-Diagrammen</strong></li>
+          <li>Tempo-Tests, Gesundheits-Prüfung, Katalog aller Datenträger</li>
+          <li>Verschlüsseln (AES-256), Image/Klonen, sicheres Löschen</li>
+        </ul>
+        <div class="case-tags"><span class="tag">Electron</span><span class="tag">Node.js</span><span class="tag">System-API</span><span class="tag">Cross-Platform</span></div>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🧮</div><h3>KI-Steuer</h3>
-        <p>KI-gestützter Steuer-Assistent: erklärt Regeln verständlich und hilft, Unterlagen sauber vorzubereiten.</p>
-        <div class="meta"><span class="tag">KI</span><span class="tag">Steuern</span><span class="tag">Web + Desktop</span></div></div>
+    <!-- 05 · Viewer AKA (Struktur-Tafel statt Foto) -->
+    <div class="case">
+      <div class="case-media">
+        <div class="spec">
+          <div class="spec-head"><svg class="ic" style="width:18px;height:18px"><use href="#i-scan"/></svg> Viewer AKA · Funktionsumfang</div>
+          <div class="row"><span class="k">Bilddaten</span><span class="v"><strong>DICOM &amp; NIfTI</strong> — CT, MRT, Röntgen, Serien &amp; Cine</span></div>
+          <div class="row"><span class="k">Ansichten</span><span class="v">2D, <strong>3D-Volumen, MPR</strong> mit Fadenkreuz, Vergleich synchron</span></div>
+          <div class="row"><span class="k">Messen</span><span class="v">Strecken, Winkel (Cobb), ROI, <strong>Orthopädie-Messungen</strong>, Kalibrierung</span></div>
+          <div class="row"><span class="k">Befund</span><span class="v">Befund-Notizen, CSV-Export, Drucken, Anonym-Modus</span></div>
+          <div class="row"><span class="k">Technik</span><span class="v">Electron · Cornerstone3D · läuft komplett lokal</span></div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 05</div>
+        <h3>Viewer AKA</h3>
+        <div class="case-sub">Desktop-App · medizinische Bildgebung</div>
+        <span class="status fertig">Version 1.0 abgeschlossen</span>
+        <p style="margin-top:14px">Ein Betrachter für medizinische Bilddaten, entstanden aus über 20 Jahren
+        Praxis im Gesundheitswesen: DICOM-Aufnahmen öffnen, in 2D und 3D betrachten,
+        messen, vergleichen und befunden — ohne Cloud, alle Daten bleiben auf dem Rechner.</p>
+        <p style="color:var(--text-dim);font-size:.9rem">Aus Datenschutz-Gründen zeige ich hier keine Patientenbilder —
+        die Funktionstafel links fasst zusammen, was die Anwendung kann.</p>
+        <div class="case-tags"><span class="tag">Electron</span><span class="tag">Cornerstone3D</span><span class="tag">DICOM</span><span class="tag">Medizin</span></div>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🛠️</div><h3>ASA Repair</h3>
-        <p>Diagnose- &amp; Reparatur-Werkzeug für Handys und Tablets — mit Anschluss-Prüfung über echte Geräte-Schnittstellen.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">Diagnose</span><span class="tag">Mobilgeräte</span></div></div>
+    <!-- 06 · AKA-Tresor (Struktur-Tafel statt Foto) -->
+    <div class="case flip">
+      <div class="case-media">
+        <div class="spec">
+          <div class="spec-head"><svg class="ic" style="width:18px;height:18px"><use href="#i-lock"/></svg> AKA-Tresor · Sicherheits-Aufbau</div>
+          <div class="row"><span class="k">Verschlüsselung</span><span class="v"><strong>AES-256-GCM</strong>, Schlüssel-Ableitung mit scrypt</span></div>
+          <div class="row"><span class="k">Offline</span><span class="v">Keine Cloud, keine Server — <strong>alles bleibt lokal</strong></span></div>
+          <div class="row"><span class="k">Inhalte</span><span class="v">Zugangsdaten, Krypto-Schlüssel, Seed-Phrasen, Notizen</span></div>
+          <div class="row"><span class="k">Schutz</span><span class="v">Auto-Sperre, Backup-Export, Papierkorb mit Wiederherstellung</span></div>
+          <div class="row"><span class="k">Technik</span><span class="v">Electron · nur Bordmittel von Node.js, keine Fremd-Krypto</span></div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-num">PROJEKT 06</div>
+        <h3>AKA-Tresor</h3>
+        <div class="case-sub">Desktop-App · Sicherheit &amp; Verschlüsselung</div>
+        <span class="status fertig">Version 1.1 im Einsatz</span>
+        <p style="margin-top:14px">Ein digitaler Tresor für sensible Daten: stark verschlüsselt, komplett
+        offline, ohne Konto und ohne Abo. Entstanden, weil ich meinen sensibelsten Daten
+        keiner Cloud anvertrauen wollte — ein Anspruch, der auch Kundenprojekten zugutekommt.</p>
+        <p style="color:var(--text-dim);font-size:.9rem">Ein Tresor zeigt seinen Inhalt nicht — deshalb hier bewusst
+        die Sicherheits-Architektur statt eines Blicks hinein.</p>
+        <div class="case-tags"><span class="tag">Electron</span><span class="tag">AES-256-GCM</span><span class="tag">scrypt</span><span class="tag">Offline</span></div>
+      </div>
+    </div>
 
-      <div class="card"><div class="ico">🩻</div><h3>Viewer AKA</h3>
-        <p>Umfangreicher Betrachter für medizinische Bilddaten (DICOM/NIfTI) mit 3D/MPR, Messungen, Befunden und Export.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">Medizin</span><span class="tag">DICOM</span></div></div>
+    <div style="margin:64px 0 40px;"><span class="divider"><span class="gem"></span></span></div>
 
-      <div class="card"><div class="ico">📈</div><h3>ASA — Finanz &amp; Trading</h3>
-        <p>Umfangreiche Finanz- &amp; Trading-Plattform mit Live-Marktdaten, mehreren Markt-Ansichten und Rechnern — für Web, Desktop, Handy/Tablet und Watch aus einer gemeinsamen Basis.</p>
-        <div class="meta"><span class="tag">Finanzen</span><span class="tag">Live-Daten</span><span class="tag">Cross-Platform</span></div></div>
+    <div class="page-head" style="margin-bottom:36px;">
+      <span class="sec-kicker">Weitere Projekte</span>
+      <h2>Aus derselben Werkstatt</h2>
+      <p>Kompakt aufgelistet — zu jedem dieser Projekte erzähle ich auf Anfrage gern mehr.</p>
+    </div>
 
-      <div class="card"><div class="ico">💾</div><h3>Speicher-Werkstatt</h3>
-        <p>Plattformübergreifendes Werkzeug zum Testen, Verschlüsseln, Formatieren und Klonen externer Speicher.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">System-Tools</span><span class="tag">Cross-Platform</span></div></div>
+    <ul class="proj-list">
+      <li><span class="n">AKA-Player</span><span class="d">Video-Player &amp; Stream-Empfänger, spielt praktisch jedes Format</span><span class="t">Electron·ffmpeg</span></li>
+      <li><span class="n">AKA-Wetter</span><span class="d">Wetter-App mit Vorhersage und Wetter-Wissen</span><span class="t">Cross-Platform</span></li>
+      <li><span class="n">AKA KI-Steuer</span><span class="d">KI-gestützter Steuer-Assistent, erklärt Regeln verständlich</span><span class="t">KI·Web</span></li>
+      <li><span class="n">ASA Repair</span><span class="d">Diagnose-Werkzeug für Handys &amp; Tablets über echte Geräte-Schnittstellen</span><span class="t">Electron·adb</span></li>
+      <li><span class="n">AKA Map</span><span class="d">Interaktive Weltkarte auf moderner Vektor-Technik</span><span class="t">MapLibre GL</span></li>
+      <li><span class="n">Klick &amp; Frag KI</span><span class="d">Gute KI-Anfragen per Baustein-Klick zusammenstellen</span><span class="t">KI·Produkt</span></li>
+      <li><span class="n">Flotten-Monitor</span><span class="d">Viele PCs und Macs live aus einer Zentrale überwachen</span><span class="t">Electron·Netz</span></li>
+      <li><span class="n">Bibliothek-Manager</span><span class="d">Ordnet und pflegt eine Sammlung mit über 2.900 Titeln</span><span class="t">Python</span></li>
+      <li><span class="n">Codex-Datenbank</span><span class="d">Offline-Nachschlagewerk für Symbole und Referenzen</span><span class="t">HTML·offline</span></li>
+      <li><span class="n">Simula</span><span class="d">3D-Visualisierung mathematischer Muster</span><span class="t">Three.js</span></li>
+      <li><span class="n">FID-Dokumentation</span><span class="d">Strukturiertes Schreiben und Dokumentieren</span><span class="t">Desktop</span></li>
+      <li><span class="n">MikaTec-Website</span><span class="d">Diese Seite — von Hand gebaut, ohne Baukasten</span><span class="t">HTML·CSS·JS</span></li>
+    </ul>
 
-      <div class="card"><div class="ico">📡</div><h3>Flotten-Monitor</h3>
-        <p>Zentrale Live-Überwachung vieler PCs, Macs und Netzwerk-Geräte aus einer Oberfläche.</p>
-        <div class="meta"><span class="tag">Electron</span><span class="tag">Monitoring</span><span class="tag">Netzwerk</span></div></div>
-
-      <div class="card"><div class="ico">🗺️</div><h3>AKA Map — Weltkarte</h3>
-        <p>Flüssige interaktive Weltkarte auf moderner Vektor-Technik (MapLibre GL) mit vielen Kartenstilen.</p>
-        <div class="meta"><span class="tag">MapLibre GL</span><span class="tag">Karten</span><span class="tag">Geo</span></div></div>
-
-      <div class="card"><div class="ico">💬</div><h3>Klick &amp; Frag KI</h3>
-        <p>App, die gute KI-Anfragen per Baustein-Klick kinderleicht macht — für Einsteiger wie Profis.</p>
-        <div class="meta"><span class="tag">KI</span><span class="tag">Produkt</span></div></div>
-
-            <div class="card"><div class="ico">🧱</div><h3>App Studio</h3>
-        <p>Werkstatt, um Oberflächen-Komponenten für Web, Desktop und Mobil zu bauen und zu testen.</p>
-        <div class="meta"><span class="tag">UI</span><span class="tag">Komponenten</span><span class="tag">Cross-Platform</span></div></div>
-
-            <div class="card"><div class="ico">📚</div><h3>Bibliothek-Manager</h3>
-        <p>Python-Werkzeug zum Ordnen tausender Bücher &amp; Hörbücher — gewachsen an über 2.900 Titeln.</p>
-        <div class="meta"><span class="tag">Python</span><span class="tag">Automatisierung</span></div></div>
-
-      <div class="card"><div class="ico">📖</div><h3>Codex-Datenbank</h3>
-        <p>Offline nutzbares HTML-Nachschlagewerk — Symbole und Referenzen schnell auffindbar, ganz ohne Internet.</p>
-        <div class="meta"><span class="tag">Nachschlagewerk</span><span class="tag">Offline</span><span class="tag">HTML</span></div></div>
-
-                              <div class="card"><div class="ico">🌀</div><h3>Simula</h3>
-        <p>3D-Visualisierung mathematischer Muster — etwa eine Primzahl-Spirale, die aus der Mitte wächst.</p>
-        <div class="meta"><span class="tag">3D</span><span class="tag">Mathematik</span><span class="tag">Visualisierung</span></div></div>
-
-<div class="card"><div class="ico">📝</div><h3>FID-Dokumentation</h3>
-        <p>Anwendung rund ums strukturierte Schreiben und Dokumentieren.</p>
-        <div class="meta"><span class="tag">Dokumentation</span><span class="tag">Text</span></div></div>
-
-      <div class="card"><div class="ico">📱</div><h3>AKA</h3>
-        <p>Das nächste Projekt der Reihe. Plattformübergreifend gedacht (Flutter) — Details folgen.</p>
-        <div class="meta"><span class="tag">Flutter</span><span class="tag">Cross-Platform</span><span class="tag">In Arbeit</span></div></div>
-
-          </div>
+    <div style="margin:72px 0 0">
+      <div class="contact-box cta-band">
+        <h2>So etwas — aber für dein Vorhaben?</h2>
+        <p>Jedes dieser Projekte hat als Idee angefangen. Erzähl mir von deiner.</p>
+        <a href="kontakt.html" class="btn btn-primary">Projekt anfragen <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot-inner">
     <div class="logo"><img class="mark" src="logos/mikatec-L4.svg" alt="MikaTec-Logo"><span class="name">Mika<b>Tec</b></span></div>
-    <div>© 2026 MikaTec · Hasan Tepegöz · Deutschland · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+    <div class="foot-sig">entworfen &amp; programmiert in Böblingen</div>
+    <div>© 2026 MikaTec · Hasan Tepegöz · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
 
