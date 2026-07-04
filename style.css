@@ -271,8 +271,9 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 }
 .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
 .status.live { color: var(--teal-strong); } .status.live::before { background: var(--teal-strong); box-shadow: 0 0 8px var(--teal-strong); }
-.status.fertig { color: var(--gold-pale); } .status.fertig::before { background: var(--gold); box-shadow: 0 0 8px rgba(227,193,120,.8); }
-.status.dev { color: var(--text-muted); } .status.dev::before { background: var(--text-dim); }
+.status.fertig { color: #63c56f; } .status.fertig::before { background: #63c56f; box-shadow: 0 0 8px rgba(99,197,111,.8); }
+.status.dev { color: #e39a4a; } .status.dev::before { background: #e39a4a; box-shadow: 0 0 8px rgba(227,154,74,.7); }
+.status.web { color: #3ccdd4; } .status.web::before { background: #3ccdd4; box-shadow: 0 0 8px rgba(60,205,212,.8); }
 
 /* ---- Fallstudien (Projekte) ---- */
 .case {
