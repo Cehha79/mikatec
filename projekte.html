@@ -179,14 +179,11 @@
     <!-- 06 · AKA-Tresor (Struktur-Tafel statt Foto) -->
     <div class="case flip">
       <div class="case-media">
-        <div class="spec">
-          <div class="spec-head"><svg class="ic" style="width:18px;height:18px"><use href="#i-lock"/></svg> AKA-Tresor · Sicherheits-Aufbau</div>
-          <div class="row"><span class="k">Verschlüsselung</span><span class="v"><strong>AES-256-GCM</strong>, Schlüssel-Ableitung mit scrypt</span></div>
-          <div class="row"><span class="k">Offline</span><span class="v">Keine Cloud, keine Server — <strong>alles bleibt lokal</strong></span></div>
-          <div class="row"><span class="k">Inhalte</span><span class="v">Zugangsdaten, Krypto-Schlüssel, Seed-Phrasen, Notizen</span></div>
-          <div class="row"><span class="k">Schutz</span><span class="v">Auto-Sperre, Backup-Export, Papierkorb mit Wiederherstellung</span></div>
-          <div class="row"><span class="k">Technik</span><span class="v">Electron · nur Bordmittel von Node.js, keine Fremd-Krypto</span></div>
-        </div>
+        <figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="t">AKA-Tresor · Sperrbildschirm</span></div>
+          <img src="bilder/aka-tresor.png" alt="AKA-Tresor — Sperrbildschirm des verschlüsselten Tresors" loading="lazy">
+          <figcaption class="cap">Echter Screenshot</figcaption>
+        </figure>
       </div>
       <div class="case-body">
         <div class="case-num">PROJEKT 06</div>
@@ -196,8 +193,13 @@
         <p style="margin-top:14px">Ein digitaler Tresor für sensible Daten: stark verschlüsselt, komplett
         offline, ohne Konto und ohne Abo. Entstanden, weil ich meinen sensibelsten Daten
         keiner Cloud anvertrauen wollte — ein Anspruch, der auch Kundenprojekten zugutekommt.</p>
-        <p style="color:var(--text-dim);font-size:.9rem">Ein Tresor zeigt seinen Inhalt nicht — deshalb hier bewusst
-        die Sicherheits-Architektur statt eines Blicks hinein.</p>
+        <ul class="case-facts">
+          <li><strong>AES-256-GCM</strong> mit Schlüssel-Ableitung über scrypt — keine Hintertür</li>
+          <li>Keine Cloud, keine Server — <strong>alles bleibt lokal</strong></li>
+          <li>Auto-Sperre, Backup-Export, Papierkorb mit Wiederherstellung</li>
+        </ul>
+        <p style="color:var(--text-dim);font-size:.9rem">Mehr als den Sperrbildschirm gibt es bewusst nicht zu sehen —
+        ein Tresor zeigt seinen Inhalt nicht.</p>
         <div class="case-tags"><span class="tag">Electron</span><span class="tag">AES-256-GCM</span><span class="tag">scrypt</span><span class="tag">Offline</span></div>
       </div>
     </div>
@@ -211,6 +213,8 @@
     </div>
 
     <ul class="proj-list">
+      <li><span class="n">AKA Key</span><span class="d">Passwörter, API-Schlüssel &amp; Lesezeichen — Schwester-App zum Tresor</span><span class="t">Electron·Web</span></li>
+      <li><span class="n">ASA Firma</span><span class="d">Firmen-Verwaltung: Kunden, Angebote, Rechnungen — verschlüsselt</span><span class="t">Cross-Platform</span></li>
       <li><span class="n">AKA-Player</span><span class="d">Video-Player &amp; Stream-Empfänger, spielt praktisch jedes Format</span><span class="t">Electron·ffmpeg</span></li>
       <li><span class="n">AKA-Wetter</span><span class="d">Wetter-App mit Vorhersage und Wetter-Wissen</span><span class="t">Cross-Platform</span></li>
       <li><span class="n">AKA KI-Steuer</span><span class="d">KI-gestützter Steuer-Assistent, erklärt Regeln verständlich</span><span class="t">KI·Web</span></li>

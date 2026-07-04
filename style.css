@@ -146,7 +146,7 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 .divider .gem { width: 9px; height: 9px; transform: rotate(45deg); background: var(--teal-deep); border: 1px solid var(--gold); }
 
 /* ---- Hero (Startseite) ---- */
-.hero { padding: 96px 0 72px; text-align: center; }
+.hero { padding: 120px 0 104px; text-align: center; }
 .hero-kicker {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--mono); font-size: .78rem; letter-spacing: 2px; text-transform: uppercase;
@@ -184,6 +184,8 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 .shot .bar .t { margin-left: 10px; font-family: var(--mono); font-size: .72rem; color: var(--text-dim); letter-spacing: .5px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .shot img { display: block; width: 100%; height: auto; }
+/* Einblick-Kacheln: einheitliches Bildformat, ruhiges Raster */
+.proj .shot img { aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; }
 .shot .cap {
   position: absolute; right: 12px; bottom: 12px;
   font-family: var(--mono); font-size: .68rem; letter-spacing: 1px; text-transform: uppercase;
