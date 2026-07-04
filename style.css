@@ -569,14 +569,69 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .faq .a { padding: 16px 22px; color: var(--text-muted); }
 
 /* ---- Leistungs-Tafeln + Detail-Maske ---- */
+.svc-group-head {
+  display: flex; align-items: baseline; gap: 18px; margin: 54px 0 22px;
+}
+.svc-group-head:first-of-type { margin-top: 0; }
+.svc-group-head h2 {
+  font-family: var(--mono); font-size: .95rem; font-weight: 600;
+  letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold-pale);
+  white-space: nowrap;
+}
+.svc-group-head h2::before { content: "// "; color: var(--gold); opacity: .7; }
+.svc-group-head p { color: var(--text-dim); font-size: .92rem; margin: 0; }
+.svc-group-head::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, var(--border-soft), transparent); align-self: center; }
+@media (max-width: 680px){ .svc-group-head { flex-wrap: wrap; gap: 6px 18px; } }
+.svc-fakten {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px;
+  margin: -30px auto 48px; font-family: var(--mono); font-size: .76rem;
+  letter-spacing: .6px; color: var(--text-dim);
+}
+.svc-fakten span { display: inline-flex; align-items: center; gap: 8px; }
+.svc-fakten span::before { content: "▸"; color: var(--gold); }
+.svc-num {
+  position: absolute; top: 20px; right: 22px;
+  font-family: var(--mono); font-size: .68rem; letter-spacing: 1.2px;
+  color: var(--text-dim);
+}
 .svc { cursor: pointer; }
 .svc:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .svc .svc-short { color: var(--text-muted); font-size: .96rem; }
+.svc-tags { margin-top: auto; padding-top: 18px; }
 .svc .svc-more {
-  margin-top: auto; padding-top: 16px;
+  padding-top: 10px;
   color: var(--gold-pale); font-family: var(--mono); font-size: .8rem; letter-spacing: .6px;
   transition: transform .2s ease;
 }
+
+/* breite Angebots-Tafel (Daten-Service) */
+.svc-wide {
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1.35fr; gap: 20px 48px;
+  padding: 40px 44px;
+  background: linear-gradient(150deg, var(--bg-panel-2), var(--bg-elev));
+  border: 1px solid rgba(227,193,120,.4); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.svc-wide::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+}
+.svc-wide h3 { font-size: 1.5rem; font-weight: 760; letter-spacing: -.4px; margin: 16px 0 10px; }
+.svc-wide .svc-short { color: var(--text-muted); font-size: 1rem; margin-bottom: 18px; }
+.svc-wide ul { list-style: none; columns: 1; margin: 4px 0 0; }
+.svc-wide ul li { color: var(--text-muted); font-size: .95rem; padding-left: 20px; position: relative; margin-bottom: 9px; break-inside: avoid; }
+.svc-wide ul li::before { content: "▸"; position: absolute; left: 0; color: var(--gold); }
+.svc-wide ul li strong { color: var(--text-primary); font-weight: 650; }
+.svc-wide .angebot-marke {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--mono); font-size: .68rem; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--gold-pale); background: var(--gold-dim); border: 1px solid rgba(227,193,120,.35);
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 4px; align-self: flex-start;
+}
+.svc-wide .links { display: flex; flex-direction: column; align-items: flex-start; }
+.svc-wide .links .btn { margin-top: 22px; }
+@media (max-width: 860px){ .svc-wide { grid-template-columns: 1fr; padding: 28px 24px; } }
 .svc:hover .svc-more { transform: translateX(4px); }
 .svc-devices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 
