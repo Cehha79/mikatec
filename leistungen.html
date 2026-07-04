@@ -317,17 +317,21 @@
         <span class="svc-num">09</span>
         <div class="ico"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Sicherheit &amp; Verschlüsselung</h3>
         <p class="svc-short">Sensible Daten schützen — starke Verschlüsselung und sichere Speicherung.</p>
-        <div class="svc-tags"><span class="tag">AES-256</span><span class="tag">Offline-first</span><span class="tag">Datenschutz</span></div>
+        <div class="svc-tags"><span class="tag">AES-256-GCM</span><span class="tag">scrypt / PBKDF2</span><span class="tag">keine Hintertür</span><span class="tag">Offline-first</span></div>
         <span class="svc-more">Mehr erfahren →</span>
         <div class="svc-detail" hidden>
-          <p class="lead">Wo es um vertrauliche Daten geht, zählt Sicherheit von Anfang an: starke Verschlüsselung, sichere Speicherung und Lösungen, die auch offline funktionieren.</p>
+          <p class="lead">Wo es um vertrauliche Daten geht, zählt Sicherheit von Anfang an: bewährte Verschlüsselung, sichere Speicherung und Lösungen, die auch komplett offline funktionieren — erprobt im eigenen Produkt AKA-Tresor.</p>
           <ul>
-            <li>Starke Verschlüsselung sensibler Daten (AES-256)</li>
-            <li>Sichere Speicherung von Passwörtern &amp; Zugangsdaten</li>
-            <li>Offline-Lösungen ohne Cloud-Zwang</li>
-            <li>Verschlüsselte Datenbanken &amp; Dateien</li>
-            <li>Datenschutz von Anfang an mitgedacht</li>
-            <li>Sichere Übertragung über Schnittstellen</li>
+            <li><strong>AES-256-GCM</strong> mit moderner Schlüssel-Ableitung (scrypt / PBKDF2) — bewährte Verfahren statt Eigenbau-Krypto</li>
+            <li>Sichere Speicherung von Passwörtern, Krypto-Schlüsseln &amp; Zugangsdaten</li>
+            <li><strong>Keine Hintertür:</strong> ohne Master-Passwort keine Daten — mit Wiederherstellungs-Schlüssel als geregeltem Notfall-Weg</li>
+            <li>Offline-Lösungen ohne Cloud-Zwang — alle Daten bleiben auf dem Gerät</li>
+            <li>Verschlüsselte Backups: Export, Wieder-Einlesen, Papierkorb mit Wiederherstellung</li>
+            <li>Auto-Sperre nach Leerlauf — Schutz, wenn der Arbeitsplatz verlassen wird</li>
+            <li>Externe Datenträger <strong>verschlüsseln und sicher löschen</strong> (USB, Festplatten, SSDs)</li>
+            <li>Signierte Updates &amp; Offline-Lizenzen (Ed25519) — Echtheit der Software prüfbar</li>
+            <li>Sichere Übertragung über Schnittstellen (HTTPS/TLS, OAuth 2.0)</li>
+            <li>Datenschutz von Anfang an mitgedacht — sparsame Daten, klare Berechtigungen</li>
           </ul>
           <div class="web-examples">
             <h3 class="ex-title">Beispiele — was möglich ist</h3>
@@ -578,10 +582,14 @@
       <div class="tech-group">
         <h4 class="tech-group-title">Sicherheit</h4>
         <div class="tech-wrap">
-          <span class="tech">AES-256</span>
+          <span class="tech">AES-256-GCM</span>
+          <span class="tech">scrypt / PBKDF2</span>
+          <span class="tech">Ed25519-Signaturen</span>
+          <span class="tech">Web Crypto API</span>
           <span class="tech">OAuth 2.0</span>
           <span class="tech">JWT</span>
           <span class="tech">HTTPS / TLS</span>
+          <span class="tech">Sicheres Löschen</span>
         </div>
       </div>
       <div class="tech-group">
