@@ -174,26 +174,44 @@
               Bewusst ein großes Ziel: Hier zeige ich den Weg dorthin — Schritt für Schritt, ehrlich als Werkstatt-Einblick.
             </p>
           </div>
-          <div class="nexus-video-wrap">
-            <video autoplay muted loop playsinline preload="metadata" poster="bilder/nexus-halb.png">
-              <source src="bilder/nexus-loop.mp4" type="video/mp4">
-            </video>
-            <span class="cap">Echtzeit-3D · eigene Entwicklung</span>
+          <div class="nx-slider">
+            <div class="nx-track" id="nxTrack">
+              <div class="nx-slide">
+                <video autoplay muted loop playsinline preload="metadata" poster="bilder/nexus-halb.png">
+                  <source src="bilder/nexus-loop.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Nexus Core · öffnet &amp; schließt sich · Echtzeit-3D</span>
+              </div>
+              <div class="nx-slide">
+                <img src="bilder/nexus-offen.png" alt="Nexus Core — offener, leuchtender Kern" loading="lazy">
+                <span class="cap">Nexus Core · Kern offen</span>
+              </div>
+              <div class="nx-slide">
+                <video muted loop playsinline preload="metadata" poster="bilder/nexus-struktur.png">
+                  <source src="bilder/nexus-struktur-loop.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Struktur-Netz · 2.323 Knoten · 9 Schalen</span>
+              </div>
+              <div class="nx-slide">
+                <img src="bilder/nexus-struktur.png" alt="NEXUS Struktur-Netz — Gesamtansicht mit Steuer-Panelen" loading="lazy">
+                <span class="cap">Struktur-Netz · Gesamtansicht</span>
+              </div>
+              <div class="nx-slide">
+                <video muted loop playsinline preload="metadata" poster="bilder/nexus-wuerfel.png">
+                  <source src="bilder/nexus-wuerfel-loop.mp4" type="video/mp4">
+                </video>
+                <span class="cap">Krypto-Würfel · entfaltet sich</span>
+              </div>
+              <div class="nx-slide">
+                <img src="bilder/nexus-wuerfel.png" alt="Krypto-Würfel — zerlegt, mit goldenem Kern" loading="lazy">
+                <span class="cap">Krypto-Würfel · goldener Kern</span>
+              </div>
+            </div>
+            <button class="nx-btn prev" type="button" aria-label="Vorheriges">‹</button>
+            <button class="nx-btn next" type="button" aria-label="Nächstes">›</button>
+            <div class="nx-dots" id="nxDots"></div>
+            <div class="nx-hint">wischen oder blättern</div>
           </div>
-        </div>
-        <div class="nexus-phasen">
-          <figure class="nexus-phase">
-            <div class="ph-img"><img src="bilder/nexus-zu.png" alt="Nexus Core — geschlossene Panzerkugel" loading="lazy"></div>
-            <figcaption><b>Phase 01</b> Verriegelt — die Hülle schützt den Kern</figcaption>
-          </figure>
-          <figure class="nexus-phase">
-            <div class="ph-img"><img src="bilder/nexus-halb.png" alt="Nexus Core — Platten entfalten sich" loading="lazy"></div>
-            <figcaption><b>Phase 02</b> Entfaltung — jede Platte am eigenen Scharnier</figcaption>
-          </figure>
-          <figure class="nexus-phase">
-            <div class="ph-img"><img src="bilder/nexus-offen.png" alt="Nexus Core — offener, leuchtender Kern" loading="lazy"></div>
-            <figcaption><b>Phase 03</b> Kern offen — die Zentrale ist aktiv</figcaption>
-          </figure>
         </div>
       </div>
     </div>
@@ -234,6 +252,47 @@
     <div>© 2026 MikaTec · Hasan Tepegöz · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var track = document.getElementById('nxTrack');
+  if (!track) return;
+  var slides = Array.prototype.slice.call(track.children);
+  var dotsWrap = document.getElementById('nxDots');
+  slides.forEach(function (_, i) {
+    var d = document.createElement('button');
+    d.className = 'nx-dot' + (i === 0 ? ' an' : '');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Bild ' + (i + 1));
+    d.addEventListener('click', function () { geheZu(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = dotsWrap.children;
+
+  function aktiv() { return Math.round(track.scrollLeft / track.clientWidth); }
+  function geheZu(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+  }
+  document.querySelector('.nx-btn.prev').addEventListener('click', function () { geheZu(aktiv() - 1); });
+  document.querySelector('.nx-btn.next').addEventListener('click', function () { geheZu(aktiv() + 1); });
+
+  // Punkte mitführen + nur das sichtbare Video abspielen (spart Strom)
+  var t;
+  track.addEventListener('scroll', function () {
+    clearTimeout(t);
+    t = setTimeout(function () {
+      var i = aktiv();
+      for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('an', k === i);
+      slides.forEach(function (s, k) {
+        var v = s.querySelector('video');
+        if (!v) return;
+        if (k === i) { v.play().catch(function () {}); } else { v.pause(); }
+      });
+    }, 80);
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>
