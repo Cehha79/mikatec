@@ -670,6 +670,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
   color: var(--text-primary); font: inherit; font-size: .96rem;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
+.form input, .form select { min-height: 54px; }
 .form input:focus, .form select:focus, .form textarea:focus {
   outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,193,120,.12);
 }
