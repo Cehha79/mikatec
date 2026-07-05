@@ -1239,6 +1239,8 @@ html[data-theme="light"] .btn-ghost:hover { color: var(--gold); border-color: va
   .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; gap: 10px 14px; }
   .nav-links a:not(.nav-cta) { font-size: .86rem; }
   .nav-links a.active:not(.nav-cta)::after { display: none; }
+  .nav-cta { padding: 5px 13px; font-size: .82rem; }
+  .theme-toggle { width: 33px; height: 33px; font-size: .9rem; }
 }
 
 /* Schmalere Seitenränder auf kleinen Screens */
