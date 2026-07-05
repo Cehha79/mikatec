@@ -121,7 +121,7 @@ main > section { padding: 54px 0; position: relative; }
 main > section + section { border-top: 1px solid var(--border-soft); }
 
 /* ---- Seiten-/Abschnittsköpfe ---- */
-.page-head { margin: 0 auto 38px; max-width: 760px; text-align: center; }
+.page-head { margin: 0 auto 38px; max-width: 1060px; text-align: center; }
 .sec-kicker {
   display: inline-flex; align-items: center; gap: 12px;
   font-family: var(--mono); color: var(--teal-strong);
@@ -129,9 +129,9 @@ main > section + section { border-top: 1px solid var(--border-soft); }
   margin-bottom: 16px;
 }
 .sec-kicker::before, .sec-kicker::after { content: "//"; color: #d69a34; opacity: 1; letter-spacing: 0; }
-.page-head h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -1px; font-weight: 760; line-height: 1.1; margin-bottom: 18px; }
-.page-head h2 { font-size: clamp(1.65rem, 4vw, 2.3rem); letter-spacing: -.7px; font-weight: 760; line-height: 1.14; margin-bottom: 16px; }
-.page-head p { color: var(--text-muted); font-size: 1.08rem; margin-left: auto; margin-right: auto; }
+.page-head h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.5px; font-weight: 620; line-height: 1.14; margin-bottom: 18px; }
+.page-head h2 { font-size: clamp(1.65rem, 4vw, 2.3rem); letter-spacing: -.4px; font-weight: 620; line-height: 1.18; margin-bottom: 16px; }
+.page-head p { color: var(--text-muted); font-size: 1.08rem; margin-left: auto; margin-right: auto; max-width: 820px; }
 
 /* feiner Teiler mit Logo-Raute */
 .divider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto; max-width: 240px; }
@@ -681,11 +681,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 }
 .svc-fakten span { display: inline-flex; align-items: center; gap: 8px; }
 .svc-fakten span::before { content: "▸"; color: var(--gold); }
-.svc-num {
-  position: absolute; top: 20px; right: 22px;
-  font-family: var(--mono); font-size: .68rem; letter-spacing: 1.2px;
-  color: var(--text-dim);
-}
+.svc-num { display: none; }
 .svc-breit { border-color: rgba(227,193,120,.28); }
 .svc { cursor: pointer; }
 .svc:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
