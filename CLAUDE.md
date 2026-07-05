@@ -15,17 +15,18 @@ Statische Mehrseiten-Website für **MikaTec** (selbstständige Software-Entwickl
 Es gibt **kein Templating**. Jede Seite (`index`, `leistungen`, `projekte`, `ueber`, `kontakt`, `impressum`, `datenschutz`) ist eine eigenständige HTML-Datei, die `<header class="nav">` und `<footer>` **wortgleich dupliziert**. Eine Änderung an Navigation oder Footer muss in **allen 7 Seiten** identisch nachgezogen werden.
 
 - **`style.css`** — eine Datei für alles. Designwerte stehen als CSS-Variablen in `:root` (Farben, `--accent-grad`, `--radius`, `--maxw: 1800px`, Schatten). Heller Modus über `[data-theme="light"]`-Überschreibungen; Dunkel ist Standard.
-- **`theme.js`** — zwei Aufgaben: (1) liest `localStorage['mt-theme']` und setzt `data-theme` **vor** dem Rendern (kein Flackern), injiziert den 🌙/☀️-Button in `.nav-links`; (2) `IntersectionObserver` blendet Elemente mit Klassen `.card .step .tl-item .factbar .faq details` beim Scrollen ein (vergibt `.reveal` → `.in`). Neue scrollbare Komponenten brauchen eine dieser Klassen, um animiert zu werden.
-- **Cache-Busting:** CSS/JS werden mit `?v=N` eingebunden (aktuell `?v=3`). Bei Änderung an `style.css` oder `theme.js` die Versionsnummer in **allen** Seiten gemeinsam hochzählen, sonst sehen Besucher alte Dateien.
-- **Logo:** aktiv ist `logos/mikatec-L4.svg` (Kopf, Footer, Favicon, OG-Image). Weitere Varianten `mikatec-A…L`, `L1…L4` liegen daneben.
+- **`theme.js`** — drei Aufgaben: (1) liest `localStorage['mt-theme']` und setzt `data-theme` **vor** dem Rendern (kein Flackern), injiziert den 🌙/☀️-Button in `.nav-links`; (2) `IntersectionObserver` blendet Elemente mit Klassen `.card .step .tl-item .faq details` beim Scrollen ein (vergibt `.reveal` → `.in`); (3) Knoten-Netz-Effekt (`.fx-net`-Canvas, ein gemeinsamer rAF-Loop) in `.contact-box, .card.pillar, .step`, theme-abhängige Palette wie im Hero. Neue scrollbare Komponenten brauchen eine der Reveal-Klassen, um animiert zu werden.
+- **Cache-Busting:** CSS/JS werden mit `?v=N` eingebunden (aktuell `?v=118`). Bei Änderung an `style.css` oder `theme.js` die Versionsnummer in **allen** Seiten gemeinsam hochzählen, sonst sehen Besucher alte Dateien.
+- **Logo:** aktiv ist `logos/mikatec-L4.svg` (Kopf, Footer, Favicon, OG-Image). Ältere Varianten (`mikatec-A…L3`) wurden am 05.07.2026 in den Papierkorb ausgelagert — nur noch `L4` liegt in `logos/`.
 - **SEO:** jede Seite hat eigene `<meta name="description">` + Open-Graph-Tags. Neue Seiten zusätzlich in `sitemap.xml` eintragen.
 
 ## Konventionen
 
 - **Ton:** sachlich, nüchtern, professionell — **kein Werbe-Sprech**, keine KI-Behauptungen. Ansprache per **„Sie"** (förmlich, für geschäftliche/internationale Kundschaft; Umstellung von „du"→„Sie" Juli 2026). Neue Texte immer in „Sie". (Siehe Git-Historie: Texte wurden bewusst entwerblicht.)
-- **Prinzip:** Symmetrie, Struktur, schlicht.
-- **`entwurf/`** gehört **nicht** zur Website — nur Logo-Entwürfe und `generate-logos.js`. Nicht verlinken, nicht deployen.
-- `.gitignore` hält `*.log`, `_pruefen.html` (lokales Prüf-Werkzeug) und `vendor/` aus dem Repo.
+- **Prinzip:** Symmetrie, Struktur, schlicht. Jedes Layout am Raster ausgerichtet, ausgewogene Spalten.
+- **Responsive:** mobiler/Tablet-Umbruch am Ende von `style.css` (Block „MOBILE RESPONSIVE") — Nav-Umbruch, Formular-Schrift 16px (kein iOS-Zoom), Tab-Scrollstreifen, engere Abstände. Geprüft: kein horizontales Überlaufen bei 390 px.
+- **`entwurf/`** wurde am 05.07.2026 entfernt (war nur Logo-Entwürfe). Nicht wieder anlegen/deployen.
+- `.gitignore` hält `*.log`, `_pruefen.html` (lokales Prüf-Werkzeug), `vendor/` und `.claude/` aus dem Repo.
 
 ## Projekt-Skills (für Routine-Aufgaben)
 

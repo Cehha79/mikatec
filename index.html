@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MikaTec — Software-Entwicklung</title>
-<link rel="stylesheet" href="style.css?v=75">
+<link rel="stylesheet" href="style.css?v=135">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="MikaTec — individuelle Software & IT-Lösungen für Desktop, Web und Mobil: Entwicklung, KI-Integration, Automatisierung, IT-Service, Datenpflege und Sicherheit. Ein Ansprechpartner, echte Projekte.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Individuelle Software und IT-Lösungen aus einer Hand — Entwicklung, KI-Integration, Automatisierung, IT-Service und Datenpflege. Gezeigt an echten Projekten.">
 <meta property="og:image" content="https://mika-tec.com/bilder/asa-trading.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=75"></script>
+<script src="theme.js?v=135"></script>
 </head>
 <body>
 
@@ -153,7 +153,7 @@
       <div class="nexus">
         <div class="nexus-grid">
           <div>
-            <span class="nexus-kicker">Gross-Projekt</span>
+            <span class="nexus-kicker">Groß-Projekt</span>
             <h2 class="nexus-name">NE<b>X</b>US</h2>
             <p class="nexus-sub">Ein verteiltes KI-System — entworfen als digitales Gehirn für Rechner, Firma und Alltag.</p>
             <span class="status dev">langfristiges Vorhaben · in früher Entwicklung</span>
@@ -170,7 +170,7 @@
               <li><strong>Verteilter Verbund</strong> — mehrere Nexus-Instanzen auf verschiedenen Rechnern koppeln sich zu einem Cluster: gemeinsames Wissen, synchronisierte Aufgaben, <strong>ein System über viele Geräte</strong></li>
               <li><strong>Lokal &amp; privat</strong> — Daten bleiben verschlüsselt auf den eigenen Geräten, mit klaren Berechtigungen je Modul — der gleiche Anspruch wie beim AKA-Tresor</li>
             </ul>
-            <p class="nexus-txt" style="color:var(--text-dim);font-size:.9rem;margin-bottom:0">
+            <p class="nexus-txt" style="color:#8793a0;font-size:.9rem;margin-bottom:0">
               Bewusst ein großes Ziel — hier dokumentiere ich den Weg dorthin, Schritt für Schritt und ehrlich.
             </p>
           </div>
@@ -371,13 +371,23 @@
   }
   function render() {
     ctx.clearRect(0, 0, W, H);
+    // Farbpalette je nach Hell-/Dunkelmodus (im Hellmodus dunklere Knoten/Linien)
+    var light = document.documentElement.getAttribute('data-theme') === 'light';
+    var lineC   = light ? '18,120,110'  : '53,194,185';
+    var pulseC  = light ? '150,110,35'  : '227,193,120';
+    var pulseHd = light ? 'rgba(120,88,28,.98)'  : 'rgba(246,228,176,.95)';
+    var nodeGld = light ? 'rgba(150,110,35,.95)' : 'rgba(227,193,120,.9)';
+    var nodeTl  = light ? 'rgba(18,120,110,.75)' : 'rgba(130,205,200,.62)';
+    var glowGld = light ? 'rgba(160,125,36,.18)' : 'rgba(227,193,120,.16)';
+    var glowTl  = light ? 'rgba(42,163,156,.16)' : 'rgba(90,190,182,.14)';
+    var lineMax = light ? .5 : .42;
     // Verbindungslinien
     for (var i = 0; i < pts.length; i++) {
       for (var j = i + 1; j < pts.length; j++) {
         var a = pts[i], b = pts[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
         if (d2 < LINK2) {
-          var o = (1 - Math.sqrt(d2) / LINK) * .42;
-          if (o > 0) { ctx.strokeStyle = 'rgba(53,194,185,' + o + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+          var o = (1 - Math.sqrt(d2) / LINK) * lineMax;
+          if (o > 0) { ctx.strokeStyle = 'rgba(' + lineC + ',' + o + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
         }
       }
     }
@@ -389,16 +399,19 @@
       var hx = A.x + (B.x - A.x) * t, hy = A.y + (B.y - A.y) * t;
       var sx = A.x + (B.x - A.x) * t0, sy = A.y + (B.y - A.y) * t0;
       var g = ctx.createLinearGradient(sx, sy, hx, hy);
-      g.addColorStop(0, 'rgba(227,193,120,0)'); g.addColorStop(1, 'rgba(227,193,120,.6)');
+      g.addColorStop(0, 'rgba(' + pulseC + ',0)'); g.addColorStop(1, 'rgba(' + pulseC + ',.6)');
       ctx.strokeStyle = g; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(hx, hy); ctx.stroke();
-      ctx.beginPath(); ctx.arc(hx, hy, 5.5, 0, 6.2832); ctx.fillStyle = 'rgba(227,193,120,.13)'; ctx.fill();
-      ctx.beginPath(); ctx.arc(hx, hy, 2.4, 0, 6.2832); ctx.fillStyle = 'rgba(246,228,176,.95)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(hx, hy, 5.5, 0, 6.2832); ctx.fillStyle = 'rgba(' + pulseC + ',.13)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(hx, hy, 2.4, 0, 6.2832); ctx.fillStyle = pulseHd; ctx.fill();
     }
-    // Knoten
+    // Knoten mit weichem Glow (hochwertiger)
     for (var k = 0; k < pts.length; k++) {
-      var p = pts[k];
+      var p = pts[k], isG = (k % 6 === 0);
+      var gl = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
+      gl.addColorStop(0, isG ? glowGld : glowTl); gl.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 5, 0, 6.2832); ctx.fill();
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832);
-      ctx.fillStyle = (k % 6 === 0) ? 'rgba(227,193,120,.9)' : 'rgba(130,205,200,.62)';
+      ctx.fillStyle = isG ? nodeGld : nodeTl;
       ctx.fill();
     }
   }

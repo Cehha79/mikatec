@@ -32,7 +32,7 @@
     links.appendChild(btn);
 
     // Sanfte Einblend-Animation beim Scrollen
-    var targets = document.querySelectorAll('.card, .step, .tl-item, .faq details, .case, .proj-list li, .hero-shot, .term');
+    var targets = document.querySelectorAll('.card, .step, .tl-item, .faq details');
     if (!('IntersectionObserver' in window) || !targets.length) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -45,4 +45,87 @@
       io.observe(el);
     });
   });
+})();
+
+// Knoten-Netz-Effekt in Tafeln — ein Renderloop für alle, weiche Glow-Punkte, feine Linien
+(function () {
+  function init() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hosts = Array.prototype.slice.call(document.querySelectorAll('.contact-box, .card.pillar, .step'));
+    if (!hosts.length) return;
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var LINK = 140, LINK2 = LINK * LINK, fields = [], raf = 0;
+
+    hosts.forEach(function (host) {
+      if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+      host.style.overflow = 'hidden';
+      var cv = document.createElement('canvas');
+      cv.className = 'fx-net'; cv.setAttribute('aria-hidden', 'true');
+      host.insertBefore(cv, host.firstChild);
+      fields.push({ host: host, cv: cv, ctx: cv.getContext('2d'), pts: [], pulses: [], W: 0, H: 0, vis: true });
+    });
+
+    function sizeField(f) {
+      var r = f.host.getBoundingClientRect();
+      f.W = r.width; f.H = r.height;
+      f.cv.width = Math.max(1, Math.round(f.W * DPR));
+      f.cv.height = Math.max(1, Math.round(f.H * DPR));
+      f.ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      var n = Math.max(10, Math.min(60, Math.round((f.W * f.H) / 5400)));
+      f.pts = [];
+      for (var i = 0; i < n; i++) f.pts.push({
+        x: Math.random() * f.W, y: Math.random() * f.H,
+        vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22,
+        r: Math.random() * 1.5 + .8, gold: Math.random() < .16
+      });
+      f.pulses = [];
+    }
+    function palette() {
+      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      return light
+        ? { line: '18,120,110', node: '18,120,110', gold: '150,110,35', glowT: 'rgba(42,163,156,.16)', glowG: 'rgba(160,125,36,.18)', pulse: '150,110,35', head: 'rgba(120,88,28,.98)', lineMax: .44 }
+        : { line: '53,194,185', node: '130,205,200', gold: '227,193,120', glowT: 'rgba(90,190,182,.15)', glowG: 'rgba(227,193,120,.18)', pulse: '227,193,120', head: 'rgba(246,228,176,.95)', lineMax: .4 };
+    }
+    function renderField(f, P) {
+      var ctx = f.ctx, pts = f.pts, i, j; ctx.clearRect(0, 0, f.W, f.H);
+      for (i = 0; i < pts.length; i++) for (j = i + 1; j < pts.length; j++) {
+        var a = pts[i], b = pts[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
+        if (d2 < LINK2) { var o = (1 - Math.sqrt(d2) / LINK) * P.lineMax; if (o > 0) { ctx.strokeStyle = 'rgba(' + P.line + ',' + o + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); } }
+      }
+      for (var q = 0; q < f.pulses.length; q++) {
+        var pu = f.pulses[q], A = pts[pu.a], B = pts[pu.b]; if (!A || !B) continue;
+        var t = pu.t, t0 = t - 0.2; if (t0 < 0) t0 = 0;
+        var hx = A.x + (B.x - A.x) * t, hy = A.y + (B.y - A.y) * t, sx = A.x + (B.x - A.x) * t0, sy = A.y + (B.y - A.y) * t0;
+        var g = ctx.createLinearGradient(sx, sy, hx, hy); g.addColorStop(0, 'rgba(' + P.pulse + ',0)'); g.addColorStop(1, 'rgba(' + P.pulse + ',.5)');
+        ctx.strokeStyle = g; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(hx, hy); ctx.stroke();
+        ctx.beginPath(); ctx.arc(hx, hy, 2, 0, 6.2832); ctx.fillStyle = P.head; ctx.fill();
+      }
+      for (var k = 0; k < pts.length; k++) {
+        var p = pts[k], gl = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4.6);
+        gl.addColorStop(0, p.gold ? P.glowG : P.glowT); gl.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4.6, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fillStyle = 'rgba(' + (p.gold ? P.gold : P.node) + ',.9)'; ctx.fill();
+      }
+    }
+    function stepField(f) {
+      var pts = f.pts, k;
+      for (var i = 0; i < pts.length; i++) { var p = pts[i]; p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > f.W) p.vx *= -1; if (p.y < 0 || p.y > f.H) p.vy *= -1; }
+      for (var q = f.pulses.length - 1; q >= 0; q--) { f.pulses[q].t += f.pulses[q].sp; if (f.pulses[q].t > 1) f.pulses.splice(q, 1); }
+      if (f.pulses.length < 2 && Math.random() < 0.011 && pts.length > 2) {
+        var a = (Math.random() * pts.length) | 0, cand = [];
+        for (k = 0; k < pts.length; k++) { if (k === a) continue; var dx = pts[k].x - pts[a].x, dy = pts[k].y - pts[a].y; if (dx * dx + dy * dy < LINK2) cand.push(k); }
+        if (cand.length) f.pulses.push({ a: a, b: cand[(Math.random() * cand.length) | 0], t: 0, sp: 0.004 + Math.random() * 0.003 });
+      }
+    }
+    function frame() { var P = palette(); for (var i = 0; i < fields.length; i++) { var f = fields[i]; if (!f.vis) continue; stepField(f); renderField(f, P); } raf = requestAnimationFrame(frame); }
+
+    fields.forEach(sizeField);
+    if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (es) { es.forEach(function (e) { for (var i = 0; i < fields.length; i++) if (fields[i].host === e.target) fields[i].vis = e.isIntersecting; }); }, { rootMargin: '140px' });
+      fields.forEach(function (f) { vio.observe(f.host); });
+    }
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { DPR = Math.min(window.devicePixelRatio || 1, 2); fields.forEach(sizeField); }, 200); });
+    if (reduce) { var P = palette(); fields.forEach(function (f) { renderField(f, P); }); } else frame();
+  }
+  if (document.readyState !== 'loading') init(); else document.addEventListener('DOMContentLoaded', init);
 })();
