@@ -34,8 +34,15 @@ Es gibt **kein Templating**. Jede Seite (`index`, `leistungen`, `projekte`, `ueb
 - **`/schluss`** — Schluss-Ritual: speichern, Dokus aktualisieren, Stand merken.
 - **`/standardisieren`** — erst Typ/Stack/Plattform klären, dann angleichen.
 
-## Offene Punkte vor dem Online-Stellen (aus README)
+## Rechtstexte (Impressum & Datenschutz)
 
-- `impressum.html`: alle `[…]`-Platzhalter ausfüllen (Anschrift in DE Pflicht, Telefon, USt-IdNr. bzw. Kleinunternehmer-Hinweis).
-- `datenschutz.html`: Anschrift + Hosting-Anbieter eintragen; Text gilt nur für eine Seite **ohne** Tracking/Google-Fonts/Formular.
+- **Beide ausgefüllt** (Stand Juli 2026). Details + bewusste Entscheidungen + offene Vorbehalte stehen in **`README.md` → Abschnitt „Rechtstexte"**. Kurz:
+  - Seite ist **cookie-/tracking-/analyse-/CDN-frei** (Hosting: GitHub Pages). Der Datenschutz sagt das ausdrücklich — **keine** Cookie-/Analytics-/Adobe-Fonts-/DSB-Abschnitte aus Fremd-Mustern übernehmen (wäre unwahr).
+  - US-Datenweitergabe beschrieben (GitHub + FormSubmit). EU-OS-Plattform bewusst weggelassen (2025 eingestellt).
+  - International: DSGVO als Mindeststandard (Datenschutz §7 + Impressum „Internationale Zusammenarbeit"). **Sprach-Pakete EN/TR: geplant, noch offen.**
+  - Kein anwaltlicher Text → vor echtem Auslandsgeschäft juristisch gegenlesen; bei echten Daten/Tracking/Cookies Datenschutz nachziehen.
+
+## Offene Punkte vor dem Online-Stellen
+
 - OG-Image langfristig auf eine absolute PNG/JPG-URL setzen (SVG wird nicht überall als Vorschau angezeigt).
+- Umbau läuft auf Branch **`neuaufbau`** — noch nicht live gepusht.

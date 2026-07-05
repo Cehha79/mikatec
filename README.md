@@ -68,8 +68,8 @@ Hinweis: Das Skript legt die Dateien neben sich in `logos/` an. Zum Aktualisiere
 
 ## OFFEN / To-do (vor dem Online-Stellen)
 
-1. **Impressum ausfüllen** (`impressum.html`) — alle `[…]`-Felder: Anschrift, Telefon, USt-IdNr. bzw. Kleinunternehmer-Hinweis. **Anschrift ist in DE Pflicht.**
-2. **Datenschutz prüfen** (`datenschutz.html`) — Verantwortlicher/Hosting sind eingetragen. Enthält jetzt **Abschnitt 5 zum Kontaktformular (FormSubmit)**. Vor Online-Stellung rechtlich gegenlesen.
+1. **Impressum** (`impressum.html`) — ✅ ausgefüllt (Anschrift, Telefon `0173 5904496`, Kleinunternehmer-Hinweis §19 UStG, § 5 DDG/§ 18 MStV). Enthält „Gründer & Inhaber"-Block, Verbraucherstreitbeilegung (Opt-out) und Abschnitt zur internationalen Zusammenarbeit. Siehe **Rechtstexte** unten.
+2. **Datenschutz** (`datenschutz.html`) — ✅ ausgebaut auf Standard-Gliederung 1–7. Siehe **Rechtstexte** unten.
 3. **Anfrageformular aktivieren** (`kontakt.html`) — nutzt **FormSubmit** (`action="https://formsubmit.co/info@mika-tec.com"`). **Beim allerersten Absenden** schickt FormSubmit eine Bestätigungs-Mail an `info@mika-tec.com`; erst nach Klick auf den Link werden Anfragen zugestellt. Funktioniert nur auf der **live gehosteten** Seite, nicht beim lokalen Öffnen.
 4. **Texte gegenlesen** — besonders „Über mich" / „Mein Weg".
 5. **Technologie-Liste prüfen** (`leistungen.html`) — enthält Technik, die noch nicht aktiv genutzt wird (z. B. React, Supabase, RAG, Docker, Tauri). Vor Online-Stellung ehrlich kürzen oder als „in Einarbeitung" kennzeichnen.
@@ -80,8 +80,24 @@ Hinweis: Das Skript legt die Dateien neben sich in `logos/` an. Zum Aktualisiere
 
 ---
 
+## Rechtstexte (Impressum & Datenschutz) — Stand Juli 2026
+
+Beide Seiten sind ausgefüllt und im Design der Seite aufgebaut (`.legal`, zentrierte 820px-Spalte, `.kontakt-grid` für ausgerichtete Kontaktangaben).
+
+**Bewusste Entscheidungen (wichtig beim späteren Pflegen):**
+- Die Website nutzt **keine Cookies, kein Tracking, keine Analyse-Tools (Google Analytics/Tag Manager) und keine externen Schriften/CDNs** (self-contained, Hosting GitHub Pages). Der Datenschutz sagt das ausdrücklich. **Nicht** aus fremden Muster-Erklärungen (eRecht24 o. Ä.) Cookie-/Analytics-/Adobe-Fonts-/Datenschutzbeauftragter-Abschnitte übernehmen — das wäre für diese Seite unwahr und rechtlich riskant.
+- **US-Datenweitergabe** ist beschrieben (GitHub-Hosting + FormSubmit-Formular).
+- **EU-OS-Plattform (ODR)** wurde bewusst **weggelassen** — zum 20.07.2025 eingestellt, ein Link wäre veraltet.
+- **International:** Datenschutz-Abschnitt 7 („Internationale Nutzung & anwendbares Recht") + Impressum-Abschnitt „Internationale Zusammenarbeit" — DSGVO als weltweiter Mindeststandard, lokale Rechte unberührt, Sprachen DE/EN/TR.
+- Kein Datenschutzbeauftragter (als Einzelunternehmer/Kleinunternehmer i. d. R. nicht erforderlich).
+
+**Offene Vorbehalte / später nachziehen:**
+- **Kein anwaltlicher Text.** Vor echtem internationalem Geschäft (v. a. US-Kunden/CCPA, UK-GDPR) einmal juristisch gegenlesen lassen.
+- Sobald **echte Kundendaten**, ein **Newsletter**, **Cookies** oder **Tracking** dazukommen → Datenschutz entsprechend erweitern (die „keine …"-Aussagen stimmen dann nicht mehr).
+- **Sprach-Pakete (EN/TR-Übersetzungen)** sind geplant, aber noch nicht umgesetzt.
+
 ## Notizen
 
-- Erstellt: Juni 2026.
+- Erstellt: Juni 2026. Umbau „neuaufbau" (Design v2 „Grafit & Gold", fixe Fußleiste, 3-spaltige Projekte, breitere Seiten `--maxw 1600`): Juli 2026 — läuft auf Branch **`neuaufbau`**, noch nicht live gepusht.
 - Name korrekt: **Hasan Tepegöz** (frühere Notiz „Özel" war falsch).
 - Prinzip der Seite: **Symmetrie, Struktur, schlicht & professionell.**
