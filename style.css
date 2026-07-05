@@ -30,7 +30,7 @@
   --sans:         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius:       10px;
   --radius-lg:    14px;
-  --maxw:         1440px;
+  --maxw:         1600px;
   --shadow:       0 30px 70px -30px rgba(0,0,0,.75);
   --shadow-sm:    0 10px 30px -16px rgba(0,0,0,.6);
   --okt:          polygon(29.29% 0%, 70.71% 0%, 100% 29.29%, 100% 70.71%, 70.71% 100%, 29.29% 100%, 0% 70.71%, 0% 29.29%);
