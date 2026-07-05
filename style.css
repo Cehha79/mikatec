@@ -112,7 +112,6 @@ header.nav::after {
 }
 .nav-cta:hover { color: #131008 !important; transform: translateY(-1px); }
 @media (max-width: 680px){ .nav-links { gap: 16px; } .nav-links a:not(.nav-cta) { font-size: .88rem; } }
-@media (max-width: 520px){ .nav-links a.start-link { display: none; } }
 
 /* ---- Seiten-Gerüst ---- */
 main { flex: 1 0 auto; }
