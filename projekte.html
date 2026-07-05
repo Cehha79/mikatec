@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projekte — MikaTec</title>
-<link rel="stylesheet" href="style.css?v=44">
+<link rel="stylesheet" href="style.css?v=45">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="Projekte von MikaTec — echte Anwendungen aus der eigenen Werkstatt, gezeigt und erklärt: vom Internet-Atlas bis zum medizinischen Bild-Viewer.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Echte Anwendungen aus der eigenen Werkstatt — gezeigt und erklärt.">
 <meta property="og:image" content="https://mika-tec.com/bilder/netz-atlas.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=44"></script>
+<script src="theme.js?v=45"></script>
 </head>
 <body>
 
@@ -109,7 +109,11 @@
       <div><h2 id="pmTitel"></h2><div class="sub" id="pmSub"></div></div>
     </div>
     <div class="proj-modal-status"><span class="status dev" id="pmStatus"></span></div>
-    <div class="proj-modal-shot" id="pmShotWrap"><img id="pmShot" src="" alt=""></div>
+    <figure class="proj-modal-shot" id="pmShotWrap">
+      <div class="bar"><i></i><i></i><i></i><span class="t" id="pmShotTitel"></span></div>
+      <img id="pmShot" src="" alt="" role="button" tabindex="0" aria-label="Bild vergrößern">
+      <span class="zoom-hint"><svg class="ic" viewBox="0 0 24 24" width="13" height="13"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg> Zum Vergrößern klicken</span>
+    </figure>
     <div class="modal-body">
       <p class="lead" id="pmText"></p>
       <ul id="pmPunkte"></ul>
@@ -117,6 +121,11 @@
       <a class="case-link" id="pmFall" href="#" hidden>Zur Fallstudie auf dieser Seite ↓</a>
     </div>
   </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-x" type="button" aria-label="Schließen">×</button>
+  <img id="lightboxImg" src="" alt="">
 </div>
 
 <script>
@@ -131,7 +140,12 @@
     document.getElementById('pmSub').textContent = p.sub;
     document.getElementById('pmStatus').textContent = p.status;
     var sw = document.getElementById('pmShotWrap');
-    if (p.bild) { document.getElementById('pmShot').src = p.bild; sw.hidden = false; } else { sw.hidden = true; }
+    if (p.bild) {
+      document.getElementById('pmShot').src = p.bild;
+      document.getElementById('pmShot').alt = p.name + ' — Bildschirmfoto';
+      document.getElementById('pmShotTitel').textContent = p.name + ' · ' + p.sub;
+      sw.hidden = false;
+    } else { sw.hidden = true; }
     document.getElementById('pmText').textContent = p.text;
     document.getElementById('pmPunkte').innerHTML = p.punkte.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
     document.getElementById('pmTechnik').innerHTML = p.technik.map(function (x) { return '<span class="tag">' + esc(x) + '</span>'; }).join('');
@@ -151,7 +165,25 @@
   });
   modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close')) close(); });
   document.getElementById('pmFall').addEventListener('click', function () { close(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+
+  // Lightbox: Klick aufs Masken-Bild öffnet es groß
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var pmShot = document.getElementById('pmShot');
+  function lbOpen() {
+    lbImg.src = pmShot.src; lbImg.alt = pmShot.alt;
+    lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('open'); });
+  }
+  function lbClose() { lb.classList.remove('open'); setTimeout(function () { lb.hidden = true; lbImg.src = ''; }, 200); }
+  pmShot.addEventListener('click', lbOpen);
+  pmShot.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lbOpen(); } });
+  lb.addEventListener('click', lbClose);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (!lb.hidden) lbClose();
+    else if (!modal.hidden) close();
+  });
 })();
 </script>
 
