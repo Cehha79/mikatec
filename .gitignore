@@ -7,3 +7,6 @@ vendor/
 .idea/
 
 .claude/
+
+# interne Arbeits-/KI-Doku (nicht veroeffentlichen)
+CLAUDE.md
