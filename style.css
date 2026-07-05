@@ -597,14 +597,10 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 /* Über MikaTec — Profil (Text links, Steckbrief rechts; beide gleich hoch, ausgeglichen) */
 .profil { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 40px; align-items: stretch; }
 @media (max-width: 860px){ .profil { grid-template-columns: 1fr; gap: 26px; } }
-.profil-text { display: flex; flex-direction: column; }
-.profil-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.04rem; line-height: 1.72; }
-.profil-text p strong { color: var(--text-primary); font-weight: 650; }
-.profil-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 22px; }
-.profil-chips span {
-  font-family: var(--mono); font-size: .72rem; letter-spacing: .4px; color: var(--gold-pale);
-  background: var(--gold-dim); border: 1px solid rgba(227,193,120,.3); padding: 6px 12px; border-radius: 999px;
-}
+.profil-text { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+.profil-label { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .7px; text-transform: uppercase; color: var(--teal-strong); margin-bottom: 9px; }
+.profil-block p { margin: 0; color: var(--text-muted); font-size: 1.02rem; line-height: 1.72; }
+.profil-block p strong { color: var(--text-primary); font-weight: 650; }
 .profil-card {
   background: linear-gradient(165deg, var(--bg-panel-2), var(--bg-elev));
   border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 28px;
