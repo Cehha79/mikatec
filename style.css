@@ -594,6 +594,35 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .facts .v { font-weight: 650; font-size: .94rem; }
 @media (max-width: 420px){ .facts .row { grid-template-columns: 120px 1fr; gap: 16px; } }
 
+/* Über MikaTec — Profil */
+.profil { display: grid; grid-template-columns: 330px 1fr; gap: 44px; align-items: start; }
+@media (max-width: 860px){ .profil { grid-template-columns: 1fr; gap: 28px; } }
+.profil-card {
+  background: linear-gradient(165deg, var(--bg-panel-2), var(--bg-elev));
+  border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 26px;
+  box-shadow: var(--shadow-sm); position: sticky; top: 96px;
+}
+@media (max-width: 860px){ .profil-card { position: static; } }
+.profil-ava {
+  width: 82px; height: 82px; margin: 0 auto 16px; display: grid; place-items: center;
+  font-weight: 800; font-size: 1.55rem; letter-spacing: 1px; color: #0b0d10;
+  background: linear-gradient(135deg, var(--gold), var(--teal-strong)); clip-path: var(--okt);
+}
+.profil-ident { text-align: center; margin-bottom: 22px; }
+.profil-ident b { display: block; font-size: 1.18rem; color: var(--text-primary); letter-spacing: -.2px; }
+.profil-ident span { font-family: var(--mono); font-size: .7rem; letter-spacing: .6px; text-transform: uppercase; color: var(--teal-strong); }
+.profil-facts { margin: 0; border-top: 1px solid var(--border-soft); }
+.profil-facts > div { padding: 11px 0; border-bottom: 1px solid var(--border-soft); }
+.profil-facts dt { font-family: var(--mono); font-size: .67rem; letter-spacing: .6px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 3px; }
+.profil-facts dd { margin: 0; font-size: .9rem; font-weight: 600; color: var(--text-primary); }
+.profil-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.04rem; line-height: 1.72; }
+.profil-text p strong { color: var(--text-primary); font-weight: 650; }
+.profil-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.profil-chips span {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .4px; color: var(--gold-pale);
+  background: var(--gold-dim); border: 1px solid rgba(227,193,120,.3); padding: 6px 12px; border-radius: 999px;
+}
+
 /* ---- Kontakt ---- */
 .contact-box {
   position: relative; overflow: hidden;
