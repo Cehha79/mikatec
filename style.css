@@ -164,8 +164,8 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 }
 .hero-content { position: relative; z-index: 2; max-width: none; width: 100%; text-align: center; }
 .hero-content h1 { font-size: clamp(2.1rem, 4.7vw, 3.5rem); line-height: 1.06; letter-spacing: -1.3px; font-weight: 780; margin: 0 0 8px; max-width: none; text-shadow: 0 2px 26px rgba(0,0,0,.5); }
-.hero-sub { font-size: clamp(1.3rem, 2.6vw, 2.05rem); font-weight: 600; letter-spacing: -.4px; line-height: 1.15; color: #cbd5dd; margin: 0 0 46px; text-shadow: 0 2px 20px rgba(0,0,0,.5); }
-.hero-content .lead { font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: var(--text-muted); margin: 0 auto; max-width: 940px; text-shadow: 0 1px 14px rgba(0,0,0,.4); }
+.hero-sub { font-size: clamp(1.3rem, 2.6vw, 2.05rem); font-weight: 600; letter-spacing: -.4px; line-height: 1.15; color: #cbd5dd; margin: 0 0 68px; text-shadow: 0 2px 20px rgba(0,0,0,.5); }
+.hero-content .lead { font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: var(--text-muted); margin: 0 auto; max-width: 1320px; text-shadow: 0 1px 14px rgba(0,0,0,.4); }
 @media (max-width: 760px){
   .hero-panel { padding: 32px 22px; min-height: 300px; }
   .hero-content { max-width: 100%; }
