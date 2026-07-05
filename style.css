@@ -1030,6 +1030,9 @@ html[data-theme="light"] .shot .cap { color: #f6e4b0; }
   transition: border-color .2s ease, transform .2s ease;
 }
 .ref-card:hover { border-color: rgba(227,193,120,.4); transform: translateY(-2px); }
+.ref-empty { display: grid; place-items: center; min-height: 150px; border-style: dashed; border-color: var(--border); background: transparent; }
+.ref-empty:hover { transform: none; border-color: rgba(227,193,120,.35); }
+.ref-empty span { font-family: var(--mono); font-size: .74rem; letter-spacing: .8px; text-transform: uppercase; color: var(--text-dim); }
 .ref-name { font-size: 1.04rem; font-weight: 650; color: var(--text-primary); margin: 0; letter-spacing: -.2px; }
 .ref-did { font-family: var(--mono); font-size: .68rem; letter-spacing: .6px; text-transform: uppercase; color: var(--teal-strong); }
 .ref-stars { color: var(--gold); letter-spacing: 2px; font-size: .84rem; margin-top: 4px; }
