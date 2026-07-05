@@ -111,6 +111,7 @@ header.nav::after {
   border: 1px solid transparent; box-shadow: 0 10px 24px -14px rgba(138,106,47,.5);
 }
 .nav-cta:hover { color: #131008 !important; transform: translateY(-1px); }
+.nav-break { display: none; }
 @media (max-width: 680px){ .nav-links { gap: 16px; } .nav-links a:not(.nav-cta) { font-size: .88rem; } }
 
 /* ---- Seiten-Gerüst ---- */
@@ -1241,6 +1242,7 @@ html[data-theme="light"] .btn-ghost:hover { color: var(--gold); border-color: va
   .nav-links a.active:not(.nav-cta)::after { display: none; }
   .nav-cta { padding: 5px 13px; font-size: .82rem; }
   .theme-toggle { width: 33px; height: 33px; font-size: .9rem; }
+  .nav-break { display: block; flex-basis: 100%; width: 100%; height: 0; }
 }
 
 /* Schmalere Seitenränder auf kleinen Screens */
