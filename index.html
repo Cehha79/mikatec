@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MikaTec — Software-Entwicklung</title>
-<link rel="stylesheet" href="style.css?v=57">
+<link rel="stylesheet" href="style.css?v=58">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="MikaTec — individuelle Software & IT-Lösungen für Desktop, Web und Mobil: Entwicklung, KI-Integration, Automatisierung, IT-Service, Datenpflege und Sicherheit. Ein Ansprechpartner, echte Projekte.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Individuelle Software und IT-Lösungen aus einer Hand — Entwicklung, KI-Integration, Automatisierung, IT-Service und Datenpflege. Gezeigt an echten Projekten.">
 <meta property="og:image" content="https://mika-tec.com/bilder/asa-trading.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=57"></script>
+<script src="theme.js?v=58"></script>
 </head>
 <body>
 
@@ -45,12 +45,17 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <h1>Individuelle Software &amp; <span style="white-space:nowrap">IT-Lösungen</span> —<br class="hero-br"> von der Idee bis zur Übergabe.</h1>
-      <p class="lead">
-        Eigene Anwendungen für Desktop, Web und Mobil, KI-Integration und Automatisierung —
-        dazu IT-Service, Datenpflege und Sicherheit. Ein Ansprechpartner, klare Absprachen.
-        Was möglich ist, zeige ich unten an echten Projekten.
-      </p>
+      <div class="hero-panel">
+        <canvas class="hero-fx" id="heroFx" aria-hidden="true"></canvas>
+        <div class="hero-content">
+          <h1>Individuelle Software &amp; <span style="white-space:nowrap">IT-Lösungen</span> — von der Idee bis zur Übergabe.</h1>
+          <p class="lead">
+            Eigene Anwendungen für Desktop, Web und Mobil, KI-Integration und Automatisierung —
+            dazu IT-Service, Datenpflege und Sicherheit. Ein Ansprechpartner, klare Absprachen.
+            Was möglich ist, zeige ich unten an echten Projekten.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -316,6 +321,68 @@
       });
     }, 80);
   }, { passive: true });
+})();
+</script>
+
+<script>
+/* Hero-Haupttafel: bewegtes Knoten-Netz (leichte Technik-Simulation) */
+(function () {
+  var c = document.getElementById('heroFx');
+  if (!c || !c.getContext) return;
+  var ctx = c.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pts = [], W = 0, H = 0, DPR = 1, raf = 0;
+
+  function size() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var r = c.getBoundingClientRect();
+    W = r.width; H = r.height;
+    c.width = Math.round(W * DPR); c.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  function init() {
+    size();
+    var n = Math.max(30, Math.min(74, Math.round(W / 20)));
+    pts = [];
+    for (var i = 0; i < n; i++) pts.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .34, vy: (Math.random() - .5) * .34,
+      r: Math.random() * 1.5 + .8
+    });
+  }
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++) {
+      for (var j = i + 1; j < pts.length; j++) {
+        var a = pts[i], b = pts[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
+        if (d2 < 20500) {
+          var o = (1 - Math.sqrt(d2) / 143) * .45;
+          if (o > 0) { ctx.strokeStyle = 'rgba(53,194,185,' + o + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+        }
+      }
+    }
+    for (var k = 0; k < pts.length; k++) {
+      var p = pts[k];
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+      ctx.fillStyle = (k % 6 === 0) ? 'rgba(227,193,120,.9)' : 'rgba(130,205,200,.62)';
+      ctx.fill();
+    }
+  }
+  function loop() {
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i]; p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    }
+    render(); raf = requestAnimationFrame(loop);
+  }
+  init(); render();
+  if (!reduce) raf = requestAnimationFrame(loop);
+  var t;
+  window.addEventListener('resize', function () {
+    clearTimeout(t);
+    t = setTimeout(function () { cancelAnimationFrame(raf); init(); render(); if (!reduce) raf = requestAnimationFrame(loop); }, 150);
+  });
 })();
 </script>
 
