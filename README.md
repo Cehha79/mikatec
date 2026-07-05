@@ -91,6 +91,8 @@ Beide Seiten sind ausgefüllt und im Design der Seite aufgebaut (`.legal`, zentr
 - **International:** Datenschutz-Abschnitt 7 („Internationale Nutzung & anwendbares Recht") + Impressum-Abschnitt „Internationale Zusammenarbeit" — DSGVO als weltweiter Mindeststandard, lokale Rechte unberührt, Sprachen DE/EN/TR.
 - Kein Datenschutzbeauftragter (als Einzelunternehmer/Kleinunternehmer i. d. R. nicht erforderlich).
 
+**Referenzen (ueber.html):** Der Bereich „Was Auftraggeber sagen" enthält aktuell **erfundene Beispiel-Stimmen** (Platzhalter, im HTML als Kommentar markiert, mit sichtbarem Hinweis „Beispiel-Darstellung"). **Vor dem Online-Stellen durch echte, freigegebene Referenzen ersetzen** — sonst ist es Fake und rechtlich angreifbar (Wettbewerbsrecht).
+
 **Offene Vorbehalte / später nachziehen:**
 - **Kein anwaltlicher Text.** Vor echtem internationalem Geschäft (v. a. US-Kunden/CCPA, UK-GDPR) einmal juristisch gegenlesen lassen.
 - Sobald **echte Kundendaten**, ein **Newsletter**, **Cookies** oder **Tracking** dazukommen → Datenschutz entsprechend erweitern (die „keine …"-Aussagen stimmen dann nicht mehr).
