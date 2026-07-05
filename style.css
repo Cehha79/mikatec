@@ -906,6 +906,7 @@ footer::before {
   content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(227,193,120,.3), transparent);
 }
+footer .wrap { max-width: none; padding: 0 40px; }
 .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; }
 .foot-inner .logo .mark { width: 22px; height: 22px; }
 .foot-inner .logo .name { font-size: .92rem; }
