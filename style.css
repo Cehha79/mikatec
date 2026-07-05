@@ -338,7 +338,7 @@ html:not([data-theme="light"]) .faq details {
 .pk .n { font-weight: 650; color: var(--text-primary); font-size: 1.06rem; letter-spacing: -.2px; }
 .pk .t { font-family: var(--mono); font-size: .64rem; color: var(--teal-strong); letter-spacing: .4px; white-space: nowrap; flex: none; }
 .pk .d { color: var(--text-muted); font-size: .9rem; line-height: 1.55; }
-.pk-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: auto; padding-top: 6px; }
+.pk-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
 .pk .status { font-size: .62rem; letter-spacing: 1px; }
 .pk .mehr { font-family: var(--mono); font-size: .68rem; letter-spacing: .6px; color: var(--gold-pale); white-space: nowrap; }
 @media (max-width: 480px){ .pk { grid-template-columns: 48px 1fr; gap: 6px 14px; padding: 18px 18px; } .pk .app-icon { width: 48px; height: 48px; } }
@@ -726,19 +726,20 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 }
 .svc-wide h3 { font-size: 1.5rem; font-weight: 760; letter-spacing: -.4px; margin: 16px 0 10px; }
 .svc-wide .svc-short { color: var(--text-muted); font-size: 1rem; margin-bottom: 18px; }
+.svc-wide > * { min-width: 0; }
 .svc-wide ul {
-  list-style: none; margin: 6px 0 0; color: var(--text-muted); font-size: 1.04rem; white-space: nowrap;
-  display: grid; grid-template-columns: 158px 1fr; column-gap: 12px; row-gap: 13px; align-items: baseline;
+  list-style: none; margin: 6px 0 0; color: var(--text-muted); font-size: 1.04rem; white-space: normal; min-width: 0;
+  display: grid; grid-template-columns: 158px minmax(0, 1fr); column-gap: 12px; row-gap: 13px; align-items: baseline;
 }
 .svc-wide ul li { display: contents; }
 .svc-wide ul li b {
   color: var(--text-primary); font-weight: 650; text-align: left; position: relative; padding-right: 12px;
 }
 .svc-wide ul li b::after { content: ":"; position: absolute; right: 0; }
-.svc-wide ul li span { color: var(--text-muted); }
-/* auf breiten Schirmen den Block nach rechts rücken (rechts ist Platz) — feste Breiten, damit beide Tafeln fluchten */
-@media (min-width: 1240px){
-  .svc-wide ul { grid-template-columns: 158px 540px; justify-content: end; }
+.svc-wide ul li span { color: var(--text-muted); min-width: 0; }
+/* Nur auf sehr breiten Schirmen einzeilig + rechtsbündig — feste Breiten passen erst dann sicher in die Tafelspalte, darunter bricht der Text sauber um (statt abgeschnitten zu werden) */
+@media (min-width: 1400px){
+  .svc-wide ul { grid-template-columns: 158px 540px; justify-content: end; white-space: nowrap; }
 }
 .svc-wide .angebot-marke {
   display: inline-flex; align-items: center; gap: 9px;
@@ -748,7 +749,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 }
 .svc-wide .links { display: flex; flex-direction: column; align-items: flex-start; }
 .svc-wide .links .btn { margin-top: 22px; }
-@media (max-width: 860px){ .svc-wide { grid-template-columns: 1fr; padding: 28px 24px; } .svc-wide ul { grid-template-columns: 120px 1fr; white-space: normal; } }
+@media (max-width: 860px){ .svc-wide { grid-template-columns: 1fr; padding: 28px 24px; } .svc-wide ul { grid-template-columns: 120px minmax(0, 1fr); } }
 .svc:hover .svc-more { transform: translateX(4px); }
 
 .modal {
@@ -887,6 +888,11 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .svc-wide .svc-tags .tag {
   display: flex; align-items: center; justify-content: center; text-align: center;
   white-space: nowrap; margin: 0; min-height: 34px; padding: 4px 8px;
+}
+/* schmale Smartphones: Tafel-Tags 2-spaltig + umbrechbar (steht NACH der Basis, damit die Kaskade greift) */
+@media (max-width: 560px){
+  .svc-wide .svc-tags { grid-template-columns: 1fr 1fr; }
+  .svc-wide .svc-tags .tag { white-space: normal; }
 }
 
 /* Breite Detail-Maske (Daten-Service) — mehr Luft, klarere Struktur */
