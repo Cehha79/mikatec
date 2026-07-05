@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MikaTec — Software-Entwicklung</title>
-<link rel="stylesheet" href="style.css?v=46">
+<link rel="stylesheet" href="style.css?v=47">
 <link rel="icon" type="image/svg+xml" href="logos/mikatec-L4.svg">
 <meta name="description" content="MikaTec — individuelle Software-Entwicklung für Desktop, Web und Mobil. Echte Projekte, ein Ansprechpartner, klare Absprachen.">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="Individuelle Software für Desktop, Web und Mobil — gezeigt an echten Projekten.">
 <meta property="og:image" content="https://mika-tec.com/bilder/asa-trading.png">
 <meta name="twitter:card" content="summary_large_image">
-<script src="theme.js?v=46"></script>
+<script src="theme.js?v=47"></script>
 </head>
 <body>
 
@@ -261,6 +261,11 @@
   </div>
 </footer>
 
+<div class="nx-lightbox" id="nxLightbox" hidden>
+  <button class="lb-x" type="button" aria-label="Schließen">×</button>
+  <div class="nx-lightbox-inner" id="nxLightboxInner"></div>
+</div>
+
 <script>
 (function () {
   var track = document.getElementById('nxTrack');
@@ -285,29 +290,43 @@
   document.querySelector('.nx-btn.prev').addEventListener('click', function () { geheZu(aktiv() - 1); });
   document.querySelector('.nx-btn.next').addEventListener('click', function () { geheZu(aktiv() + 1); });
 
-  // Vollbild an/aus (mit Safari-Fallback); nach dem Wechsel wieder sauber einrasten
+  // Groß-Ansicht als Overlay (wie die Projekt-Masken): Galerie ins Overlay schieben,
+  // beim Schließen an den ursprünglichen Platz zurück.
   var slider = document.getElementById('nxSlider');
   var vollBtn = document.getElementById('nxVoll');
-  var merkIndex = 0;
-  function imVollbild() { return document.fullscreenElement || document.webkitFullscreenElement; }
-  vollBtn.addEventListener('click', function () {
-    merkIndex = aktiv();
-    if (imVollbild()) {
-      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    } else {
-      (slider.requestFullscreen || slider.webkitRequestFullscreen).call(slider);
-    }
-  });
-  ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) {
-    document.addEventListener(ev, function () {
-      vollBtn.textContent = imVollbild() ? '✕' : '⛶';
-      setTimeout(function () { track.scrollTo({ left: merkIndex * track.clientWidth }); }, 150);
-    });
-  });
+  var lb = document.getElementById('nxLightbox');
+  var lbInner = document.getElementById('nxLightboxInner');
+  var origParent = slider.parentNode;
+  var origNext = slider.nextSibling;
+  function offen() { return !lb.hidden; }
+  function einrasten(i) { setTimeout(function () { track.scrollTo({ left: i * track.clientWidth }); }, 60); }
+
+  function lbAuf() {
+    var i = aktiv();
+    lbInner.appendChild(slider);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { lb.classList.add('open'); });
+    einrasten(i);
+  }
+  function lbZu() {
+    var i = aktiv();
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    origParent.insertBefore(slider, origNext);
+    einrasten(i);
+    setTimeout(function () { lb.hidden = true; }, 200);
+  }
+  vollBtn.addEventListener('click', function () { offen() ? lbZu() : lbAuf(); });
+  document.querySelector('#nxLightbox .lb-x').addEventListener('click', lbZu);
+  // Klick auf den dunklen Hintergrund schließt; Klick auf die Galerie selbst nicht
+  lb.addEventListener('click', function (e) { if (e.target === lb) lbZu(); });
+
   document.addEventListener('keydown', function (e) {
-    if (!imVollbild()) return;
-    if (e.key === 'ArrowRight') geheZu(aktiv() + 1);
-    if (e.key === 'ArrowLeft') geheZu(aktiv() - 1);
+    if (!offen()) return;
+    if (e.key === 'Escape') lbZu();
+    else if (e.key === 'ArrowRight') geheZu(aktiv() + 1);
+    else if (e.key === 'ArrowLeft') geheZu(aktiv() - 1);
   });
 
   // Punkte mitführen + nur das sichtbare Video abspielen (spart Strom)

@@ -494,14 +494,22 @@ main > section + section { border-top: 1px solid var(--border-soft); }
 .nx-btn.next { right: 12px; }
 .nx-btn.voll { top: 12px; right: 12px; transform: none; width: 36px; height: 36px; border-radius: 9px; font-size: .95rem; }
 
-/* Vollbild-Modus der Galerie */
-.nx-slider:fullscreen { background: #04060a; padding: 4vh 4vw; display: flex; flex-direction: column; justify-content: center; }
-.nx-slider:fullscreen .nx-track { border-radius: 10px; }
-.nx-slider:fullscreen .nx-slide { aspect-ratio: auto; height: 84vh; }
-.nx-slider:fullscreen .nx-slide video, .nx-slider:fullscreen .nx-slide img { object-fit: contain; background: #000; }
-.nx-slider:fullscreen .nx-btn { width: 52px; height: 52px; font-size: 1.5rem; }
-.nx-slider:fullscreen .nx-btn.voll { width: 44px; height: 44px; font-size: 1.1rem; }
-.nx-slider:fullscreen .nx-hint { display: none; }
+/* Groß-Ansicht der Galerie — als Overlay wie die Projekt-Masken */
+.nx-lightbox {
+  position: fixed; inset: 0; z-index: 120;
+  display: flex; align-items: center; justify-content: center; padding: 4vh 4vw;
+  background: rgba(4,6,10,.94);
+  opacity: 0; transition: opacity .2s ease;
+}
+.nx-lightbox.open { opacity: 1; }
+.nx-lightbox[hidden] { display: none; }
+.nx-lightbox-inner { width: min(1500px, 94vw); }
+.nx-lightbox .nx-slide { aspect-ratio: auto; height: 82vh; }
+.nx-lightbox .nx-slide video, .nx-lightbox .nx-slide img { object-fit: contain; background: #000; }
+.nx-lightbox .nx-btn { width: 52px; height: 52px; font-size: 1.5rem; }
+.nx-lightbox .nx-btn.voll { display: none; }
+.nx-lightbox .nx-hint { display: none; }
+.nx-lightbox .nx-dots { margin-top: 20px; }
 .nx-dots { display: flex; justify-content: center; gap: 9px; margin-top: 16px; }
 .nx-dot {
   width: 8px; height: 8px; padding: 0; cursor: pointer; border-radius: 0;
