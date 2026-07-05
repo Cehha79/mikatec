@@ -95,13 +95,12 @@ header.nav::after {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
 .nav-badge {
-  margin-left: 18px; font-family: var(--mono); font-size: .68rem; letter-spacing: 1.6px;
+  font-family: var(--mono); font-size: .68rem; letter-spacing: 1.6px;
   text-transform: uppercase; color: var(--text-dim);
-  padding: 5px 12px; border: 1px solid var(--border-soft); border-radius: 999px;
+  padding: 4px 12px; border: 1px solid var(--border-soft); border-radius: 999px;
   display: inline-flex; align-items: center; gap: 8px;
 }
 .nav-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-strong); box-shadow: 0 0 9px var(--teal-strong); }
-@media (max-width: 1080px){ .nav-badge { display: none; } }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a { color: var(--text-muted); font-size: .94rem; font-weight: 500; }
 .nav-links a:hover { color: var(--text-primary); }
@@ -907,7 +906,7 @@ footer::before {
   content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(227,193,120,.3), transparent);
 }
-.foot-inner { display: flex; justify-content: center; align-items: center; gap: 12px 20px; flex-wrap: wrap; text-align: center; }
+.foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; }
 .foot-inner .logo .mark { width: 22px; height: 22px; }
 .foot-inner .logo .name { font-size: .92rem; }
 .foot-inner a { color: var(--text-muted); }
