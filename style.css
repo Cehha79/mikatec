@@ -95,7 +95,7 @@ header.nav::after {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
 .nav-badge {
-  font-family: var(--mono); font-size: .68rem; letter-spacing: 1.6px;
+  font-family: var(--mono); font-size: .8rem; letter-spacing: 1px;
   text-transform: uppercase; color: var(--text-dim);
   padding: 4px 12px; border: 1px solid var(--border-soft); border-radius: 999px;
   display: inline-flex; align-items: center; gap: 8px;
