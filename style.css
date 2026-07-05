@@ -808,7 +808,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 /* Werkzeugkasten mit Kategorie-Reitern */
 .tech-tabs {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
-  max-width: 1100px; margin: 0 auto 14px;
+  max-width: none; margin: 0 auto 14px;
 }
 .tech-tab {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .6px; text-transform: uppercase;
@@ -822,7 +822,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 @media (max-width: 900px){ .tech-tabs { grid-template-columns: repeat(2, 1fr); } }
 
 /* feste Ausgabe-Tafel, Chips als einheitliches Raster */
-.tech-groups.tech-matrix { display: block; max-width: 1100px; margin: 0 auto; }
+.tech-groups.tech-matrix { display: block; max-width: none; margin: 0 auto; }
 .tech-groups.tech-matrix .tech-group {
   display: none; grid-template-columns: 1fr; gap: 0;
   padding: 28px; min-height: 208px; align-content: start;
