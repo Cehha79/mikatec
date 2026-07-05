@@ -22,7 +22,7 @@ Es gibt **kein Templating**. Jede Seite (`index`, `leistungen`, `projekte`, `ueb
 
 ## Konventionen
 
-- **Ton:** sachlich, nüchtern, professionell — **kein Werbe-Sprech**, keine KI-Behauptungen. Ansprache per **„du"**. (Siehe Git-Historie: Texte wurden bewusst entwerblicht.)
+- **Ton:** sachlich, nüchtern, professionell — **kein Werbe-Sprech**, keine KI-Behauptungen. Ansprache per **„Sie"** (förmlich, für geschäftliche/internationale Kundschaft; Umstellung von „du"→„Sie" Juli 2026). Neue Texte immer in „Sie". (Siehe Git-Historie: Texte wurden bewusst entwerblicht.)
 - **Prinzip:** Symmetrie, Struktur, schlicht.
 - **`entwurf/`** gehört **nicht** zur Website — nur Logo-Entwürfe und `generate-logos.js`. Nicht verlinken, nicht deployen.
 - `.gitignore` hält `*.log`, `_pruefen.html` (lokales Prüf-Werkzeug) und `vendor/` aus dem Repo.
