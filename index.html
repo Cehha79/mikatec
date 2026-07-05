@@ -325,13 +325,14 @@
 </script>
 
 <script>
-/* Hero-Haupttafel: bewegtes Knoten-Netz (leichte Technik-Simulation) */
+/* Hero-Haupttafel: bewegtes Knoten-Netz + langsamer Datenpuls entlang der Linien */
 (function () {
   var c = document.getElementById('heroFx');
   if (!c || !c.getContext) return;
   var ctx = c.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var pts = [], W = 0, H = 0, DPR = 1, raf = 0;
+  var pts = [], pulses = [], W = 0, H = 0, DPR = 1, raf = 0;
+  var LINK = 143, LINK2 = LINK * LINK;
 
   function size() {
     DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -343,24 +344,54 @@
   function init() {
     size();
     var n = Math.max(30, Math.min(74, Math.round(W / 20)));
-    pts = [];
+    pts = []; pulses = [];
     for (var i = 0; i < n; i++) pts.push({
       x: Math.random() * W, y: Math.random() * H,
       vx: (Math.random() - .5) * .34, vy: (Math.random() - .5) * .34,
       r: Math.random() * 1.5 + .8
     });
   }
+  // ein zufälliger Nachbar-Knoten innerhalb der Verbindungs-Reichweite (für den Puls-Weg)
+  function neighbor(idx, notIdx) {
+    var p = pts[idx], cand = [];
+    for (var k = 0; k < pts.length; k++) {
+      if (k === idx || k === notIdx) continue;
+      var dx = pts[k].x - p.x, dy = pts[k].y - p.y;
+      if (dx * dx + dy * dy < LINK2) cand.push(k);
+    }
+    return cand.length ? cand[(Math.random() * cand.length) | 0] : -1;
+  }
+  function spawnPulse() {
+    var a = (Math.random() * pts.length) | 0, b = neighbor(a, -1);
+    if (b < 0) return;
+    pulses.push({ a: a, b: b, t: 0, sp: 0.0025 + Math.random() * 0.0025 }); // langsam
+  }
   function render() {
     ctx.clearRect(0, 0, W, H);
+    // Verbindungslinien
     for (var i = 0; i < pts.length; i++) {
       for (var j = i + 1; j < pts.length; j++) {
         var a = pts[i], b = pts[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
-        if (d2 < 20500) {
-          var o = (1 - Math.sqrt(d2) / 143) * .45;
+        if (d2 < LINK2) {
+          var o = (1 - Math.sqrt(d2) / LINK) * .42;
           if (o > 0) { ctx.strokeStyle = 'rgba(53,194,185,' + o + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
         }
       }
     }
+    // Datenpulse: leuchtender Kopf mit kurzem Schweif, wandert an der Linie entlang
+    for (var q = 0; q < pulses.length; q++) {
+      var pu = pulses[q], A = pts[pu.a], B = pts[pu.b];
+      if (!A || !B) continue;
+      var t = pu.t, t0 = t - 0.18; if (t0 < 0) t0 = 0;
+      var hx = A.x + (B.x - A.x) * t, hy = A.y + (B.y - A.y) * t;
+      var sx = A.x + (B.x - A.x) * t0, sy = A.y + (B.y - A.y) * t0;
+      var g = ctx.createLinearGradient(sx, sy, hx, hy);
+      g.addColorStop(0, 'rgba(227,193,120,0)'); g.addColorStop(1, 'rgba(227,193,120,.6)');
+      ctx.strokeStyle = g; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(hx, hy); ctx.stroke();
+      ctx.beginPath(); ctx.arc(hx, hy, 5.5, 0, 6.2832); ctx.fillStyle = 'rgba(227,193,120,.13)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(hx, hy, 2.4, 0, 6.2832); ctx.fillStyle = 'rgba(246,228,176,.95)'; ctx.fill();
+    }
+    // Knoten
     for (var k = 0; k < pts.length; k++) {
       var p = pts[k];
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832);
@@ -368,20 +399,33 @@
       ctx.fill();
     }
   }
-  function loop() {
+  function step() {
     for (var i = 0; i < pts.length; i++) {
       var p = pts[i]; p.x += p.vx; p.y += p.vy;
       if (p.x < 0 || p.x > W) p.vx *= -1;
       if (p.y < 0 || p.y > H) p.vy *= -1;
     }
-    render(); raf = requestAnimationFrame(loop);
+    // Pulse weiterbewegen; am Knoten mit hoher Wahrscheinlichkeit weiterfließen
+    for (var q = pulses.length - 1; q >= 0; q--) {
+      var pu = pulses[q]; pu.t += pu.sp;
+      if (pu.t >= 1) {
+        var nx = neighbor(pu.b, pu.a);
+        if (nx >= 0 && Math.random() < 0.72) { pu.a = pu.b; pu.b = nx; pu.t = 0; pu.sp = 0.0025 + Math.random() * 0.0025; }
+        else pulses.splice(q, 1);
+      }
+    }
+    var target = Math.min(5, Math.max(3, Math.round(pts.length / 14)));
+    if (pulses.length < target && Math.random() < 0.03) spawnPulse();
   }
-  init(); render();
+  function loop() { step(); render(); raf = requestAnimationFrame(loop); }
+  init();
+  if (!reduce) { spawnPulse(); spawnPulse(); }
+  render();
   if (!reduce) raf = requestAnimationFrame(loop);
   var t;
   window.addEventListener('resize', function () {
     clearTimeout(t);
-    t = setTimeout(function () { cancelAnimationFrame(raf); init(); render(); if (!reduce) raf = requestAnimationFrame(loop); }, 150);
+    t = setTimeout(function () { cancelAnimationFrame(raf); init(); if (!reduce) { spawnPulse(); spawnPulse(); } render(); if (!reduce) raf = requestAnimationFrame(loop); }, 150);
   });
 })();
 </script>
