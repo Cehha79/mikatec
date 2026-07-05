@@ -594,29 +594,29 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .facts .v { font-weight: 650; font-size: .94rem; }
 @media (max-width: 420px){ .facts .row { grid-template-columns: 120px 1fr; gap: 16px; } }
 
-/* Über MikaTec — Profil (Text links, Steckbrief rechts) */
-.profil { display: grid; grid-template-columns: 1fr 330px; gap: 44px; align-items: start; }
-@media (max-width: 860px){ .profil { grid-template-columns: 1fr; gap: 28px; } }
-.profil-card {
-  background: linear-gradient(165deg, var(--bg-panel-2), var(--bg-elev));
-  border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px;
-  box-shadow: var(--shadow-sm); position: sticky; top: 96px;
-}
-@media (max-width: 860px){ .profil-card { position: static; } }
-.profil-ident { text-align: left; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border-soft); }
-.profil-ident b { display: block; font-size: 1.18rem; color: var(--text-primary); letter-spacing: -.2px; margin-bottom: 4px; }
-.profil-ident span { font-family: var(--mono); font-size: .7rem; letter-spacing: .6px; text-transform: uppercase; color: var(--teal-strong); }
-.profil-facts { margin: 0; }
-.profil-facts > div { padding: 11px 0; border-bottom: 1px solid var(--border-soft); }
-.profil-facts dt { font-family: var(--mono); font-size: .67rem; letter-spacing: .6px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 3px; }
-.profil-facts dd { margin: 0; font-size: .9rem; font-weight: 600; color: var(--text-primary); }
+/* Über MikaTec — Profil (Text links, Steckbrief rechts; beide gleich hoch, ausgeglichen) */
+.profil { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 40px; align-items: stretch; }
+@media (max-width: 860px){ .profil { grid-template-columns: 1fr; gap: 26px; } }
+.profil-text { display: flex; flex-direction: column; }
 .profil-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.04rem; line-height: 1.72; }
 .profil-text p strong { color: var(--text-primary); font-weight: 650; }
-.profil-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.profil-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 22px; }
 .profil-chips span {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .4px; color: var(--gold-pale);
   background: var(--gold-dim); border: 1px solid rgba(227,193,120,.3); padding: 6px 12px; border-radius: 999px;
 }
+.profil-card {
+  background: linear-gradient(165deg, var(--bg-panel-2), var(--bg-elev));
+  border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 28px;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+}
+.profil-ident { margin-bottom: 6px; padding-bottom: 18px; border-bottom: 1px solid var(--border-soft); }
+.profil-ident b { display: block; font-size: 1.18rem; color: var(--text-primary); letter-spacing: -.2px; margin-bottom: 5px; }
+.profil-ident span { font-family: var(--mono); font-size: .7rem; letter-spacing: .6px; text-transform: uppercase; color: var(--teal-strong); }
+.profil-facts { margin: 0; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.profil-facts > div { padding: 4px 0; }
+.profil-facts dt { font-family: var(--mono); font-size: .67rem; letter-spacing: .6px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px; }
+.profil-facts dd { margin: 0; font-size: .94rem; font-weight: 600; color: var(--text-primary); }
 
 /* ---- Kontakt ---- */
 .contact-box {
