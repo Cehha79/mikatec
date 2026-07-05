@@ -896,15 +896,24 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .faq-collapse .faq { max-width: 100%; margin-top: 16px; }
 
 /* ---- Fußzeile ---- */
-footer { flex-shrink: 0; padding: 40px 0; border-top: 1px solid var(--border-soft); color: var(--text-dim); font-size: .88rem; position: relative; }
+/* dünne, fixierte Fußleiste — immer sichtbar */
+footer {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  padding: 8px 0; border-top: 1px solid var(--border-soft);
+  color: var(--text-dim); font-size: .8rem;
+  background: var(--bg);
+}
 footer::before {
   content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(227,193,120,.3), transparent);
 }
-.foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; }
+.foot-inner .logo .mark { width: 22px; height: 22px; }
+.foot-inner .logo .name { font-size: .92rem; }
 .foot-inner a { color: var(--text-muted); }
 .foot-inner a:hover { color: var(--gold-pale); }
-.foot-sig { font-family: var(--mono); font-size: .72rem; letter-spacing: .6px; }
+body { padding-bottom: 52px; }
+@media (max-width: 560px){ footer { font-size: .72rem; } .foot-inner { gap: 4px 14px; } }
 
 /* ---- Hell-/Dunkel-Umschalter ---- */
 .theme-toggle {
