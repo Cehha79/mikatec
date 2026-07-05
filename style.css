@@ -659,7 +659,7 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
 .contact-hero .facts .v { color: #eef1f4; }
 
 /* ---- Formular ---- */
-.form { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.form { max-width: none; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-field { display: flex; flex-direction: column; }
 .form label { font-family: var(--mono); font-size: .72rem; font-weight: 600; letter-spacing: 1px;
