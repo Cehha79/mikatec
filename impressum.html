@@ -12,6 +12,8 @@
   .legal h2 { font-size:1.15rem; margin:28px 0 8px; }
   .legal p { color:var(--text-muted); margin-bottom:10px; }
   .legal a { color: var(--teal-strong); }
+  .kontakt-grid { display:grid; grid-template-columns:max-content 1fr; gap:14px 16px; align-items:baseline; margin:4px 0 10px; }
+  .kontakt-grid .k { text-align:right; color:var(--text-dim); white-space:nowrap; }
   .team-kicker {
     font-family: var(--mono); color: var(--gold-pale); font-size:.82rem; font-weight:600;
     letter-spacing:2px; text-transform:uppercase; margin:36px 0 12px;
@@ -56,9 +58,11 @@
          Deutschland</p>
 
       <h2>Kontakt</h2>
-      <p>Web: <a href="https://www.mika-tec.com">www.mika-tec.com</a><br>
-         Telefon: <a href="tel:+491735904496">0173 5904496</a><br>
-         E-Mail: <a href="mailto:info@mika-tec.com">info@mika-tec.com</a></p>
+      <div class="kontakt-grid">
+        <span class="k">Web:</span><a href="https://www.mika-tec.com">www.mika-tec.com</a>
+        <span class="k">Telefon:</span><a href="tel:+491735904496">0173 5904496</a>
+        <span class="k">E-Mail:</span><a href="mailto:info@mika-tec.com">info@mika-tec.com</a>
+      </div>
 
       <h2>Umsatzsteuer</h2>
       <p>Kleinunternehmer gemäß § 19 UStG — es wird keine Umsatzsteuer ausgewiesen.</p>
@@ -66,9 +70,9 @@
       <h2>Verantwortlich i.S.d. § 18 Abs. 2 MStV</h2>
       <p>Hasan Tepegöz, Anschrift wie oben.</p>
 
-      <div class="team-kicker">Team</div>
+      <div class="team-kicker">Gründer &amp; Inhaber</div>
       <div class="team-card">
-        <div class="team-head"><b>Hasan Tepegöz</b><span class="team-role">Gründer &amp; Inhaber</span></div>
+        <div class="team-head"><b>Hasan Tepegöz</b></div>
         <p>Verantwortlich für Produktkonzeption, Softwarearchitektur und die technische Gesamtleitung — jede Anwendung entsteht aus einer Hand.</p>
       </div>
 
