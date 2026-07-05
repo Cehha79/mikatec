@@ -16,7 +16,7 @@ Es gibt **kein Templating**. Jede Seite (`index`, `leistungen`, `projekte`, `ueb
 
 - **`style.css`** — eine Datei für alles. Designwerte stehen als CSS-Variablen in `:root` (Farben, `--accent-grad`, `--radius`, `--maxw: 1800px`, Schatten). Heller Modus über `[data-theme="light"]`-Überschreibungen; Dunkel ist Standard.
 - **`theme.js`** — drei Aufgaben: (1) liest `localStorage['mt-theme']` und setzt `data-theme` **vor** dem Rendern (kein Flackern), injiziert den 🌙/☀️-Button in `.nav-links`; (2) `IntersectionObserver` blendet Elemente mit Klassen `.card .step .tl-item .faq details` beim Scrollen ein (vergibt `.reveal` → `.in`); (3) Knoten-Netz-Effekt (`.fx-net`-Canvas, ein gemeinsamer rAF-Loop) in `.contact-box, .card.pillar, .step`, theme-abhängige Palette wie im Hero. Neue scrollbare Komponenten brauchen eine der Reveal-Klassen, um animiert zu werden.
-- **Cache-Busting:** CSS/JS werden mit `?v=N` eingebunden (aktuell `?v=118`). Bei Änderung an `style.css` oder `theme.js` die Versionsnummer in **allen** Seiten gemeinsam hochzählen, sonst sehen Besucher alte Dateien.
+- **Cache-Busting:** CSS/JS werden mit `?v=N` eingebunden (aktuell `?v=138`). Bei Änderung an `style.css` oder `theme.js` die Versionsnummer in **allen** Seiten gemeinsam hochzählen, sonst sehen Besucher alte Dateien.
 - **Logo:** aktiv ist `logos/mikatec-L4.svg` (Kopf, Footer, Favicon, OG-Image). Ältere Varianten (`mikatec-A…L3`) wurden am 05.07.2026 in den Papierkorb ausgelagert — nur noch `L4` liegt in `logos/`.
 - **SEO:** jede Seite hat eigene `<meta name="description">` + Open-Graph-Tags. Neue Seiten zusätzlich in `sitemap.xml` eintragen.
 

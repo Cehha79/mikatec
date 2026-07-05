@@ -336,10 +336,10 @@ html:not([data-theme="light"]) .faq details {
 .pk-body { display: flex; flex-direction: column; gap: 8px; min-width: 0; height: 100%; }
 .pk-top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
 .pk .n { font-weight: 650; color: var(--text-primary); font-size: 1.06rem; letter-spacing: -.2px; }
-.pk .t { font-family: var(--mono); font-size: .64rem; color: var(--teal-strong); letter-spacing: .4px; white-space: nowrap; flex: none; }
+.pk .t { font-family: var(--mono); font-size: .72rem; color: var(--teal-strong); letter-spacing: .4px; white-space: nowrap; flex: none; }
 .pk .d { color: var(--text-muted); font-size: .9rem; line-height: 1.55; }
 .pk-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
-.pk .status { font-size: .62rem; letter-spacing: 1px; }
+.pk .status { font-size: .7rem; letter-spacing: 1px; }
 .pk .mehr { font-family: var(--mono); font-size: .68rem; letter-spacing: .6px; color: var(--gold-pale); white-space: nowrap; }
 @media (max-width: 480px){ .pk { grid-template-columns: 48px 1fr; gap: 6px 14px; padding: 18px 18px; } .pk .app-icon { width: 48px; height: 48px; } }
 
@@ -486,12 +486,13 @@ html:not([data-theme="light"]) .faq details {
 .nx-lightbox .nx-btn.voll { display: none; }
 .nx-lightbox .nx-hint { display: none; }
 .nx-lightbox .nx-dots { margin-top: 20px; }
-.nx-dots { display: flex; justify-content: center; gap: 9px; margin-top: 16px; }
+.nx-dots { display: flex; justify-content: center; gap: 18px; margin-top: 16px; }
 .nx-dot {
-  width: 8px; height: 8px; padding: 0; cursor: pointer; border-radius: 0;
+  width: 9px; height: 9px; padding: 0; cursor: pointer; border-radius: 0; position: relative;
   background: #2c343e; border: 0; transform: rotate(45deg);
   transition: background .2s ease, transform .2s ease;
 }
+.nx-dot::before { content: ""; position: absolute; inset: -8px; }
 .nx-dot.an { background: var(--gold); transform: rotate(45deg) scale(1.25); }
 .nx-hint { text-align: center; margin-top: 10px; font-family: var(--mono); font-size: .66rem; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-dim); }
 html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
@@ -850,6 +851,11 @@ html[data-theme="light"] .nexus { border-color: rgba(138,106,47,.5); }
   color: var(--gold-pale); margin: 26px 0 12px;
 }
 .ds-cluster::before { content: "// "; color: var(--teal-strong); }
+/* Hellmodus: nur die teal-Labels in der Detail-Maske (weißer Grund) dunkler für Lesbarkeit — das helle Teal bleibt sonst überall erhalten */
+html[data-theme="light"] .modal-body .ds-h,
+html[data-theme="light"] .modal-body .ds-step b,
+html[data-theme="light"] .modal-body .ds-ex-after .ds-ex-label { color: var(--teal-deep); }
+html[data-theme="light"] .modal-body .ds-cluster::before { color: var(--teal-deep); }
 .ds-cluster:first-of-type { margin-top: 6px; }
 .ds-hint-top { margin-top: -8px; margin-bottom: 18px; }
 
@@ -1084,7 +1090,7 @@ body { padding-bottom: 52px; }
 
 /* ---- Hell-/Dunkel-Umschalter ---- */
 .theme-toggle {
-  width: 31px; height: 31px; border-radius: 8px; cursor: pointer;
+  width: 40px; height: 40px; border-radius: 9px; cursor: pointer;
   background: var(--bg-panel); border: 1px solid var(--border-soft);
   color: var(--text-primary); font-size: 1.02rem; line-height: 1;
   display: inline-grid; place-items: center; transition: border-color .15s ease, transform .15s ease;
