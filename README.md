@@ -29,7 +29,7 @@ Gehostet über **GitHub Pages** mit **Continuous Deployment**: Jeder Push auf `m
 - **Responsive Design** — fließende Layouts mit **50+ Breakpoints** (CSS Grid & Flexbox), optimiert für Smartphone, Tablet und Desktop.
 - **Dark-/Light-Mode** — **Dark Mode ist der feste Standard**: Jeder Seitenaufruf startet dunkel, ein Umschalten auf Light ist jederzeit möglich (wird bewusst nicht dauerhaft gemerkt). Anwendung im `<head>` vor dem Rendern (kein Flash of Unstyled Content).
 - **Barrierefreiheit (a11y)** — WCAG-orientiert: **ARIA-Rollen/-Attribute** (`role="dialog"`, `aria-modal`, `aria-label`, `aria-labelledby`, `aria-haspopup`), Tastatur-Bedienung (Enter/Escape), Respekt vor **`prefers-reduced-motion`**.
-- **Performance** — **self-contained** (keine externen CDNs, Fonts oder Tracker), **Lazy Loading** von Bildern (`loading="lazy"`), minimaler Payload, **Cache-Busting** via Query-String-Versionierung (`?v=N`).
+- **Performance** — weitgehend **self-contained** (keine externen Fonts/CDNs; einzige externe Ressource ist das anonyme, cookiefreie Analyse-Skript **GoatCounter**), **Lazy Loading** von Bildern (`loading="lazy"`), minimaler Payload, **Cache-Busting** via Query-String-Versionierung (`?v=N`).
 - **Progressive Enhancement** — Kerninhalte funktionieren ohne JavaScript; Interaktion (Modals, Effekte) wird darauf aufgesetzt.
 - **SEO-ready** — Open Graph & Twitter Cards, `canonical`-URLs, `sitemap.xml`, `robots.txt`, Google-Search-Console-Verifikation.
 
@@ -92,7 +92,7 @@ Pro Dokument: individueller `<title>`, `meta description`, **Open-Graph-** und *
 ## Sicherheit & Datenschutz
 
 - **Minimale Angriffsfläche:** keine serverseitige Logik, keine Datenbank, kein CMS.
-- **Datensparsam:** **keine Cookies, kein Tracking, keine Analyse-Tools, keine externen Schriften/CDNs**.
+- **Datensparsam:** **keine Cookies, keine Werbung, lokale Schriften**; zur Reichweitenmessung ausschließlich das **cookiefreie, anonyme GoatCounter** (keine personenbezogenen Daten, kein Consent-Banner nötig).
 - **Sichere Verweise:** externe Links mit `rel="noopener"`.
 - **Rechtstexte:** Impressum (§ 5 DDG, § 19 UStG) und DSGVO-Datenschutzerklärung integriert.
 
