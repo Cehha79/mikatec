@@ -10,3 +10,6 @@ vendor/
 
 # interne Arbeits-/KI-Doku (nicht veroeffentlichen)
 CLAUDE.md
+
+# lokale Projekt-Doku – nur fuer mich, NICHT online (README.md ist die oeffentliche Doku)
+DOKU/
