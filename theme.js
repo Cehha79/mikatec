@@ -2,14 +2,19 @@
 try { if (window.self !== window.top) document.documentElement.classList.add('embed'); }
 catch (e) { document.documentElement.classList.add('embed'); }
 
-// Hell-/Dunkel-Modus für MikaTec — Standard ist IMMER Dunkel; Umschalten auf Hell möglich,
-// wird aber bewusst nicht dauerhaft gemerkt (jeder Seitenaufruf startet dunkel).
+// Hell-/Dunkel-Modus für MikaTec — Start ist IMMER Dunkel. Umschalten auf Hell bleibt
+// für die laufende Sitzung erhalten (auch über Seitenwechsel/Neuladen) via sessionStorage;
+// bei einem Neustart (Tab/Browser neu geöffnet) beginnt es wieder dunkel.
 (function () {
   var KEY = 'mt-theme';
   // Im Modal-iframe wird das Thema per URL-Hash mitgegeben (Maske soll zum Elternthema passen)
   var hash = (location.hash || '');
+  var saved = null;
+  try { saved = sessionStorage.getItem(KEY); } catch (e) {}
   if (hash.indexOf('mt=light') !== -1) document.documentElement.setAttribute('data-theme', 'light');
-  // sonst: nichts setzen → Dunkelmodus als fester Standard
+  else if (hash.indexOf('mt=dark') !== -1) document.documentElement.removeAttribute('data-theme');
+  else if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  // sonst: nichts setzen → Dunkelmodus als Start-Standard
 
   var SUN = '<svg class="ic" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
   var MOON = '<svg class="ic" viewBox="0 0 24 24" width="17" height="17"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
@@ -29,10 +34,10 @@ catch (e) { document.documentElement.classList.add('embed'); }
     btn.addEventListener('click', function () {
       if (isLight()) {
         document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem(KEY, 'dark');
+        try { sessionStorage.setItem(KEY, 'dark'); } catch (e) {}
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem(KEY, 'light');
+        try { sessionStorage.setItem(KEY, 'light'); } catch (e) {}
       }
       btn.innerHTML = icon();
     });
