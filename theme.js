@@ -31,17 +31,32 @@ catch (e) { document.documentElement.classList.add('embed'); }
     btn.setAttribute('aria-label', 'Hell-/Dunkelmodus umschalten');
     btn.title = 'Hell / Dunkel';
     btn.innerHTML = icon();
-    btn.addEventListener('click', function () {
-      if (isLight()) {
-        document.documentElement.removeAttribute('data-theme');
-        try { sessionStorage.setItem(KEY, 'dark'); } catch (e) {}
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        try { sessionStorage.setItem(KEY, 'light'); } catch (e) {}
+    // Interne Seiten-Links tragen das aktuelle Thema in der Adresse mit (#mt=light),
+    // damit die Wahl über Seitenwechsel hält – auch wenn Safari den Speicher blockiert.
+    function tagLinks() {
+      var light = isLight();
+      var as = document.getElementsByTagName('a');
+      for (var i = 0; i < as.length; i++) {
+        var href = as[i].getAttribute('href');
+        if (!href) continue;
+        if (/^(mailto:|tel:|https?:\/\/|#)/i.test(href)) continue; // extern/mail/tel/reiner Anker
+        var base = href.replace(/#mt=(light|dark)$/i, '');
+        as[i].setAttribute('href', light ? base + '#mt=light' : base);
       }
+    }
+    function setTheme(light) {
+      if (light) document.documentElement.setAttribute('data-theme', 'light');
+      else document.documentElement.removeAttribute('data-theme');
+      try { sessionStorage.setItem(KEY, light ? 'light' : 'dark'); } catch (e) {}
+      // aktuelle Adresse merkt die Wahl (überlebt Neuladen, ganz ohne Speicher)
+      try { history.replaceState(null, '', location.pathname + location.search + (light ? '#mt=light' : '')); }
+      catch (e) { try { location.hash = light ? 'mt=light' : ''; } catch (e2) {} }
+      tagLinks();
       btn.innerHTML = icon();
-    });
+    }
+    btn.addEventListener('click', function () { setTheme(!isLight()); });
     links.appendChild(btn);
+    tagLinks();
 
     // Sanfte Einblend-Animation beim Scrollen
     var targets = document.querySelectorAll('.card, .step, .tl-item, .faq details');
@@ -200,12 +215,13 @@ catch (e) { document.documentElement.classList.add('embed'); }
     function onKey(e) { if (e.key === 'Escape') close(); }
 
     function open(href, label) {
+      var clean = String(href).replace(/#mt=(light|dark)$/i, '');
       box = document.createElement('div');
       box.className = 'legal-modal';
       box.innerHTML =
         '<div class="legal-modal-box" role="dialog" aria-modal="true">' +
           '<button class="legal-modal-x" type="button" aria-label="Schließen">&times;</button>' +
-          '<iframe class="legal-modal-frame" title="' + (label || 'Rechtliches') + '" src="' + href + (document.documentElement.getAttribute('data-theme') === 'light' ? '#mt=light' : '#mt=dark') + '"></iframe>' +
+          '<iframe class="legal-modal-frame" title="' + (label || 'Rechtliches') + '" src="' + clean + (document.documentElement.getAttribute('data-theme') === 'light' ? '#mt=light' : '#mt=dark') + '"></iframe>' +
         '</div>';
       document.body.appendChild(box);
       // Thema des Iframes an die Seite angleichen (sonst helle Schrift auf weißem Grund im Hellmodus)
