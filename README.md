@@ -27,7 +27,7 @@ Gehostet über **GitHub Pages** mit **Continuous Deployment**: Jeder Push auf `m
 - **Semantic HTML5** — `header`, `nav`, `main`, `section`, `footer`, `figure` für saubere Dokumentstruktur.
 - **Design-Tokens** — zentrales Theming über **CSS Custom Properties** (`:root`), eine einzige Stylesheet-Quelle.
 - **Responsive Design** — fließende Layouts mit **50+ Breakpoints** (CSS Grid & Flexbox), optimiert für Smartphone, Tablet und Desktop.
-- **Dark-/Light-Mode** — umschaltbar, Auswahl **persistiert** über `localStorage`; Anwendung im `<head>` vor dem Rendern (kein Flash of Unstyled Content).
+- **Dark-/Light-Mode** — **Dark Mode ist der feste Standard**: Jeder Seitenaufruf startet dunkel, ein Umschalten auf Light ist jederzeit möglich (wird bewusst nicht dauerhaft gemerkt). Anwendung im `<head>` vor dem Rendern (kein Flash of Unstyled Content).
 - **Barrierefreiheit (a11y)** — WCAG-orientiert: **ARIA-Rollen/-Attribute** (`role="dialog"`, `aria-modal`, `aria-label`, `aria-labelledby`, `aria-haspopup`), Tastatur-Bedienung (Enter/Escape), Respekt vor **`prefers-reduced-motion`**.
 - **Performance** — **self-contained** (keine externen CDNs, Fonts oder Tracker), **Lazy Loading** von Bildern (`loading="lazy"`), minimaler Payload, **Cache-Busting** via Query-String-Versionierung (`?v=N`).
 - **Progressive Enhancement** — Kerninhalte funktionieren ohne JavaScript; Interaktion (Modals, Effekte) wird darauf aufgesetzt.
@@ -70,14 +70,14 @@ mikatec/
 
 Es gibt **kein Templating** und keinen Server-seitigen Include-Mechanismus: Jede Seite ist ein eigenständiges Dokument, `header` und `footer` sind **bewusst dupliziert** und müssen bei Änderungen in allen Seiten synchron gehalten werden — ein klassischer Trade-off statischer Sites zugunsten von Einfachheit und Auslieferungsgeschwindigkeit.
 
-Die **Detail-Ansichten** auf `leistungen.html` und `projekte.html` sind als **client-seitige Modals** realisiert: Klick auf eine Karte öffnet einen Dialog (`role="dialog"`, `aria-modal`), dessen Inhalt aus dem DOM bzw. einem Daten-Objekt befüllt wird. Der **Knoten-Netz-Hintergrund** ist ein leichtgewichtiger Canvas-Renderer mit einer gemeinsamen `requestAnimationFrame`-Schleife, der bei `prefers-reduced-motion` still bleibt.
+Die **Detail-Ansichten** auf `leistungen.html` und `projekte.html` sind als **client-seitige Modals** realisiert: Klick auf eine Karte öffnet einen Dialog (`role="dialog"`, `aria-modal`), dessen Inhalt aus dem DOM bzw. einem Daten-Objekt befüllt wird. Das Projekt-Modal enthält einen **Screenshot-Slider** (index-genaues Blättern per Pfeil/Wischen/Pfeiltasten, `scroll-snap`) und eine **Vollbild-Galerie** (Lightbox mit Weiter/Zurück, Zähler, Tastatur-Steuerung). **Impressum** und **Datenschutz** öffnen als **Maske** (iframe-Modal), deren Hell-/Dunkel-Thema per URL-Hash mit der Seite synchronisiert wird; die eigenständigen Seiten bleiben als rechtssicherer Fallback erhalten. Der **Knoten-Netz-Hintergrund** ist ein leichtgewichtiger Canvas-Renderer mit einer gemeinsamen `requestAnimationFrame`-Schleife, der bei `prefers-reduced-motion` still bleibt.
 
 ## Design-System — „Grafit & Gold"
 
 - **Farbwelt** als CSS Custom Properties in `:root`; **Dark Mode** ist Standard, **Light Mode** überschreibt via `[data-theme="light"]`.
 - **Akzente:** Gold `#e3c178`, Türkis `#2aa39c` / `#35c2b9`, Tiefen-Türkis `#16686b`.
 - **Typografie:** system-nahe Schriftfamilie, fluide Skalierung über `clamp()`.
-- **Logo:** `logos/mikatec-L4.svg` (Achteck-Motiv) — im Header, Footer, als Favicon und als Grundlage des OG-Vorschaubilds `bilder/og-mikatec.png` (1200 × 630).
+- **Logo:** `logos/mikatec-mt.png` (freigestelltes MT-Emblem) im Header — anklickbar, öffnet das Logo als hochauflösende Maske; Favicon `logos/mikatec-mt-favicon.png`; OG-Vorschaubild `bilder/og-mikatec.png` (1200 × 630).
 
 ## Barrierefreiheit & Performance
 

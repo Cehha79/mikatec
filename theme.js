@@ -1,8 +1,15 @@
-// Hell-/Dunkel-Modus für MikaTec — gespeicherte Wahl sofort anwenden (kein Flackern)
+// Wenn diese Seite in einem Modal-iframe steckt: nur Inhalt zeigen (Kopf/Fuß aus)
+try { if (window.self !== window.top) document.documentElement.classList.add('embed'); }
+catch (e) { document.documentElement.classList.add('embed'); }
+
+// Hell-/Dunkel-Modus für MikaTec — Standard ist IMMER Dunkel; Umschalten auf Hell möglich,
+// wird aber bewusst nicht dauerhaft gemerkt (jeder Seitenaufruf startet dunkel).
 (function () {
   var KEY = 'mt-theme';
-  var saved = localStorage.getItem(KEY);
-  if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  // Im Modal-iframe wird das Thema per URL-Hash mitgegeben (Maske soll zum Elternthema passen)
+  var hash = (location.hash || '');
+  if (hash.indexOf('mt=light') !== -1) document.documentElement.setAttribute('data-theme', 'light');
+  // sonst: nichts setzen → Dunkelmodus als fester Standard
 
   var SUN = '<svg class="ic" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
   var MOON = '<svg class="ic" viewBox="0 0 24 24" width="17" height="17"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
@@ -51,7 +58,7 @@
 (function () {
   function init() {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var hosts = Array.prototype.slice.call(document.querySelectorAll('.contact-box, .card.pillar, .step'));
+    var hosts = Array.prototype.slice.call(document.querySelectorAll('.contact-box, .card.pillar, .step, .page-hero'));
     if (!hosts.length) return;
     var DPR = Math.min(window.devicePixelRatio || 1, 2);
     var LINK = 140, LINK2 = LINK * LINK, fields = [], raf = 0;
@@ -126,6 +133,104 @@
     }
     var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { DPR = Math.min(window.devicePixelRatio || 1, 2); fields.forEach(sizeField); }, 200); });
     if (reduce) { var P = palette(); fields.forEach(function (f) { renderField(f, P); }); } else frame();
+  }
+  if (document.readyState !== 'loading') init(); else document.addEventListener('DOMContentLoaded', init);
+})();
+
+// Logo-Maske: Klick auf das Emblem öffnet es groß in hoher Auflösung
+(function () {
+  function init() {
+    var mark = document.querySelector('.logo img.mark');
+    if (!mark) return;
+    var box = null;
+
+    function open() {
+      if (box) return;
+      box = document.createElement('div');
+      box.className = 'logo-mask';
+      box.innerHTML =
+        '<img src="logos/mikatec-mt-full.png" alt="MikaTec-Logo" class="logo-mask-img">' +
+        '<button class="logo-mask-x" type="button" aria-label="Schließen">&times;</button>';
+      document.body.appendChild(box);
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () { box.classList.add('an'); });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', onKey);
+    }
+    function close() {
+      if (!box) return;
+      box.classList.remove('an');
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+      var b = box; box = null;
+      setTimeout(function () { if (b && b.parentNode) b.parentNode.removeChild(b); }, 220);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    mark.addEventListener('click', function (e) {
+      e.preventDefault();      // nicht zur Startseite navigieren
+      e.stopPropagation();
+      open();
+    });
+  }
+  if (document.readyState !== 'loading') init(); else document.addEventListener('DOMContentLoaded', init);
+})();
+
+// Rechtliches (Impressum/Datenschutz): Footer-Link öffnet Modal statt Seite.
+// Ohne JS / bei fetch-Fehler bleibt der normale Link zur Seite als Fallback.
+(function () {
+  function init() {
+    var links = document.querySelectorAll('footer a[href$="impressum.html"], footer a[href$="datenschutz.html"]');
+    if (!links.length) return;
+    var box = null;
+
+    function close() {
+      if (!box) return;
+      box.classList.remove('an');
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+      var b = box; box = null;
+      setTimeout(function () { if (b && b.parentNode) b.parentNode.removeChild(b); }, 220);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    function open(href, label) {
+      box = document.createElement('div');
+      box.className = 'legal-modal';
+      box.innerHTML =
+        '<div class="legal-modal-box" role="dialog" aria-modal="true">' +
+          '<button class="legal-modal-x" type="button" aria-label="Schließen">&times;</button>' +
+          '<iframe class="legal-modal-frame" title="' + (label || 'Rechtliches') + '" src="' + href + (document.documentElement.getAttribute('data-theme') === 'light' ? '#mt=light' : '#mt=dark') + '"></iframe>' +
+        '</div>';
+      document.body.appendChild(box);
+      // Thema des Iframes an die Seite angleichen (sonst helle Schrift auf weißem Grund im Hellmodus)
+      var frame = box.querySelector('.legal-modal-frame');
+      function syncTheme() {
+        try {
+          var doc = frame.contentDocument;
+          if (!doc) return;
+          if (document.documentElement.getAttribute('data-theme') === 'light')
+            doc.documentElement.setAttribute('data-theme', 'light');
+          else
+            doc.documentElement.removeAttribute('data-theme');
+        } catch (e) {}
+      }
+      frame.addEventListener('load', syncTheme);
+      syncTheme();
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () { box.classList.add('an'); });
+      box.addEventListener('click', function (e) {
+        if (e.target === box || e.target.closest('.legal-modal-x')) close();
+      });
+      document.addEventListener('keydown', onKey);
+    }
+
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(a.getAttribute('href'), a.textContent);
+      });
+    });
   }
   if (document.readyState !== 'loading') init(); else document.addEventListener('DOMContentLoaded', init);
 })();
