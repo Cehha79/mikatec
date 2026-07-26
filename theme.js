@@ -2,7 +2,7 @@
 try { if (window.self !== window.top) document.documentElement.classList.add('embed'); }
 catch (e) { document.documentElement.classList.add('embed'); }
 
-// Hell-/Dunkel-Modus für MikaTec — Start ist IMMER Hell. Umschalten auf Dunkel bleibt
+// Hell-/Dunkel-Modus für MikaTec: Start ist IMMER Hell. Umschalten auf Dunkel bleibt
 // für die laufende Sitzung erhalten (auch über Seitenwechsel/Neuladen) via sessionStorage;
 // bei einem Neustart (Tab/Browser neu geöffnet) beginnt es wieder hell.
 (function () {
@@ -32,7 +32,7 @@ catch (e) { document.documentElement.classList.add('embed'); }
     btn.title = 'Hell / Dunkel';
     btn.innerHTML = icon();
     // Interne Seiten-Links tragen das aktuelle Thema in der Adresse mit (#mt=dark),
-    // damit die Wahl über Seitenwechsel hält – auch wenn Safari den Speicher blockiert.
+    // damit die Wahl über Seitenwechsel hält, auch wenn Safari den Speicher blockiert.
     function tagLinks() {
       var dark = isDark();
       var as = document.getElementsByTagName('a');
