@@ -13,3 +13,7 @@ CLAUDE.md
 
 # lokale Projekt-Doku – nur fuer mich, NICHT online (README.md ist die oeffentliche Doku)
 DOKU/
+
+# Logo-Rohdateien in 4096 px (647 MB, Einzeldateien bis 16 MB).
+# Gehoert nicht in ein Website-Repo mit GitHub-Remote. Bleibt lokal liegen.
+logos/MikaTec Logo/
