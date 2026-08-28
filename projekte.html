@@ -138,9 +138,581 @@
   <div class="lb-count" id="lbCount"><b id="lbNow">1</b> / <span id="lbTotal">1</span></div>
 </div>
 
+
+<!-- Projekt-Details als echtes HTML: EINZIGE Datenquelle. Unsichtbar für Besucher,
+     lesbar für Suchmaschinen; das Modal-Script unten liest hieraus. -->
+<div id="projDaten" hidden>
+  <article data-proj="nexus" data-sub="Groß-Projekt" data-status="in aktiver Entwicklung" data-icon="bilder/icons/nexus.jpg" data-bilder-light="[&quot;bilder/nexus/1.jpg&quot;, &quot;bilder/nexus/2.jpg&quot;, &quot;bilder/nexus/3.jpg&quot;, &quot;bilder/nexus/4.jpg&quot;, &quot;bilder/nexus/5.png&quot;, &quot;bilder/nexus/6.jpg&quot;, &quot;bilder/nexus/7.jpg&quot;, &quot;bilder/nexus/9.jpg&quot;, &quot;bilder/nexus/10.jpg&quot;]" data-bilder-dunkel="[&quot;bilder/nexus/1.jpg&quot;, &quot;bilder/nexus/2.jpg&quot;, &quot;bilder/nexus/3.jpg&quot;, &quot;bilder/nexus/4.jpg&quot;, &quot;bilder/nexus/5.png&quot;, &quot;bilder/nexus/6.jpg&quot;, &quot;bilder/nexus/7.jpg&quot;, &quot;bilder/nexus/9.jpg&quot;, &quot;bilder/nexus/10.jpg&quot;]" data-caps="[&quot;Das Netz · tausende Knoten, ein Kern&quot;, &quot;Räumliches Knoten-Netz&quot;, &quot;Kern-Zelle im Verbund&quot;, &quot;Adressierbar · jeder Knoten erreichbar&quot;, &quot;Der Aufbau · Eingang, Kern, Ausgabe&quot;, &quot;Goldener Kern-Baustein&quot;, &quot;Lebendiges Signal-Netz&quot;, &quot;Daten-Würfel im Netz&quot;, &quot;Energie-Tor&quot;]">
+    <h3>ASA-NEXUS</h3>
+    <p>NEXUS ist eine persönliche KI- und Arbeitszentrale, die alle Lebens- und Firmenbereiche in einer interaktiven 3D-Struktur bündelt: Der „Neural Nexus&quot; dient als räumliche Navigation mit definiertem Zentrum, neun Schalen und sechs Hauptachsen. Die lokale Zentrale bietet Dashboard, Projekt-Übersicht, Firmen- und Finanzbereiche und liest echte Projektordner direkt vom Rechner ein. Eine Cross-Platform-Hülle bringt den Nexus auf Web, Desktop und später Mobile.</p>
+    <ul class="pd-punkte">
+      <li>Interaktive 3D-Nexus-Visualisierung mit Zentrum, 9 Schalen, 6 Hauptachsen</li>
+      <li>Dashboard mit Chat, To-dos, Kalender und Aktivitätsübersicht</li>
+      <li>Projekt-Scanner liest echte Projektordner und öffnet sie per Klick</li>
+      <li>Bereiche für Firma, Finanzen, Input/Output und Administration</li>
+      <li>KI-Zentrale mit Gedächtnis, Regeln und Prompt-Verwaltung</li>
+      <li>Dokumentiertes Koordinatensystem als verbindliche Struktur-Grundlage</li>
+      <li>Wiederverwendbare Energiekugel-Komponente mit Öffnungs-Mechanik und GLB-Export</li>
+      <li>Cross-Platform-Hülle für Web, Desktop und Mobile</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Three.js</li>
+      <li>JavaScript</li>
+      <li>Vite</li>
+      <li>Electron</li>
+      <li>Capacitor / PWA</li>
+      <li>Python</li>
+    </ul>
+  </article>
+  <article data-proj="netz-atlas" data-sub="Web·live" data-status="online · öffentlich erreichbar" data-icon="bilder/icons/netz-atlas.svg" data-live="https://cehha79.github.io/netz-atlas/" data-bild="bilder/netz-atlas.jpg">
+    <h3>Netz-Atlas</h3>
+    <p>Netz-Atlas ist eine interaktive Web-Anwendung, die das globale Internet sichtbar macht: von den rund 700 Unterseekabeln über die großen Knotenpunkte bis zur eigenen Verbindung. Vier Ansichten (Aufbau, Weltkarte, Globus, Flachkarte) visualisieren das weltweite Kabelnetz mit Live-Daten der Submarine Cable Map, dazu misst die App die eigene Netzqualität in Echtzeit und erklärt Fachbegriffe verständlich. Vollständig ohne Frameworks in reinem HTML, CSS und JavaScript umgesetzt.</p>
+    <ul class="pd-punkte">
+      <li>Interaktive Visualisierung des globalen Seekabel-Netzes in vier Ansichten</li>
+      <li>Live-Daten zu ~700 aktiven Unterseekabeln (Submarine Cable Map API)</li>
+      <li>Eigene Verbindung live: Standort, IP-Adresse, Internet-Anbieter</li>
+      <li>Echte Netz-Messung: Antwortzeit, Download, Upload, Schwankung</li>
+      <li>Netzwerk- und Geräte-Details: WLAN/Mobilfunk, Browser, Hardware</li>
+      <li>Fakten in Zahlen: Laufzeiten, Knotenpunkte, Rekorde des Netzes</li>
+      <li>Glossar mit Fachbegriffen und Wikipedia-Verknüpfung</li>
+      <li>Drehbarer Globus und animierte Flachkarte per Canvas</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>HTML/CSS/JavaScript (Vanilla)</li>
+      <li>Canvas 2D</li>
+      <li>SVG</li>
+      <li>Fetch-API / Live-Daten</li>
+      <li>Cloudflare Speed-Test</li>
+      <li>git</li>
+    </ul>
+  </article>
+  <article data-proj="asa-broker" data-sub="Electron·Echtzeit" data-status="im Einsatz" data-icon="bilder/icons/asa-broker.png" data-bild="bilder/asa-trading.png">
+    <h3>ASA Broker</h3>
+    <p>ASA Broker ist ein professionelles Finanz- und Trading-Cockpit als Desktop-App, angelehnt an Bloomberg Terminal und TradingView. Die App bündelt Live-Marktdaten für Krypto, Aktien und ETFs mit Charting, Fundamentalanalyse, Depot-Verwaltung, Backtesting und Papier-Trading in einem modularen Multi-Panel-Terminal. Verbindliche Sicherheitsregeln sind fester Bestandteil der Architektur: Datenintegrität mit Quelle und Zeitstempel, verschlüsselte API-Schlüssel und die strikte Trennung von Lesen und Handeln.</p>
+    <ul class="pd-punkte">
+      <li>Live-Kurse aus mehreren Quellen (Binance, Yahoo, Finnhub u.a.)</li>
+      <li>Interaktive Charts mit Indikatoren (SMA, EMA, RSI, MACD)</li>
+      <li>Depot-Verwaltung mit CSV-Import, Rebalancing und Berichten</li>
+      <li>Backtesting und Papier-Trading mit Profi-Ordertypen (OCO, Bracket)</li>
+      <li>Weltweite Instrumenten-Suche mit Kennzahlen und News</li>
+      <li>Recht-&amp;-Steuer-Bereich mit Haltefrist-Checker und Steuerrechnern</li>
+      <li>Risiko-Navigator mit Klumpen-Warnung und Was-wäre-wenn-Rechner</li>
+      <li>Integrierter KI-Assistent (Claude) mit Marktkontext</li>
+      <li>Verschlüsselter Tresor für API-Schlüssel, Alarme, Watchlists</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>JavaScript</li>
+      <li>Lightweight Charts</li>
+      <li>WebSocket</li>
+      <li>Finanz-APIs</li>
+      <li>AES-Verschlüsselung</li>
+    </ul>
+  </article>
+  <article data-proj="asa-firma" data-sub="Cross-Platform" data-status="im Einsatz" data-icon="bilder/icons/asa-firma.svg" data-bild="bilder/asa-firma.png">
+    <h3>ASA Firma</h3>
+    <p>ASA Firma ist eine komplette Verwaltungs-App für kleine Unternehmen: Kunden, Angebote, Rechnungen, Verträge, Projekte, Zeiten und Kosten an einem Ort, ergänzt um E-Rechnung, GoBD-Archiv, DATEV-Export und Steuer-Berechnungen. Die App läuft aus einem gemeinsamen Kern als Web-/PWA-, Desktop- und Mobil-Anwendung; alle Daten bleiben lokal und AES-256-verschlüsselt auf dem Gerät. Ein integrierter Microsoft-365-Hub bündelt E-Mail, Kalender, Teams, Kontakte und OneDrive direkt im Arbeitskontext.</p>
+    <ul class="pd-punkte">
+      <li>Kunden, Angebote, Rechnungen, Verträge, Projekte und Zeiterfassung an einem Ort</li>
+      <li>E-Rechnung (XRechnung/ZUGFeRD), GoBD-Archiv und DATEV-Export</li>
+      <li>Steuer-Cockpit: EÜR, AfA, § 19/Regelbesteuerung, rechtsformbewusst</li>
+      <li>Microsoft-365-Hub: E-Mail, Kalender, Teams, Kontakte, OneDrive</li>
+      <li>Bank-Abgleich per camt.053-Import, Zahlungen automatisch zuordnen</li>
+      <li>Mahnwesen mit Mahnstufen, Skonto und Sammel-Mahnlauf</li>
+      <li>Alle Daten lokal, AES-256-verschlüsselt mit Master-Passwort</li>
+      <li>Optionaler KI-Assistent für Texte, Auswertungen und Beleg-OCR</li>
+      <li>Plantafel für Mitarbeiter- und Einsatzplanung mit Konflikt-Warnung</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Capacitor</li>
+      <li>PWA</li>
+      <li>Vite</li>
+      <li>JavaScript</li>
+      <li>Web Crypto (AES-256)</li>
+    </ul>
+  </article>
+  <article data-proj="asa-repair" data-sub="Electron·adb" data-status="in Entwicklung" data-icon="bilder/icons/asa-repair.svg" data-bild="bilder/projekte/asa-repair.png">
+    <h3>AKA Repair</h3>
+    <p>AKA Repair ist eine Diagnose-Werkstation für Handy- und Tablet-Reparaturen: Angeschlossene Android-Geräte und iPhones werden per Kabel automatisch erkannt und über offene Werkzeuge (adb, libimobiledevice) tiefgehend ausgelesen: von Akku-Gesundheit über Speicher bis zu Sicherheitsmerkmalen wie IMEI und Aktivierungssperre. Interaktive Funktionstests laufen per QR-Code direkt auf dem Kundengerät, Ergebnisse hängen am Auftrag und lassen sich als Bericht drucken. Die App setzt bewusst auf legale Diagnose und Dokumentation, ohne Unlock- oder Entsperr-Funktionen.</p>
+    <ul class="pd-punkte">
+      <li>Automatische Geräte-Erkennung beim Anstecken (Android und iPhone)</li>
+      <li>Kabel-Diagnose in Kategorien: System, Akku, Speicher, Display, Sensoren</li>
+      <li>Sicherheits-Check: IMEI, Aktivierungssperre, Verified Boot, Verschlüsselung</li>
+      <li>Interaktive Geräte-Tests per QR-Code direkt auf dem Kundengerät</li>
+      <li>Auftrags-Verwaltung mit Status-Ablauf von Annahme bis Abholung</li>
+      <li>Diagnose-Ergebnisse am Auftrag speichern, Bericht drucken oder als PDF</li>
+      <li>Live-Spiegelung des Gerätebildschirms (scrcpy / QuickTime)</li>
+      <li>Profi-Oberfläche als 3-Spalten-Werkstation</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Vite</li>
+      <li>PWA</li>
+      <li>adb / fastboot</li>
+      <li>libimobiledevice</li>
+      <li>Capacitor</li>
+    </ul>
+  </article>
+  <article data-proj="asa-explorer" data-sub="Python" data-status="in Entwicklung" data-icon="bilder/icons/asa-explorer.svg" data-bild="bilder/projekte/asa-explorer.png">
+    <h3>AKA Explorer</h3>
+    <p>AKA Explorer ist ein schlankes Desktop-Werkzeug, das den kompletten Aufbau beliebiger Software-Projekte als interaktive HTML-Ansicht aufbereitet: mit Ordner-Baum, Datei-Vorschau, Statistiken und automatischer Technik-Erkennung. Das Programm arbeitet strikt nach dem Nur-Lesen-Prinzip: Analysierte Projekte werden nie verändert. Umgesetzt in reinem Python ohne eine einzige externe Abhängigkeit, läuft es als eine einzelne Datei mit Browser-Oberfläche und Live-Aktualisierung.</p>
+    <ul class="pd-punkte">
+      <li>Interaktiver Ordner-Baum mit Suche, Typ-Filtern und Datei-Icons</li>
+      <li>Datei-Vorschau direkt in der Ansicht (Text, Bild, Video, PDF)</li>
+      <li>Automatische Technik-Erkennung (Python, Node, Flutter, Rust, Go u. a.)</li>
+      <li>Werkzeug-Prüfung: sind alle nötigen Programme installiert?</li>
+      <li>Änderungs-Vergleich seit der letzten Analyse (neu/geändert/gelöscht)</li>
+      <li>Statistiken: Dateien, Größe, Code-Zeilen, häufigste Dateitypen</li>
+      <li>App-Modus im Browser mit Projekt-Wechsel ohne Neustart</li>
+      <li>Live-Modus: Ansicht aktualisiert sich bei Änderungen automatisch</li>
+      <li>Hell/Dunkel-Modus und Druck/PDF-Export</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Python 3</li>
+      <li>Nur Standardbibliothek</li>
+      <li>HTML/CSS/JS (selbst-enthalten)</li>
+      <li>http.server</li>
+      <li>Ruff</li>
+    </ul>
+  </article>
+  <article data-proj="aka-tresor" data-sub="Electron·AES-256" data-status="im Einsatz" data-icon="bilder/icons/aka-tresor.png" data-bild="bilder/aka-tresor.png">
+    <h3>AKA-Tresor</h3>
+    <p>AKA-Tresor ist ein vollständig offline arbeitender Passwort- und Krypto-Schlüssel-Tresor als Desktop-App. Seed-Phrasen, private Schlüssel, Zugänge und Dokumente werden mit AES-256-GCM und scrypt verschlüsselt, ausschließlich mit Bordmitteln, ohne fremde Krypto-Pakete und ohne jede Netzwerkverbindung. Über 30 Eintrags-Arten, integrierte Generatoren, TOTP/2FA und ein Live-Sicherheits-Prüfstand machen die App zur kompletten Schaltzentrale für sensible Daten.</p>
+    <ul class="pd-punkte">
+      <li>Verschlüsselung mit AES-256-GCM und scrypt, komplett offline</li>
+      <li>34 Eintrags-Arten: Seeds, Keys, Börsen, Logins, Bank, Dokumente</li>
+      <li>Optionale Schlüsseldatei als zweiter Faktor</li>
+      <li>Generatoren: Passwort, Diceware, PIN, BIP39-Seed, Private Key</li>
+      <li>TOTP/2FA-Codes lokal erzeugen und speichern</li>
+      <li>Verschlüsselte Backups, Papierkorb und CSV-Import</li>
+      <li>Prüfstand: Live-Selbst-Check mit Sicherheits-Score</li>
+      <li>Auto-Sperre, Feld-Maskierung, Zwischenablage-Auto-Leerung</li>
+      <li>Design-Profile hell/dunkel, verschlüsselte Datei-Anhänge</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Node.js crypto</li>
+      <li>AES-256-GCM</li>
+      <li>scrypt</li>
+      <li>Universal-Build (Intel + Apple Silicon)</li>
+    </ul>
+  </article>
+  <article data-proj="aka-key" data-sub="Electron·Web" data-status="im Einsatz" data-icon="bilder/icons/aka-key.svg" data-bild="bilder/aka-key.png">
+    <h3>AKA Key</h3>
+    <p>AKA Key ist der schlanke Alltags-Manager für Passwörter, API-Schlüssel und Lesezeichen, zugleich die Begleiter-App zum offline arbeitenden AKA-Tresor. Die Cross-Platform-App (Web/PWA, Desktop, Handy) verschlüsselt alle Daten mit AES-256-GCM und tauscht sie ausschließlich per verschlüsselter Datei mit dem Tresor aus, ohne Internet und ohne Cloud. Ein 10-Agenten-Sicherheitsaudit wurde durchgeführt und alle kritischen Befunde behoben.</p>
+    <ul class="pd-punkte">
+      <li>Passwörter, API-Schlüssel und Lesezeichen ansehen, anlegen, bearbeiten, kopieren</li>
+      <li>AES-256-GCM-Verschlüsselung mit Master-Passwort (PBKDF2, 600.000 Runden)</li>
+      <li>Datei-Abgleich mit AKA-Tresor in beide Richtungen (.akakeys)</li>
+      <li>Komplett offline: kein Internet, keine Cloud, strenge CSP</li>
+      <li>Seed-Phrasen und Private Keys werden bewusst herausgefiltert</li>
+      <li>681 Dienst-Symbole, Gruppen-Verwaltung, Suche und Filter</li>
+      <li>10 Design-Profile mit Hell/Dunkel-Modus</li>
+      <li>Zwischenablage leert sich nach 20 Sekunden automatisch</li>
+      <li>Sicherheitsaudit mit 10 Prüf-Agenten bestanden, Befunde behoben</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Capacitor</li>
+      <li>PWA</li>
+      <li>Vite</li>
+      <li>Web Crypto API</li>
+      <li>Vanilla JS</li>
+    </ul>
+  </article>
+  <article data-proj="aka-bauelemente" data-sub="Electron·PWA" data-status="in Entwicklung" data-icon="bilder/icons/aka-bauelemente.png" data-bild="bilder/aka-bauelemente.png">
+    <h3>AKA Bauelemente</h3>
+    <p>AKA Bauelemente ist eine lokale Bibliothek für wiederverwendbare UI-Bausteine: Über 900 Komponenten in 21 Bereichen lassen sich mit Code, Notizen und Live-Vorschau sammeln, durchsuchen, prüfen und exportieren. Eine integrierte Werkstatt fügt Bausteine auf einer Raster-Bühne zu neuen Komponenten zusammen und zerlegt vermischten Roh-Code automatisch in HTML, CSS und JavaScript. Die App läuft aus einer Code-Basis als Desktop-Anwendung, offline-fähige Web-App und installierbare PWA auf dem iPad.</p>
+    <ul class="pd-punkte">
+      <li>Bibliothek mit 900+ UI-Bausteinen in 21 Bereichen</li>
+      <li>Getrennte Code-Tafeln: HTML, CSS, JavaScript, JSON, SVG</li>
+      <li>Live-Vorschau mit Hell/Dunkel-Modus, Offline-Test und Vollbild</li>
+      <li>Werkstatt: Bausteine auf Raster-Bühne zusammenfügen, Code live erzeugen</li>
+      <li>Roh-Code-Station: vermischten Code trennen, formatieren, speichern</li>
+      <li>Design-Labor: 395 Design-Tokens, 20 Export-Formate, 34 Plattform-Vorschauen</li>
+      <li>Code-Prüfung und Prettier-Formatierung direkt in der App</li>
+      <li>Export als HTML-Datei oder komplette Ordnerstruktur</li>
+      <li>Desktop, Web/PWA und iPad aus einer Code-Basis</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Vite</li>
+      <li>PWA</li>
+      <li>CodeMirror 6</li>
+      <li>Prettier</li>
+      <li>Node.js</li>
+    </ul>
+  </article>
+  <article data-proj="aka-viewer" data-sub="Electron·DICOM" data-status="in Entwicklung" data-icon="bilder/icons/aka-viewer.png">
+    <h3>AKA Viewer</h3>
+    <p>AKA Viewer ist ein moderner medizinischer Bildbetrachter für DICOM, NIfTI sowie gängige Bild- und Videoformate als Electron-Desktop-App auf Basis der GPU-beschleunigten Cornerstone3D-Engine. Die App bietet 3D/MPR-Ansichten mit Fadenkreuz und Volumen-Rendering, umfangreiche Mess- und Analysewerkzeuge sowie einen Orthopädie-Schwerpunkt mit Kalibrierung, Norm-Winkel-Vorlagen und Prothesen-Templating. Version 1.0 ist fertiggestellt und läuft als signierte, installierbare Mac-App.</p>
+    <ul class="pd-punkte">
+      <li>DICOM- und NIfTI-Serien öffnen, blättern, fenstern, als Cine abspielen</li>
+      <li>3D/MPR-Ansicht mit Fadenkreuz und drehbarem Volumen-Rendering</li>
+      <li>Messwerkzeuge: Strecke, Winkel, Cobb, ROI mit Hounsfield-Statistik</li>
+      <li>Orthopädie: Kalibrierung, CCD/Wiberg/Beinlängen, Prothesen-Templating</li>
+      <li>Vergleichsansicht mit synchronem Blättern, Fenstern und Zoomen</li>
+      <li>Befunde-Panel mit CSV-Export, PNG-Export und Drucken</li>
+      <li>Tag-Inspektor, Struktur-Baum und reiche DICOM-Overlays</li>
+      <li>DSA-Subtraktion, MIP/MinIP-Projektion und Farbtabellen</li>
+      <li>Anonym-Modus für Lehre und Weitergabe</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Cornerstone3D</li>
+      <li>electron-vite</li>
+      <li>JavaScript</li>
+      <li>WebGL/GPU</li>
+    </ul>
+  </article>
+  <article data-proj="aka-speicher" data-sub="Electron·System" data-status="in Entwicklung" data-icon="bilder/icons/aka-speicher.png" data-bild="bilder/speicher-werkstatt.png">
+    <h3>AKA Speicher</h3>
+    <p>AKA Speicher ist eine plattformübergreifende Desktop-App für macOS, Windows und Linux, die externe Speichermedien testet, verschlüsselt, formatiert, klont und sicher löscht. Ergänzt wird die Speicher-Verwaltung durch System- und Sensor-Monitoring, Netzwerk- und Mobilgeräte-Werkzeuge sowie eine Geräte-Flotten-Übersicht. Eine zentrale Sicherheits-Schicht schützt interne Laufwerke und sichert jede zerstörende Aktion mit Trockenlauf-Vorschau, harter Bestätigung und Live-Gegenprüfung ab.</p>
+    <ul class="pd-punkte">
+      <li>Diagnose: SMART, Fake-USB-Erkennung, Speed-Benchmark, Burn-in, SSD-Health</li>
+      <li>Formatieren, Partitionieren, Image erstellen, Flashen und Klonen</li>
+      <li>Sicheres Löschen mit PDF-Löschzertifikat</li>
+      <li>Verschlüsselte Tresore (DMG/VeraCrypt) und Datei-Werkzeuge</li>
+      <li>Sensorik-Hub mit Live-Monitor, Menüleisten-Tray und Lüfter-Regelung</li>
+      <li>Netz &amp; Mobil: WLAN-Diagramme, Heatmap, NAS, Handy/Tablet-Anbindung</li>
+      <li>Fern-Steuerung und Geräte-Flotten-Verwaltung</li>
+      <li>Dreifache Sicherung: Trockenlauf, Bestätigung, Live-Gegenprüfung</li>
+      <li>KI-Assistent, Befehls-Palette und App-Sperre per PIN</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Node.js</li>
+      <li>OS-Bordmittel (diskutil, parted, PowerShell)</li>
+      <li>Native Helfer (Swift, C)</li>
+      <li>JavaScript</li>
+    </ul>
+  </article>
+  <article data-proj="aka-doku" data-sub="Desktop" data-status="in Entwicklung" data-icon="bilder/icons/aka-doku.svg" data-bild="bilder/projekte/aka-doku.png">
+    <h3>AKA DOKU</h3>
+    <p>AKA DOKU ist eine interne Dokumentations-Zentrale, die Firmen-Dokumente an einer Stelle verwaltet: lesen, schreiben, ablegen. Die App entsteht als Cross-Platform-Anwendung aus einer Code-Basis und läuft im Browser, auf dem Desktop und auf dem Tablet; eine Cloud-Anbindung ist als eigene Schicht vorgesehen. Den inhaltlichen Kern bildet eine bereits funktionsfähige Schreib- und Ablage-Oberfläche mit Vorgängen, Suche und festgeschriebener Ablage.</p>
+    <ul class="pd-punkte">
+      <li>Firmen-Dokumente zentral verwalten, lesen und schreiben</li>
+      <li>Vorgänge anlegen: Schreiben, Bestellungen, Verordnungen, Rückfragen</li>
+      <li>Ablage mit Nachweisen, verschickte Einträge werden festgeschrieben</li>
+      <li>Suche und Status-Filter über alle Einträge</li>
+      <li>Einträge als PDF speichern oder als Text kopieren</li>
+      <li>Eine Code-Basis für Web, Desktop und Tablet</li>
+      <li>Als PWA installierbar, offline nutzbar</li>
+      <li>Cloud-Anbindung als eigene Schicht geplant</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>JavaScript</li>
+      <li>Vite</li>
+      <li>PWA</li>
+      <li>Electron</li>
+      <li>Capacitor</li>
+    </ul>
+  </article>
+  <article data-proj="aka-simula" data-sub="Three.js" data-status="in Entwicklung" data-icon="bilder/icons/aka-simula.svg" data-bild="bilder/projekte/aka-simula.png">
+    <h3>AKA Simula</h3>
+    <p>AKA Simula ist eine mathematische Forschungs-Workbench im Browser, die Primzahlmuster in der Ulam-Spirale sowie Feld- und Solver-Simulationen auf einem virtualisierten 1000×1000-Raster visualisiert. Die App bietet Parameter-Sweeps, Run-History mit Vergleichen, Hypothesen- und Evidence-Verwaltung sowie Report-Export in mehreren Formaten, komplett als eine einzige HTML-Datei ohne Build und ohne Abhängigkeiten. Eine 3D-Variante stellt Primzahlen als leuchtende Punktwolke in einer würfelförmigen Zahlenspirale dar.</p>
+    <ul class="pd-punkte">
+      <li>Ulam-Spirale und Primzahlmuster auf virtualisiertem Canvas-Raster</li>
+      <li>Feld- und Solver-Simulationen (Welle, Diffusion, Monte Carlo)</li>
+      <li>Parameter-Sweeps, Cases und Run-History mit Vergleichsbasis</li>
+      <li>Forschungs-Workbench: Hypothesen, Evidence, Prüfmatrix, Notebook</li>
+      <li>Report-Export als Markdown, HTML, JSON, PNG, CSV, PDF</li>
+      <li>Presets, Undo/Redo und versionierter Autosave</li>
+      <li>3D-Ansicht: Primzahlen als Punktwolke im Zahlenwürfel</li>
+      <li>Eingebaute Test-Suite mit Volltest</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>HTML/CSS/JavaScript (Vanilla)</li>
+      <li>Canvas 2D</li>
+      <li>Three.js (3D-Variante)</li>
+      <li>Single-File-App</li>
+      <li>localStorage-Autosave</li>
+    </ul>
+  </article>
+  <article data-proj="aka" data-sub="Flutter·Hive" data-status="in Entwicklung" data-icon="bilder/icons/aka.svg" data-bild="bilder/projekte/aka.png">
+    <h3>AKA</h3>
+    <p>AKA ist eine sichere persönliche Gesundheits-App, die sämtliche Gesundheitsdaten ausschließlich lokal und verschlüsselt auf dem Gerät speichert, ohne Übertragung an externe Server. Ein konfigurierbares Kachel-Dashboard mit Zielen, Ampelsystem und Verlaufsdiagrammen macht Werte wie Blutdruck, Gewicht oder Laborwerte auf einen Blick erfassbar. Die modulare Architektur setzt auf Standard-Datenformate (FHIR/LOINC) und ist damit auf spätere Erweiterungen und Anbindungen vorbereitet.</p>
+    <ul class="pd-punkte">
+      <li>Gesundheitswerte erfassen mit Zielen, Ampelsystem und Verlaufsdiagrammen</li>
+      <li>Alle Daten lokal und verschlüsselt gespeichert, keine Server-Übertragung</li>
+      <li>Konfigurierbares Kachel-Dashboard mit Schnellzugriff und Widgets</li>
+      <li>Laborwerte-Modul mit FHIR/LOINC-Export</li>
+      <li>Rollen-System mit Benutzer, Admin und Haupt-Admin inkl. 2FA</li>
+      <li>App-Sperre, Notfall-Code und verschlüsselbares Backup</li>
+      <li>Export als PDF und Excel</li>
+      <li>Referenzlisten: Krankheiten, Medikamente, Impfungen, Notrufnummern</li>
+      <li>Mehrsprachigkeit angelegt (11 Sprachen)</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Flutter</li>
+      <li>Dart</li>
+      <li>Hive (verschlüsselt)</li>
+      <li>FHIR/LOINC</li>
+      <li>Cross-Platform</li>
+    </ul>
+  </article>
+  <article data-proj="aka-audix" data-sub="Desktop·Mobil" data-status="in Entwicklung" data-icon="bilder/icons/aka-audix.svg" data-bild="bilder/projekte/aka-audix.png">
+    <h3>AKA Audix</h3>
+    <p>AKA Audix ist ein professioneller Musik-Player mit Bibliothek und Playlist-Verwaltung, als Cross-Platform-App für Desktop, Web und Mobilgeräte aus einer gemeinsamen Basis. Die App liest Tags, Cover und Spieldauer direkt aus den Audiodateien, speichert die Bibliothek dauerhaft und bietet Visualizer sowie einen abschaltbaren Equalizer. Das Konzept zielt auf audiophile Wiedergabe-Qualität: bit-perfect, High-Res bis 24-bit/192 kHz, echtes Gapless und DSD über einen nativen Audio-Motor.</p>
+    <ul class="pd-punkte">
+      <li>Musik-Bibliothek mit Suche, Sortierung und dauerhafter Speicherung</li>
+      <li>Echte Metadaten: Tags, Albumcover und Spieldauer aus den Dateien</li>
+      <li>Playlists anlegen, füllen und verwalten</li>
+      <li>Visualizer und 5-Band-Equalizer, komplett abschaltbar</li>
+      <li>Drag &amp; Drop, Tastenkürzel, Position merken</li>
+      <li>Responsiv für Handy und Tablet, als PWA installierbar</li>
+      <li>Konzept Stufe B: bit-perfect, High-Res, Gapless, DSD</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Capacitor</li>
+      <li>PWA</li>
+      <li>Vite</li>
+      <li>IndexedDB / SQLite</li>
+      <li>Web Audio</li>
+    </ul>
+  </article>
+  <article data-proj="aka-player" data-sub="Electron·ffmpeg" data-status="in Entwicklung" data-icon="bilder/icons/aka-player.png" data-bild="bilder/projekte/aka-player.png">
+    <h3>AKA-Player</h3>
+    <p>AKA-Player ist ein universeller Medien-Player und Empfänger für den Desktop: Er spielt Video, Audio und Bilder in praktisch allen Formaten ab; eine integrierte ffmpeg-Engine packt oder wandelt nicht web-taugliche Dateien automatisch um. Zusätzlich empfängt die App Live-Sender aus dem Netz: IPTV-Playlisten, Gratis-TV aus 250 Ländern, Internetradio und freie Filmarchive, ergänzt um Profi-Werkzeuge wie Equalizer, Untertitel, Aufnahme und Chromecast.</p>
+    <ul class="pd-punkte">
+      <li>Spielt alle Video-, Audio- und Bildformate über ffmpeg-Engine</li>
+      <li>Live-Sender: IPTV (Xtream), Gratis-TV aus 250 Ländern, 45.000 Radiosender</li>
+      <li>Listen-Manager mit mehreren Bibliotheken, Favoriten, Import/Export (M3U/PLS/XSPF)</li>
+      <li>Aufnehmen von Sendern und Streams, Schnappschüsse, Bild-im-Bild</li>
+      <li>Tonspur- und Untertitel-Auswahl, EPG, Weiterschauen, Sleep-Timer</li>
+      <li>10-Band-Equalizer, Visualizer, Bild-Regler (Helligkeit/Kontrast/Filter)</li>
+      <li>Chromecast-Ausgabe sowie Bildschirm und Kamera als Live-Quelle</li>
+      <li>Bibliothek sichern und wiederherstellen (JSON-Backup)</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>ffmpeg</li>
+      <li>hls.js</li>
+      <li>HTML5-Video</li>
+      <li>Web Audio API</li>
+      <li>Node.js</li>
+    </ul>
+  </article>
+  <article data-proj="aka-wetter" data-sub="Cross-Platform" data-status="in Entwicklung" data-icon="bilder/icons/aka-wetter.svg" data-bild="bilder/projekte/aka-wetter.png">
+    <h3>AKA-Wetter</h3>
+    <p>AKA-Wetter ist eine professionelle Wetter-App, die aus einer einzigen Code-Basis auf Desktop, im Web und als Mobile-App läuft. Sie bietet weit mehr als eine Vorhersage: Meteogramm, Modellvergleich, Ensemble-Prognosen, amtliche Warnungen, interaktive Karten mit Regenradar und Wind-Animation sowie einen eigenen Wissensbereich mit Satellitenkarte, Klimadaten und Spezialanalysen. Die Datenschicht ist quellenunabhängig aufgebaut, sodass Wetteranbieter jederzeit austauschbar bleiben.</p>
+    <ul class="pd-punkte">
+      <li>Vorhersage mit 24-Stunden-Leiste, 48-h-Meteogramm und 7-Tage-Trend</li>
+      <li>Amtliche Unwetter-Warnungen (DWD, US NWS) direkt als Banner</li>
+      <li>Interaktive Karte: Regenradar, Wetterstationen, Wind-Animation, Isobaren, Isothermen</li>
+      <li>Modellvergleich (ECMWF/GFS/ICON) und Ensemble-Prognosen</li>
+      <li>Wissensbereich: NASA-Satellitenkarte, Klima-Rückblick, Klima-Ausblick bis 2050</li>
+      <li>Spezialdaten: Luftqualität, Pollen, Hochwasser, Schnee, Lawinen, Polarlicht</li>
+      <li>Vertikalprofil mit Gewitter-Indizes (CAPE, Lifted Index)</li>
+      <li>Mehrere Orte, Standort-Erkennung, Hell-/Dunkel-Modus, Offline-Cache</li>
+      <li>Läuft auf Desktop, Web (PWA), iPhone und Android</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Capacitor (iOS/Android)</li>
+      <li>PWA / Vite</li>
+      <li>MapLibre</li>
+      <li>Open-Meteo</li>
+      <li>Cloudflare Worker</li>
+    </ul>
+  </article>
+  <article data-proj="aka-ki-steuer" data-sub="KI·Web" data-status="in Entwicklung" data-icon="bilder/icons/aka-ki-steuer.svg" data-bild="bilder/projekte/aka-ki-steuer.png">
+    <h3>AKA KI-Steuer</h3>
+    <p>AKA KI-Steuer ist eine Steuererklärungs-Software auf Steuerberater-Niveau mit drei Welten: Privat (Einkommensteuer), Geschäftlich (Unternehmen/Selbstständige) und Mandanten (Kanzlei-Betrieb mit eigener Akte je Kunde). Sie rechnet bundesland-genau nach exaktem Tarif (§ 32a EStG 2024/2025 inkl. Splitting, Soli und Kirchensteuer), deckt vom Anlagen-Satz über EÜR und Umsatzsteuer bis zu E-Rechnung und DATEV-Export das volle Spektrum ab und arbeitet konsequent lokal. Die KI-Unterstützung ist optional, alles funktioniert auch ohne.</p>
+    <ul class="pd-punkte">
+      <li>Drei Welten: Privat, Geschäftlich und Mandanten mit eigener Akte</li>
+      <li>Exakte Steuer-Engine: Tarif 2024/2025, Splitting, Soli, Kirchensteuer</li>
+      <li>Bundesland-genaue Berechnung (16 Länder: Kirchensteuer, Grundsteuer, Grunderwerbsteuer)</li>
+      <li>Vollständiger Anlagen-Satz von Anlage N bis Krypto (§ 23, FIFO)</li>
+      <li>Geschäftsbereich: EÜR, USt-Voranmeldung, BWA, E-Rechnung, DATEV-Export</li>
+      <li>Belegfoto-OCR erkennt Betrag und Datum offline (Tesseract, deutsch)</li>
+      <li>Amtlicher Formular-Katalog mit 42 Deeplinks und Update-Pool</li>
+      <li>Sicherheit: App-Sperre, Tresor, Backup, Mehrbenutzer mit Rollen</li>
+      <li>Alle Daten bleiben lokal auf dem Gerät, KI optional</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>HTML/CSS/JavaScript</li>
+      <li>Electron</li>
+      <li>Tesseract.js (OCR)</li>
+      <li>localStorage (local-first)</li>
+      <li>Web + Desktop aus einem Kern</li>
+    </ul>
+  </article>
+  <article data-proj="aka-map" data-sub="MapLibre GL" data-status="in Entwicklung" data-icon="bilder/icons/aka-map.svg" data-bild="bilder/projekte/aka-map.png">
+    <h3>AKA Map</h3>
+    <p>AKA Map ist eine interaktive Weltkarten-App auf Basis von MapLibre GL: Vektor-Kacheln werden auf der Grafikkarte gerendert und bleiben dadurch auch bei voller Detailtiefe flüssig und gestochen scharf. Regionen lassen sich per Klick von der Welt über Länder und Regionen bis auf Bezirksebene erkunden, mit besonders feinen Daten für Deutschland und die Türkei. Dazu kommen viele Karten-Stile, Orte (POIs), ein MGRS/UTM-Einsatzgitter, hochauflösender Bild-Export, Offline-Vorladen und eine Electron-Desktop-App.</p>
+    <ul class="pd-punkte">
+      <li>Interaktiver Drilldown: Welt → Land → Region → Bezirk per Klick</li>
+      <li>GPU-Rendering mit MapLibre GL, flüssig bei voller Detailtiefe</li>
+      <li>Viele Karten-Stile: Vektor- und Raster-Ansichten umschaltbar</li>
+      <li>Orte (POIs) in 29 Kategorien ein-/ausblendbar</li>
+      <li>Einsatz-Gitter MGRS/UTM einblendbar</li>
+      <li>Hochauflösender PNG-Bildexport und Druckansicht</li>
+      <li>Offline-Vorladen von Kartengebieten (IndexedDB-Cache)</li>
+      <li>Eigene Markierungen setzen, Stand sichern und laden</li>
+      <li>Als Desktop-App (Electron) und im Browser nutzbar</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>MapLibre GL</li>
+      <li>WebGL</li>
+      <li>JavaScript</li>
+      <li>GeoJSON</li>
+      <li>Electron</li>
+      <li>IndexedDB</li>
+    </ul>
+  </article>
+  <article data-proj="aka-tur" data-sub="Cross-Platform" data-status="in Entwicklung" data-icon="bilder/icons/aka-tur.svg" data-bild="bilder/projekte/aka-tur.png">
+    <h3>AKA TUR</h3>
+    <p>AKA TUR ist eine dreisprachig ausgelegte Cross-Platform-App (DE/TR/EN) für die türkische Diaspora: der praktische Draht zur Türkei in einer App. Kernstück ist ein durchsuchbarer Behörden-Lotse mit über 50 offiziellen Diensten samt Erklärungen und Direktlinks; dazu kommen Bereiche für Reise, Medien, Community im Ausland und Gebetszeiten. Die App zeigt Live-Wechselkurse (EZB-Daten) und läuft als Web/PWA, Desktop- und Mobile-App aus einer gemeinsamen Code-Basis.</p>
+    <ul class="pd-punkte">
+      <li>Behörden-Lotse: 52 offizielle Dienste in 14 Kategorien, erklärt und verlinkt</li>
+      <li>Suche und Kategorie-Filter über alle Inhalte und Sprachen</li>
+      <li>Dreisprachig: Deutsch, Türkisch und Englisch, umschaltbar; die Auswahl wird gemerkt</li>
+      <li>Live-Wechselkurs Euro/Dollar zu Lira (EZB-Daten)</li>
+      <li>Reise-Bereich: Heimreise, Routen, Maut und Buchung</li>
+      <li>Medien-Bereich: türkisches Radio, TV und Presse (nur legale Quellen)</li>
+      <li>Community: Konsulate, Moscheen, Vereine und Schulen im Ausland</li>
+      <li>Gebetszeiten als dezenter Bonus-Bereich</li>
+      <li>Eine Code-Basis für Web/PWA, Desktop und Mobile</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>JavaScript</li>
+      <li>Vite</li>
+      <li>PWA</li>
+      <li>Electron</li>
+      <li>Capacitor</li>
+    </ul>
+  </article>
+  <article data-proj="klick-frag-ki" data-sub="KI·Produkt" data-status="in Entwicklung" data-icon="bilder/icons/klick-frag-ki.svg" data-bild="bilder/projekte/klick-frag-ki.png">
+    <h3>AKA Ask KI/AI</h3>
+    <p>AKA Ask KI/AI ist ein Offline-Prompt-Baukasten, mit dem sich gute KI-Aufträge in fünf Schritten zusammenklicken lassen, ganz ohne Prompt-Wissen. Die App liest PDF, Word und Bilder (OCR) komplett offline ein, fragt auf Wunsch mehrere KIs direkt an und vergleicht deren Antworten nebeneinander. Barrierefreiheit ist Kernprinzip: sechs Sprachen, Vorlesefunktion, große Schrift. Einmal zahlen, kein Abo.</p>
+    <ul class="pd-punkte">
+      <li>5-Schritte-Baukasten mit Live-Vorschau und Kopieren-Knopf</li>
+      <li>Bibliothek mit 45 Vorlagen und 5 geführten Baukästen</li>
+      <li>Dateien offline lesen: PDF, Word, Bild zu Text (OCR)</li>
+      <li>KI direkt fragen: OpenAI, Anthropic, Gemini, Ollama</li>
+      <li>Mehrere KIs vergleichen, Prompt automatisch verbessern lassen</li>
+      <li>6 Sprachen, Vorlesen, große Schrift, hoher Kontrast</li>
+      <li>100 % offline, keine Telemetrie, PIN-Sperre</li>
+      <li>API-Schlüssel verschlüsselt im OS-Schlüsselbund</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>HTML/CSS/JavaScript</li>
+      <li>pdf.js</li>
+      <li>Tesseract OCR</li>
+      <li>PWA</li>
+    </ul>
+  </article>
+  <article data-proj="coden" data-sub="Cross-Platform" data-status="in aktiver Entwicklung · Inhalte wachsen" data-icon="bilder/icons/coden.svg" data-bild="bilder/projekte/coden.png">
+    <h3>Coden</h3>
+    <p>Coden ist eine Lern-App fürs Programmieren, die Wissen zu Grundlagen, Programmiersprachen, Git und GitHub, Terminal, KI-Werkzeugen und Sicherheit in 21 strukturierten Bereichen mit Lektionen bündelt. Die App läuft aus einer gemeinsamen Code-Basis als Web-, Desktop- und Mobile-App und speichert den Lernfortschritt lokal. Alle Inhalte sind deutschsprachig aufbereitet; englische Fachbegriffe werden konsequent mit Übersetzung und Aussprache erklärt.</p>
+    <ul class="pd-punkte">
+      <li>21 Lern-Bereiche: von Grundlagen über Sprachen bis Veröffentlichen</li>
+      <li>Strukturierter Lernweg mit nummerierten Lektionen und Fortschritt je Bereich</li>
+      <li>Code-Beispiele mit Kopieren-Knopf, sicher ohne Prompt-Zeichen</li>
+      <li>Interaktive Übungen und Live-Widgets in Lektionen</li>
+      <li>Vokabel-Spickzettel: Englisch, Aussprache, Deutsch</li>
+      <li>Nachschlagewerk und Wörterbuch integriert</li>
+      <li>Abschluss-Test mit Zertifikat</li>
+      <li>Hell/Dunkel-Modus, responsive Oberfläche mit Seitenleiste</li>
+      <li>Eine Code-Basis für Web, Desktop und Mobile</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>JavaScript</li>
+      <li>Vite</li>
+      <li>PWA</li>
+      <li>Electron</li>
+      <li>Capacitor</li>
+    </ul>
+  </article>
+  <article data-proj="geraete-scanner" data-sub="Electron·Netz" data-status="in Entwicklung" data-icon="bilder/icons/geraete-scanner.png" data-bild="bilder/projekte/geraete-scanner.png">
+    <h3>AKA Geräte Scan</h3>
+    <p>AKA Geräte Scan ist eine Electron-Zentrale, die viele PCs und Macs gleichzeitig live überwacht: CPU, RAM, Festplatte, Netzwerk, Temperatur und Akku auf einen Blick, eine Zeile pro Gerät. Ein schlanker Melder-Agent läuft auf jedem überwachten Rechner und meldet seine Werte lokal, über das Netzwerk oder standortübergreifend per Sammelordner. Alarme, Heatmap-Ansicht, Pop-out-Monitore und CSV-Export machen die App zum vollwertigen Werkzeug für kleine Geräteflotten.</p>
+    <ul class="pd-punkte">
+      <li>Live-Überwachung vieler Geräte: CPU, RAM, Disk, Netz, Temperatur, Akku</li>
+      <li>Melder-Agent als Einzeldatei ohne Node-Installation auf jedem Gerät</li>
+      <li>Drei Datenwege: lokaler PC, LAN-Live, Sammelordner (z.B. OneDrive)</li>
+      <li>Alarme bei Grenzwert-Überschreitung mit Warn-Kennzeichnung</li>
+      <li>Tabellen- und Heatmap-Ansicht mit Filter und Suche</li>
+      <li>Geräte-Detail mit kompletten Hardware-Infos und Verlaufskurven</li>
+      <li>Pop-out-Monitore als eigene Fenster je Gerät</li>
+      <li>Netzwerk-Erkennung, Geräte-Notizen und CSV-Export</li>
+      <li>Läuft auf Mac, Windows und Linux</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>Electron</li>
+      <li>Node.js</li>
+      <li>systeminformation</li>
+      <li>esbuild + Node SEA</li>
+      <li>electron-builder</li>
+    </ul>
+  </article>
+  <article data-proj="ki-ai-netz" data-sub="Web·Wissen" data-status="online · öffentlich erreichbar" data-icon="bilder/icons/ki-ai-netz.svg" data-live="https://cehha79.github.io/ki-ai-netz/" data-bild="bilder/projekte/ki-ai-netz-dunkel.jpg" data-bild-light="bilder/projekte/ki-ai-netz-hell.jpg" data-bild-dark="bilder/projekte/ki-ai-netz-dunkel.jpg">
+    <h3>KI/AI-Netz</h3>
+    <p>KI/AI-Netz ist eine eigenständige Web-Übersicht der großen KI-Anbieter und ihrer aktuellen Modelle, quellengeprüft und nach Typ sortiert (Text, Bild, Audio, Video, multimodal). Jede Modell-Kachel öffnet eine Detail-Maske mit Beschreibung, Preis, Kontextfenster, Lizenz und Links; Filter nach Anbieter und Typ machen den Markt auf einen Blick vergleichbar.</p>
+    <ul class="pd-punkte">
+      <li>Alle großen Anbieter mit ihren aktuellen Modellen, quellengeprüft</li>
+      <li>Detail-Maske je Modell: Preis, Kontextfenster, Lizenz, Stärken</li>
+      <li>Ansichten: Raster und Baumstruktur (Anbieter → Modelle nach Typ)</li>
+      <li>Filter nach Typ (Text/Bild/Audio/Video/Multimodal) und Anbieter</li>
+      <li>Hell-/Dunkel-Modus, feste Fußzeile, klare Quellen-Angabe</li>
+      <li>Aktualisieren-Knopf für späteren Live-Abruf vorbereitet</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>HTML/CSS/JavaScript</li>
+      <li>Daten als data.js</li>
+      <li>GitHub Pages (geplant)</li>
+    </ul>
+  </article>
+  <article data-proj="norbert" data-sub="Web·Kundenauftrag" data-status="in Arbeit" data-icon="bilder/icons/norbert.svg" data-bilder-light="[&quot;bilder/projekte/norbert/leistungen-hell.jpg&quot;, &quot;bilder/projekte/norbert/preise-hell.jpg&quot;, &quot;bilder/projekte/norbert/produkte-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-werkzeug-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-cremes-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-fussbad-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-nagel-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-hornhaut-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-komfort-hell.jpg&quot;, &quot;bilder/projekte/norbert/ber-geschenke-hell.jpg&quot;, &quot;bilder/projekte/norbert/warenkorb-hell.jpg&quot;, &quot;bilder/projekte/norbert/kasse-hell.jpg&quot;, &quot;bilder/projekte/norbert/kundenstimmen-hell.jpg&quot;, &quot;bilder/projekte/norbert/kontakt-hell.jpg&quot;]" data-bilder-dunkel="[&quot;bilder/projekte/norbert/leistungen-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/preise-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/produkte-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-werkzeug-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-cremes-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-fussbad-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-nagel-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-hornhaut-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-komfort-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/ber-geschenke-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/warenkorb-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/kasse-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/kundenstimmen-dunkel.jpg&quot;, &quot;bilder/projekte/norbert/kontakt-dunkel.jpg&quot;]" data-caps="[&quot;Leistungen &amp; Preise&quot;, &quot;Preisliste &amp; Anfahrt&quot;, &quot;Produkte · Übersicht&quot;, &quot;Werkzeuge &amp; Hygiene&quot;, &quot;Cremes &amp; Balsame&quot;, &quot;Fußbäder &amp; Zusätze&quot;, &quot;Nagelpflege&quot;, &quot;Hornhaut &amp; Peeling&quot;, &quot;Komfort &amp; Entlastung&quot;, &quot;Geschenke &amp; Gutscheine&quot;, &quot;Warenkorb&quot;, &quot;Kasse&quot;, &quot;Kundenstimmen&quot;, &quot;Kontakt &amp; Termin&quot;]">
+    <h3>Norberts mobile Fußpflege</h3>
+    <p>Ein vollständiger Web-Auftritt für Norberts mobile Fußpflege: kosmetische Fußpflege als Hausbesuch statt Ladengeschäft. Von der Startseite über Leistungen, Produkte und Kundenstimmen bis Kontakt entsteht ein mehrseitiger Auftritt in sieben Sprachen: rein statisch, ohne Fremdabrufe, mit lokal eingebetteten Schriften und Hell-/Dunkel-Umschaltung. Derzeit in Arbeit: Die Muster-Inhalte werden vor dem Livegang durch echte Kundendaten ersetzt, dann zieht die Seite auf die eigene Domain um.</p>
+    <ul class="pd-punkte">
+      <li>Mehrseitiger Auftritt: Start, Leistungen, Produkte, Kundenstimmen, Kontakt</li>
+      <li>Sieben Sprachen mit umschaltbarer Oberfläche (DE, EN, PL, RU, AR u. a.)</li>
+      <li>Statisches HTML/CSS/JS: kein Build, keine Fremdabrufe, Schriften lokal</li>
+      <li>Hell-/Dunkel-Modus und responsives Layout für Handy, Tablet und Desktop</li>
+      <li>Bild- und Video-Hintergründe, klar gegliederte Leistungs- und Produkt-Kacheln</li>
+      <li>Impressum und Datenschutz rechtssicher angelegt (UWG/DSGVO)</li>
+      <li>Ziel: eigene Domain norberts-mobile-fusspflege.de über GitHub Pages</li>
+    </ul>
+    <ul class="pd-technik">
+      <li>HTML/CSS/JavaScript (Vanilla)</li>
+      <li>Statische Seite, kein Build</li>
+      <li>Lokale Schriften</li>
+      <li>Mehrsprachigkeit (7 Sprachen)</li>
+      <li>GitHub Pages</li>
+    </ul>
+  </article>
+</div>
+
 <script>
 (function () {
-  var DATEN = {"nexus": {"name": "ASA-NEXUS", "sub": "Groß-Projekt", "status": "in aktiver Entwicklung", "text": "NEXUS ist eine persönliche KI- und Arbeitszentrale, die alle Lebens- und Firmenbereiche in einer interaktiven 3D-Struktur bündelt: Der „Neural Nexus\" dient als räumliche Navigation mit definiertem Zentrum, neun Schalen und sechs Hauptachsen. Die lokale Zentrale bietet Dashboard, Projekt-Übersicht, Firmen- und Finanzbereiche und liest echte Projektordner direkt vom Rechner ein. Eine Cross-Platform-Hülle bringt den Nexus auf Web, Desktop und später Mobile.", "punkte": ["Interaktive 3D-Nexus-Visualisierung mit Zentrum, 9 Schalen, 6 Hauptachsen", "Dashboard mit Chat, To-dos, Kalender und Aktivitätsübersicht", "Projekt-Scanner liest echte Projektordner und öffnet sie per Klick", "Bereiche für Firma, Finanzen, Input/Output und Administration", "KI-Zentrale mit Gedächtnis, Regeln und Prompt-Verwaltung", "Dokumentiertes Koordinatensystem als verbindliche Struktur-Grundlage", "Wiederverwendbare Energiekugel-Komponente mit Öffnungs-Mechanik und GLB-Export", "Cross-Platform-Hülle für Web, Desktop und Mobile"], "technik": ["Three.js", "JavaScript", "Vite", "Electron", "Capacitor / PWA", "Python"], "icon": "bilder/icons/nexus.jpg", "fall": null, "bilderLight": ["bilder/nexus/1.jpg", "bilder/nexus/2.jpg", "bilder/nexus/3.jpg", "bilder/nexus/4.jpg", "bilder/nexus/5.png", "bilder/nexus/6.jpg", "bilder/nexus/7.jpg", "bilder/nexus/9.jpg", "bilder/nexus/10.jpg"], "bilderDunkel": ["bilder/nexus/1.jpg", "bilder/nexus/2.jpg", "bilder/nexus/3.jpg", "bilder/nexus/4.jpg", "bilder/nexus/5.png", "bilder/nexus/6.jpg", "bilder/nexus/7.jpg", "bilder/nexus/9.jpg", "bilder/nexus/10.jpg"], "bilderCaps": ["Das Netz · tausende Knoten, ein Kern", "Räumliches Knoten-Netz", "Kern-Zelle im Verbund", "Adressierbar · jeder Knoten erreichbar", "Der Aufbau · Eingang, Kern, Ausgabe", "Goldener Kern-Baustein", "Lebendiges Signal-Netz", "Daten-Würfel im Netz", "Energie-Tor"]}, "netz-atlas": {"name": "Netz-Atlas", "sub": "Web·live", "status": "online · öffentlich erreichbar", "text": "Netz-Atlas ist eine interaktive Web-Anwendung, die das globale Internet sichtbar macht: von den rund 700 Unterseekabeln über die großen Knotenpunkte bis zur eigenen Verbindung. Vier Ansichten (Aufbau, Weltkarte, Globus, Flachkarte) visualisieren das weltweite Kabelnetz mit Live-Daten der Submarine Cable Map, dazu misst die App die eigene Netzqualität in Echtzeit und erklärt Fachbegriffe verständlich. Vollständig ohne Frameworks in reinem HTML, CSS und JavaScript umgesetzt.", "punkte": ["Interaktive Visualisierung des globalen Seekabel-Netzes in vier Ansichten", "Live-Daten zu ~700 aktiven Unterseekabeln (Submarine Cable Map API)", "Eigene Verbindung live: Standort, IP-Adresse, Internet-Anbieter", "Echte Netz-Messung: Antwortzeit, Download, Upload, Schwankung", "Netzwerk- und Geräte-Details: WLAN/Mobilfunk, Browser, Hardware", "Fakten in Zahlen: Laufzeiten, Knotenpunkte, Rekorde des Netzes", "Glossar mit Fachbegriffen und Wikipedia-Verknüpfung", "Drehbarer Globus und animierte Flachkarte per Canvas"], "technik": ["HTML/CSS/JavaScript (Vanilla)", "Canvas 2D", "SVG", "Fetch-API / Live-Daten", "Cloudflare Speed-Test", "git"], "bild": "bilder/netz-atlas.jpg", "icon": "bilder/icons/netz-atlas.svg", "fall": null, "live": "https://cehha79.github.io/netz-atlas/"}, "asa-broker": {"name": "ASA Broker", "sub": "Electron·Echtzeit", "status": "im Einsatz", "text": "ASA Broker ist ein professionelles Finanz- und Trading-Cockpit als Desktop-App, angelehnt an Bloomberg Terminal und TradingView. Die App bündelt Live-Marktdaten für Krypto, Aktien und ETFs mit Charting, Fundamentalanalyse, Depot-Verwaltung, Backtesting und Papier-Trading in einem modularen Multi-Panel-Terminal. Verbindliche Sicherheitsregeln sind fester Bestandteil der Architektur: Datenintegrität mit Quelle und Zeitstempel, verschlüsselte API-Schlüssel und die strikte Trennung von Lesen und Handeln.", "punkte": ["Live-Kurse aus mehreren Quellen (Binance, Yahoo, Finnhub u.a.)", "Interaktive Charts mit Indikatoren (SMA, EMA, RSI, MACD)", "Depot-Verwaltung mit CSV-Import, Rebalancing und Berichten", "Backtesting und Papier-Trading mit Profi-Ordertypen (OCO, Bracket)", "Weltweite Instrumenten-Suche mit Kennzahlen und News", "Recht-&-Steuer-Bereich mit Haltefrist-Checker und Steuerrechnern", "Risiko-Navigator mit Klumpen-Warnung und Was-wäre-wenn-Rechner", "Integrierter KI-Assistent (Claude) mit Marktkontext", "Verschlüsselter Tresor für API-Schlüssel, Alarme, Watchlists"], "technik": ["Electron", "JavaScript", "Lightweight Charts", "WebSocket", "Finanz-APIs", "AES-Verschlüsselung"], "bild": "bilder/asa-trading.png", "icon": "bilder/icons/asa-broker.png", "fall": null}, "asa-firma": {"name": "ASA Firma", "sub": "Cross-Platform", "status": "im Einsatz", "text": "ASA Firma ist eine komplette Verwaltungs-App für kleine Unternehmen: Kunden, Angebote, Rechnungen, Verträge, Projekte, Zeiten und Kosten an einem Ort, ergänzt um E-Rechnung, GoBD-Archiv, DATEV-Export und Steuer-Berechnungen. Die App läuft aus einem gemeinsamen Kern als Web-/PWA-, Desktop- und Mobil-Anwendung; alle Daten bleiben lokal und AES-256-verschlüsselt auf dem Gerät. Ein integrierter Microsoft-365-Hub bündelt E-Mail, Kalender, Teams, Kontakte und OneDrive direkt im Arbeitskontext.", "punkte": ["Kunden, Angebote, Rechnungen, Verträge, Projekte und Zeiterfassung an einem Ort", "E-Rechnung (XRechnung/ZUGFeRD), GoBD-Archiv und DATEV-Export", "Steuer-Cockpit: EÜR, AfA, § 19/Regelbesteuerung, rechtsformbewusst", "Microsoft-365-Hub: E-Mail, Kalender, Teams, Kontakte, OneDrive", "Bank-Abgleich per camt.053-Import, Zahlungen automatisch zuordnen", "Mahnwesen mit Mahnstufen, Skonto und Sammel-Mahnlauf", "Alle Daten lokal, AES-256-verschlüsselt mit Master-Passwort", "Optionaler KI-Assistent für Texte, Auswertungen und Beleg-OCR", "Plantafel für Mitarbeiter- und Einsatzplanung mit Konflikt-Warnung"], "technik": ["Electron", "Capacitor", "PWA", "Vite", "JavaScript", "Web Crypto (AES-256)"], "bild": "bilder/asa-firma.png", "icon": "bilder/icons/asa-firma.svg", "fall": null}, "asa-repair": {"name": "AKA Repair", "sub": "Electron·adb", "status": "in Entwicklung", "text": "AKA Repair ist eine Diagnose-Werkstation für Handy- und Tablet-Reparaturen: Angeschlossene Android-Geräte und iPhones werden per Kabel automatisch erkannt und über offene Werkzeuge (adb, libimobiledevice) tiefgehend ausgelesen: von Akku-Gesundheit über Speicher bis zu Sicherheitsmerkmalen wie IMEI und Aktivierungssperre. Interaktive Funktionstests laufen per QR-Code direkt auf dem Kundengerät, Ergebnisse hängen am Auftrag und lassen sich als Bericht drucken. Die App setzt bewusst auf legale Diagnose und Dokumentation, ohne Unlock- oder Entsperr-Funktionen.", "punkte": ["Automatische Geräte-Erkennung beim Anstecken (Android und iPhone)", "Kabel-Diagnose in Kategorien: System, Akku, Speicher, Display, Sensoren", "Sicherheits-Check: IMEI, Aktivierungssperre, Verified Boot, Verschlüsselung", "Interaktive Geräte-Tests per QR-Code direkt auf dem Kundengerät", "Auftrags-Verwaltung mit Status-Ablauf von Annahme bis Abholung", "Diagnose-Ergebnisse am Auftrag speichern, Bericht drucken oder als PDF", "Live-Spiegelung des Gerätebildschirms (scrcpy / QuickTime)", "Profi-Oberfläche als 3-Spalten-Werkstation"], "technik": ["Electron", "Vite", "PWA", "adb / fastboot", "libimobiledevice", "Capacitor"], "bild": "bilder/projekte/asa-repair.png", "icon": "bilder/icons/asa-repair.svg", "fall": null}, "asa-explorer": {"name": "AKA Explorer", "sub": "Python", "status": "in Entwicklung", "text": "AKA Explorer ist ein schlankes Desktop-Werkzeug, das den kompletten Aufbau beliebiger Software-Projekte als interaktive HTML-Ansicht aufbereitet: mit Ordner-Baum, Datei-Vorschau, Statistiken und automatischer Technik-Erkennung. Das Programm arbeitet strikt nach dem Nur-Lesen-Prinzip: Analysierte Projekte werden nie verändert. Umgesetzt in reinem Python ohne eine einzige externe Abhängigkeit, läuft es als eine einzelne Datei mit Browser-Oberfläche und Live-Aktualisierung.", "punkte": ["Interaktiver Ordner-Baum mit Suche, Typ-Filtern und Datei-Icons", "Datei-Vorschau direkt in der Ansicht (Text, Bild, Video, PDF)", "Automatische Technik-Erkennung (Python, Node, Flutter, Rust, Go u. a.)", "Werkzeug-Prüfung: sind alle nötigen Programme installiert?", "Änderungs-Vergleich seit der letzten Analyse (neu/geändert/gelöscht)", "Statistiken: Dateien, Größe, Code-Zeilen, häufigste Dateitypen", "App-Modus im Browser mit Projekt-Wechsel ohne Neustart", "Live-Modus: Ansicht aktualisiert sich bei Änderungen automatisch", "Hell/Dunkel-Modus und Druck/PDF-Export"], "technik": ["Python 3", "Nur Standardbibliothek", "HTML/CSS/JS (selbst-enthalten)", "http.server", "Ruff"], "bild": "bilder/projekte/asa-explorer.png", "icon": "bilder/icons/asa-explorer.svg", "fall": null}, "aka-tresor": {"name": "AKA-Tresor", "sub": "Electron·AES-256", "status": "im Einsatz", "text": "AKA-Tresor ist ein vollständig offline arbeitender Passwort- und Krypto-Schlüssel-Tresor als Desktop-App. Seed-Phrasen, private Schlüssel, Zugänge und Dokumente werden mit AES-256-GCM und scrypt verschlüsselt, ausschließlich mit Bordmitteln, ohne fremde Krypto-Pakete und ohne jede Netzwerkverbindung. Über 30 Eintrags-Arten, integrierte Generatoren, TOTP/2FA und ein Live-Sicherheits-Prüfstand machen die App zur kompletten Schaltzentrale für sensible Daten.", "punkte": ["Verschlüsselung mit AES-256-GCM und scrypt, komplett offline", "34 Eintrags-Arten: Seeds, Keys, Börsen, Logins, Bank, Dokumente", "Optionale Schlüsseldatei als zweiter Faktor", "Generatoren: Passwort, Diceware, PIN, BIP39-Seed, Private Key", "TOTP/2FA-Codes lokal erzeugen und speichern", "Verschlüsselte Backups, Papierkorb und CSV-Import", "Prüfstand: Live-Selbst-Check mit Sicherheits-Score", "Auto-Sperre, Feld-Maskierung, Zwischenablage-Auto-Leerung", "Design-Profile hell/dunkel, verschlüsselte Datei-Anhänge"], "technik": ["Electron", "Node.js crypto", "AES-256-GCM", "scrypt", "Universal-Build (Intel + Apple Silicon)"], "bild": "bilder/aka-tresor.png", "icon": "bilder/icons/aka-tresor.png", "fall": null}, "aka-key": {"name": "AKA Key", "sub": "Electron·Web", "status": "im Einsatz", "text": "AKA Key ist der schlanke Alltags-Manager für Passwörter, API-Schlüssel und Lesezeichen, zugleich die Begleiter-App zum offline arbeitenden AKA-Tresor. Die Cross-Platform-App (Web/PWA, Desktop, Handy) verschlüsselt alle Daten mit AES-256-GCM und tauscht sie ausschließlich per verschlüsselter Datei mit dem Tresor aus, ohne Internet und ohne Cloud. Ein 10-Agenten-Sicherheitsaudit wurde durchgeführt und alle kritischen Befunde behoben.", "punkte": ["Passwörter, API-Schlüssel und Lesezeichen ansehen, anlegen, bearbeiten, kopieren", "AES-256-GCM-Verschlüsselung mit Master-Passwort (PBKDF2, 600.000 Runden)", "Datei-Abgleich mit AKA-Tresor in beide Richtungen (.akakeys)", "Komplett offline: kein Internet, keine Cloud, strenge CSP", "Seed-Phrasen und Private Keys werden bewusst herausgefiltert", "681 Dienst-Symbole, Gruppen-Verwaltung, Suche und Filter", "10 Design-Profile mit Hell/Dunkel-Modus", "Zwischenablage leert sich nach 20 Sekunden automatisch", "Sicherheitsaudit mit 10 Prüf-Agenten bestanden, Befunde behoben"], "technik": ["Electron", "Capacitor", "PWA", "Vite", "Web Crypto API", "Vanilla JS"], "bild": "bilder/aka-key.png", "icon": "bilder/icons/aka-key.svg", "fall": null}, "aka-bauelemente": {"name": "AKA Bauelemente", "sub": "Electron·PWA", "status": "in Entwicklung", "text": "AKA Bauelemente ist eine lokale Bibliothek für wiederverwendbare UI-Bausteine: Über 900 Komponenten in 21 Bereichen lassen sich mit Code, Notizen und Live-Vorschau sammeln, durchsuchen, prüfen und exportieren. Eine integrierte Werkstatt fügt Bausteine auf einer Raster-Bühne zu neuen Komponenten zusammen und zerlegt vermischten Roh-Code automatisch in HTML, CSS und JavaScript. Die App läuft aus einer Code-Basis als Desktop-Anwendung, offline-fähige Web-App und installierbare PWA auf dem iPad.", "punkte": ["Bibliothek mit 900+ UI-Bausteinen in 21 Bereichen", "Getrennte Code-Tafeln: HTML, CSS, JavaScript, JSON, SVG", "Live-Vorschau mit Hell/Dunkel-Modus, Offline-Test und Vollbild", "Werkstatt: Bausteine auf Raster-Bühne zusammenfügen, Code live erzeugen", "Roh-Code-Station: vermischten Code trennen, formatieren, speichern", "Design-Labor: 395 Design-Tokens, 20 Export-Formate, 34 Plattform-Vorschauen", "Code-Prüfung und Prettier-Formatierung direkt in der App", "Export als HTML-Datei oder komplette Ordnerstruktur", "Desktop, Web/PWA und iPad aus einer Code-Basis"], "technik": ["Electron", "Vite", "PWA", "CodeMirror 6", "Prettier", "Node.js"], "bild": "bilder/aka-bauelemente.png", "icon": "bilder/icons/aka-bauelemente.png", "fall": null}, "aka-viewer": {"name": "AKA Viewer", "sub": "Electron·DICOM", "status": "in Entwicklung", "text": "AKA Viewer ist ein moderner medizinischer Bildbetrachter für DICOM, NIfTI sowie gängige Bild- und Videoformate als Electron-Desktop-App auf Basis der GPU-beschleunigten Cornerstone3D-Engine. Die App bietet 3D/MPR-Ansichten mit Fadenkreuz und Volumen-Rendering, umfangreiche Mess- und Analysewerkzeuge sowie einen Orthopädie-Schwerpunkt mit Kalibrierung, Norm-Winkel-Vorlagen und Prothesen-Templating. Version 1.0 ist fertiggestellt und läuft als signierte, installierbare Mac-App.", "punkte": ["DICOM- und NIfTI-Serien öffnen, blättern, fenstern, als Cine abspielen", "3D/MPR-Ansicht mit Fadenkreuz und drehbarem Volumen-Rendering", "Messwerkzeuge: Strecke, Winkel, Cobb, ROI mit Hounsfield-Statistik", "Orthopädie: Kalibrierung, CCD/Wiberg/Beinlängen, Prothesen-Templating", "Vergleichsansicht mit synchronem Blättern, Fenstern und Zoomen", "Befunde-Panel mit CSV-Export, PNG-Export und Drucken", "Tag-Inspektor, Struktur-Baum und reiche DICOM-Overlays", "DSA-Subtraktion, MIP/MinIP-Projektion und Farbtabellen", "Anonym-Modus für Lehre und Weitergabe"], "technik": ["Electron", "Cornerstone3D", "electron-vite", "JavaScript", "WebGL/GPU"], "bild": null, "icon": "bilder/icons/aka-viewer.png", "fall": null}, "aka-speicher": {"name": "AKA Speicher", "sub": "Electron·System", "status": "in Entwicklung", "text": "AKA Speicher ist eine plattformübergreifende Desktop-App für macOS, Windows und Linux, die externe Speichermedien testet, verschlüsselt, formatiert, klont und sicher löscht. Ergänzt wird die Speicher-Verwaltung durch System- und Sensor-Monitoring, Netzwerk- und Mobilgeräte-Werkzeuge sowie eine Geräte-Flotten-Übersicht. Eine zentrale Sicherheits-Schicht schützt interne Laufwerke und sichert jede zerstörende Aktion mit Trockenlauf-Vorschau, harter Bestätigung und Live-Gegenprüfung ab.", "punkte": ["Diagnose: SMART, Fake-USB-Erkennung, Speed-Benchmark, Burn-in, SSD-Health", "Formatieren, Partitionieren, Image erstellen, Flashen und Klonen", "Sicheres Löschen mit PDF-Löschzertifikat", "Verschlüsselte Tresore (DMG/VeraCrypt) und Datei-Werkzeuge", "Sensorik-Hub mit Live-Monitor, Menüleisten-Tray und Lüfter-Regelung", "Netz & Mobil: WLAN-Diagramme, Heatmap, NAS, Handy/Tablet-Anbindung", "Fern-Steuerung und Geräte-Flotten-Verwaltung", "Dreifache Sicherung: Trockenlauf, Bestätigung, Live-Gegenprüfung", "KI-Assistent, Befehls-Palette und App-Sperre per PIN"], "technik": ["Electron", "Node.js", "OS-Bordmittel (diskutil, parted, PowerShell)", "Native Helfer (Swift, C)", "JavaScript"], "bild": "bilder/speicher-werkstatt.png", "icon": "bilder/icons/aka-speicher.png", "fall": null}, "aka-doku": {"name": "AKA DOKU", "sub": "Desktop", "status": "in Entwicklung", "text": "AKA DOKU ist eine interne Dokumentations-Zentrale, die Firmen-Dokumente an einer Stelle verwaltet: lesen, schreiben, ablegen. Die App entsteht als Cross-Platform-Anwendung aus einer Code-Basis und läuft im Browser, auf dem Desktop und auf dem Tablet; eine Cloud-Anbindung ist als eigene Schicht vorgesehen. Den inhaltlichen Kern bildet eine bereits funktionsfähige Schreib- und Ablage-Oberfläche mit Vorgängen, Suche und festgeschriebener Ablage.", "punkte": ["Firmen-Dokumente zentral verwalten, lesen und schreiben", "Vorgänge anlegen: Schreiben, Bestellungen, Verordnungen, Rückfragen", "Ablage mit Nachweisen, verschickte Einträge werden festgeschrieben", "Suche und Status-Filter über alle Einträge", "Einträge als PDF speichern oder als Text kopieren", "Eine Code-Basis für Web, Desktop und Tablet", "Als PWA installierbar, offline nutzbar", "Cloud-Anbindung als eigene Schicht geplant"], "technik": ["JavaScript", "Vite", "PWA", "Electron", "Capacitor"], "bild": "bilder/projekte/aka-doku.png", "icon": "bilder/icons/aka-doku.svg", "fall": null}, "aka-simula": {"name": "AKA Simula", "sub": "Three.js", "status": "in Entwicklung", "text": "AKA Simula ist eine mathematische Forschungs-Workbench im Browser, die Primzahlmuster in der Ulam-Spirale sowie Feld- und Solver-Simulationen auf einem virtualisierten 1000×1000-Raster visualisiert. Die App bietet Parameter-Sweeps, Run-History mit Vergleichen, Hypothesen- und Evidence-Verwaltung sowie Report-Export in mehreren Formaten, komplett als eine einzige HTML-Datei ohne Build und ohne Abhängigkeiten. Eine 3D-Variante stellt Primzahlen als leuchtende Punktwolke in einer würfelförmigen Zahlenspirale dar.", "punkte": ["Ulam-Spirale und Primzahlmuster auf virtualisiertem Canvas-Raster", "Feld- und Solver-Simulationen (Welle, Diffusion, Monte Carlo)", "Parameter-Sweeps, Cases und Run-History mit Vergleichsbasis", "Forschungs-Workbench: Hypothesen, Evidence, Prüfmatrix, Notebook", "Report-Export als Markdown, HTML, JSON, PNG, CSV, PDF", "Presets, Undo/Redo und versionierter Autosave", "3D-Ansicht: Primzahlen als Punktwolke im Zahlenwürfel", "Eingebaute Test-Suite mit Volltest"], "technik": ["HTML/CSS/JavaScript (Vanilla)", "Canvas 2D", "Three.js (3D-Variante)", "Single-File-App", "localStorage-Autosave"], "bild": "bilder/projekte/aka-simula.png", "icon": "bilder/icons/aka-simula.svg", "fall": null}, "aka": {"name": "AKA", "sub": "Flutter·Hive", "status": "in Entwicklung", "text": "AKA ist eine sichere persönliche Gesundheits-App, die sämtliche Gesundheitsdaten ausschließlich lokal und verschlüsselt auf dem Gerät speichert, ohne Übertragung an externe Server. Ein konfigurierbares Kachel-Dashboard mit Zielen, Ampelsystem und Verlaufsdiagrammen macht Werte wie Blutdruck, Gewicht oder Laborwerte auf einen Blick erfassbar. Die modulare Architektur setzt auf Standard-Datenformate (FHIR/LOINC) und ist damit auf spätere Erweiterungen und Anbindungen vorbereitet.", "punkte": ["Gesundheitswerte erfassen mit Zielen, Ampelsystem und Verlaufsdiagrammen", "Alle Daten lokal und verschlüsselt gespeichert, keine Server-Übertragung", "Konfigurierbares Kachel-Dashboard mit Schnellzugriff und Widgets", "Laborwerte-Modul mit FHIR/LOINC-Export", "Rollen-System mit Benutzer, Admin und Haupt-Admin inkl. 2FA", "App-Sperre, Notfall-Code und verschlüsselbares Backup", "Export als PDF und Excel", "Referenzlisten: Krankheiten, Medikamente, Impfungen, Notrufnummern", "Mehrsprachigkeit angelegt (11 Sprachen)"], "technik": ["Flutter", "Dart", "Hive (verschlüsselt)", "FHIR/LOINC", "Cross-Platform"], "bild": "bilder/projekte/aka.png", "icon": "bilder/icons/aka.svg", "fall": null}, "aka-audix": {"name": "AKA Audix", "sub": "Desktop·Mobil", "status": "in Entwicklung", "text": "AKA Audix ist ein professioneller Musik-Player mit Bibliothek und Playlist-Verwaltung, als Cross-Platform-App für Desktop, Web und Mobilgeräte aus einer gemeinsamen Basis. Die App liest Tags, Cover und Spieldauer direkt aus den Audiodateien, speichert die Bibliothek dauerhaft und bietet Visualizer sowie einen abschaltbaren Equalizer. Das Konzept zielt auf audiophile Wiedergabe-Qualität: bit-perfect, High-Res bis 24-bit/192 kHz, echtes Gapless und DSD über einen nativen Audio-Motor.", "punkte": ["Musik-Bibliothek mit Suche, Sortierung und dauerhafter Speicherung", "Echte Metadaten: Tags, Albumcover und Spieldauer aus den Dateien", "Playlists anlegen, füllen und verwalten", "Visualizer und 5-Band-Equalizer, komplett abschaltbar", "Drag & Drop, Tastenkürzel, Position merken", "Responsiv für Handy und Tablet, als PWA installierbar", "Konzept Stufe B: bit-perfect, High-Res, Gapless, DSD"], "technik": ["Electron", "Capacitor", "PWA", "Vite", "IndexedDB / SQLite", "Web Audio"], "bild": "bilder/projekte/aka-audix.png", "icon": "bilder/icons/aka-audix.svg", "fall": null}, "aka-player": {"name": "AKA-Player", "sub": "Electron·ffmpeg", "status": "in Entwicklung", "text": "AKA-Player ist ein universeller Medien-Player und Empfänger für den Desktop: Er spielt Video, Audio und Bilder in praktisch allen Formaten ab; eine integrierte ffmpeg-Engine packt oder wandelt nicht web-taugliche Dateien automatisch um. Zusätzlich empfängt die App Live-Sender aus dem Netz: IPTV-Playlisten, Gratis-TV aus 250 Ländern, Internetradio und freie Filmarchive, ergänzt um Profi-Werkzeuge wie Equalizer, Untertitel, Aufnahme und Chromecast.", "punkte": ["Spielt alle Video-, Audio- und Bildformate über ffmpeg-Engine", "Live-Sender: IPTV (Xtream), Gratis-TV aus 250 Ländern, 45.000 Radiosender", "Listen-Manager mit mehreren Bibliotheken, Favoriten, Import/Export (M3U/PLS/XSPF)", "Aufnehmen von Sendern und Streams, Schnappschüsse, Bild-im-Bild", "Tonspur- und Untertitel-Auswahl, EPG, Weiterschauen, Sleep-Timer", "10-Band-Equalizer, Visualizer, Bild-Regler (Helligkeit/Kontrast/Filter)", "Chromecast-Ausgabe sowie Bildschirm und Kamera als Live-Quelle", "Bibliothek sichern und wiederherstellen (JSON-Backup)"], "technik": ["Electron", "ffmpeg", "hls.js", "HTML5-Video", "Web Audio API", "Node.js"], "bild": "bilder/projekte/aka-player.png", "icon": "bilder/icons/aka-player.png", "fall": null}, "aka-wetter": {"name": "AKA-Wetter", "sub": "Cross-Platform", "status": "in Entwicklung", "text": "AKA-Wetter ist eine professionelle Wetter-App, die aus einer einzigen Code-Basis auf Desktop, im Web und als Mobile-App läuft. Sie bietet weit mehr als eine Vorhersage: Meteogramm, Modellvergleich, Ensemble-Prognosen, amtliche Warnungen, interaktive Karten mit Regenradar und Wind-Animation sowie einen eigenen Wissensbereich mit Satellitenkarte, Klimadaten und Spezialanalysen. Die Datenschicht ist quellenunabhängig aufgebaut, sodass Wetteranbieter jederzeit austauschbar bleiben.", "punkte": ["Vorhersage mit 24-Stunden-Leiste, 48-h-Meteogramm und 7-Tage-Trend", "Amtliche Unwetter-Warnungen (DWD, US NWS) direkt als Banner", "Interaktive Karte: Regenradar, Wetterstationen, Wind-Animation, Isobaren, Isothermen", "Modellvergleich (ECMWF/GFS/ICON) und Ensemble-Prognosen", "Wissensbereich: NASA-Satellitenkarte, Klima-Rückblick, Klima-Ausblick bis 2050", "Spezialdaten: Luftqualität, Pollen, Hochwasser, Schnee, Lawinen, Polarlicht", "Vertikalprofil mit Gewitter-Indizes (CAPE, Lifted Index)", "Mehrere Orte, Standort-Erkennung, Hell-/Dunkel-Modus, Offline-Cache", "Läuft auf Desktop, Web (PWA), iPhone und Android"], "technik": ["Electron", "Capacitor (iOS/Android)", "PWA / Vite", "MapLibre", "Open-Meteo", "Cloudflare Worker"], "bild": "bilder/projekte/aka-wetter.png", "icon": "bilder/icons/aka-wetter.svg", "fall": null}, "aka-ki-steuer": {"name": "AKA KI-Steuer", "sub": "KI·Web", "status": "in Entwicklung", "text": "AKA KI-Steuer ist eine Steuererklärungs-Software auf Steuerberater-Niveau mit drei Welten: Privat (Einkommensteuer), Geschäftlich (Unternehmen/Selbstständige) und Mandanten (Kanzlei-Betrieb mit eigener Akte je Kunde). Sie rechnet bundesland-genau nach exaktem Tarif (§ 32a EStG 2024/2025 inkl. Splitting, Soli und Kirchensteuer), deckt vom Anlagen-Satz über EÜR und Umsatzsteuer bis zu E-Rechnung und DATEV-Export das volle Spektrum ab und arbeitet konsequent lokal. Die KI-Unterstützung ist optional, alles funktioniert auch ohne.", "punkte": ["Drei Welten: Privat, Geschäftlich und Mandanten mit eigener Akte", "Exakte Steuer-Engine: Tarif 2024/2025, Splitting, Soli, Kirchensteuer", "Bundesland-genaue Berechnung (16 Länder: Kirchensteuer, Grundsteuer, Grunderwerbsteuer)", "Vollständiger Anlagen-Satz von Anlage N bis Krypto (§ 23, FIFO)", "Geschäftsbereich: EÜR, USt-Voranmeldung, BWA, E-Rechnung, DATEV-Export", "Belegfoto-OCR erkennt Betrag und Datum offline (Tesseract, deutsch)", "Amtlicher Formular-Katalog mit 42 Deeplinks und Update-Pool", "Sicherheit: App-Sperre, Tresor, Backup, Mehrbenutzer mit Rollen", "Alle Daten bleiben lokal auf dem Gerät, KI optional"], "technik": ["HTML/CSS/JavaScript", "Electron", "Tesseract.js (OCR)", "localStorage (local-first)", "Web + Desktop aus einem Kern"], "bild": "bilder/projekte/aka-ki-steuer.png", "icon": "bilder/icons/aka-ki-steuer.svg", "fall": null}, "aka-map": {"name": "AKA Map", "sub": "MapLibre GL", "status": "in Entwicklung", "text": "AKA Map ist eine interaktive Weltkarten-App auf Basis von MapLibre GL: Vektor-Kacheln werden auf der Grafikkarte gerendert und bleiben dadurch auch bei voller Detailtiefe flüssig und gestochen scharf. Regionen lassen sich per Klick von der Welt über Länder und Regionen bis auf Bezirksebene erkunden, mit besonders feinen Daten für Deutschland und die Türkei. Dazu kommen viele Karten-Stile, Orte (POIs), ein MGRS/UTM-Einsatzgitter, hochauflösender Bild-Export, Offline-Vorladen und eine Electron-Desktop-App.", "punkte": ["Interaktiver Drilldown: Welt → Land → Region → Bezirk per Klick", "GPU-Rendering mit MapLibre GL, flüssig bei voller Detailtiefe", "Viele Karten-Stile: Vektor- und Raster-Ansichten umschaltbar", "Orte (POIs) in 29 Kategorien ein-/ausblendbar", "Einsatz-Gitter MGRS/UTM einblendbar", "Hochauflösender PNG-Bildexport und Druckansicht", "Offline-Vorladen von Kartengebieten (IndexedDB-Cache)", "Eigene Markierungen setzen, Stand sichern und laden", "Als Desktop-App (Electron) und im Browser nutzbar"], "technik": ["MapLibre GL", "WebGL", "JavaScript", "GeoJSON", "Electron", "IndexedDB"], "bild": "bilder/projekte/aka-map.png", "icon": "bilder/icons/aka-map.svg", "fall": null}, "aka-tur": {"name": "AKA TUR", "sub": "Cross-Platform", "status": "in Entwicklung", "text": "AKA TUR ist eine dreisprachig ausgelegte Cross-Platform-App (DE/TR/EN) für die türkische Diaspora: der praktische Draht zur Türkei in einer App. Kernstück ist ein durchsuchbarer Behörden-Lotse mit über 50 offiziellen Diensten samt Erklärungen und Direktlinks; dazu kommen Bereiche für Reise, Medien, Community im Ausland und Gebetszeiten. Die App zeigt Live-Wechselkurse (EZB-Daten) und läuft als Web/PWA, Desktop- und Mobile-App aus einer gemeinsamen Code-Basis.", "punkte": ["Behörden-Lotse: 52 offizielle Dienste in 14 Kategorien, erklärt und verlinkt", "Suche und Kategorie-Filter über alle Inhalte und Sprachen", "Dreisprachig: Deutsch, Türkisch und Englisch, umschaltbar; die Auswahl wird gemerkt", "Live-Wechselkurs Euro/Dollar zu Lira (EZB-Daten)", "Reise-Bereich: Heimreise, Routen, Maut und Buchung", "Medien-Bereich: türkisches Radio, TV und Presse (nur legale Quellen)", "Community: Konsulate, Moscheen, Vereine und Schulen im Ausland", "Gebetszeiten als dezenter Bonus-Bereich", "Eine Code-Basis für Web/PWA, Desktop und Mobile"], "technik": ["JavaScript", "Vite", "PWA", "Electron", "Capacitor"], "bild": "bilder/projekte/aka-tur.png", "icon": "bilder/icons/aka-tur.svg", "fall": null}, "klick-frag-ki": {"name": "AKA Ask KI/AI", "sub": "KI·Produkt", "status": "in Entwicklung", "text": "AKA Ask KI/AI ist ein Offline-Prompt-Baukasten, mit dem sich gute KI-Aufträge in fünf Schritten zusammenklicken lassen, ganz ohne Prompt-Wissen. Die App liest PDF, Word und Bilder (OCR) komplett offline ein, fragt auf Wunsch mehrere KIs direkt an und vergleicht deren Antworten nebeneinander. Barrierefreiheit ist Kernprinzip: sechs Sprachen, Vorlesefunktion, große Schrift. Einmal zahlen, kein Abo.", "punkte": ["5-Schritte-Baukasten mit Live-Vorschau und Kopieren-Knopf", "Bibliothek mit 45 Vorlagen und 5 geführten Baukästen", "Dateien offline lesen: PDF, Word, Bild zu Text (OCR)", "KI direkt fragen: OpenAI, Anthropic, Gemini, Ollama", "Mehrere KIs vergleichen, Prompt automatisch verbessern lassen", "6 Sprachen, Vorlesen, große Schrift, hoher Kontrast", "100 % offline, keine Telemetrie, PIN-Sperre", "API-Schlüssel verschlüsselt im OS-Schlüsselbund"], "technik": ["Electron", "HTML/CSS/JavaScript", "pdf.js", "Tesseract OCR", "PWA"], "bild": "bilder/projekte/klick-frag-ki.png", "icon": "bilder/icons/klick-frag-ki.svg", "fall": null}, "coden": {"name": "Coden", "sub": "Cross-Platform", "status": "in aktiver Entwicklung · Inhalte wachsen", "text": "Coden ist eine Lern-App fürs Programmieren, die Wissen zu Grundlagen, Programmiersprachen, Git und GitHub, Terminal, KI-Werkzeugen und Sicherheit in 21 strukturierten Bereichen mit Lektionen bündelt. Die App läuft aus einer gemeinsamen Code-Basis als Web-, Desktop- und Mobile-App und speichert den Lernfortschritt lokal. Alle Inhalte sind deutschsprachig aufbereitet; englische Fachbegriffe werden konsequent mit Übersetzung und Aussprache erklärt.", "punkte": ["21 Lern-Bereiche: von Grundlagen über Sprachen bis Veröffentlichen", "Strukturierter Lernweg mit nummerierten Lektionen und Fortschritt je Bereich", "Code-Beispiele mit Kopieren-Knopf, sicher ohne Prompt-Zeichen", "Interaktive Übungen und Live-Widgets in Lektionen", "Vokabel-Spickzettel: Englisch, Aussprache, Deutsch", "Nachschlagewerk und Wörterbuch integriert", "Abschluss-Test mit Zertifikat", "Hell/Dunkel-Modus, responsive Oberfläche mit Seitenleiste", "Eine Code-Basis für Web, Desktop und Mobile"], "technik": ["JavaScript", "Vite", "PWA", "Electron", "Capacitor"], "bild": "bilder/projekte/coden.png", "icon": "bilder/icons/coden.svg", "fall": null}, "geraete-scanner": {"name": "AKA Geräte Scan", "sub": "Electron·Netz", "status": "in Entwicklung", "text": "AKA Geräte Scan ist eine Electron-Zentrale, die viele PCs und Macs gleichzeitig live überwacht: CPU, RAM, Festplatte, Netzwerk, Temperatur und Akku auf einen Blick, eine Zeile pro Gerät. Ein schlanker Melder-Agent läuft auf jedem überwachten Rechner und meldet seine Werte lokal, über das Netzwerk oder standortübergreifend per Sammelordner. Alarme, Heatmap-Ansicht, Pop-out-Monitore und CSV-Export machen die App zum vollwertigen Werkzeug für kleine Geräteflotten.", "punkte": ["Live-Überwachung vieler Geräte: CPU, RAM, Disk, Netz, Temperatur, Akku", "Melder-Agent als Einzeldatei ohne Node-Installation auf jedem Gerät", "Drei Datenwege: lokaler PC, LAN-Live, Sammelordner (z.B. OneDrive)", "Alarme bei Grenzwert-Überschreitung mit Warn-Kennzeichnung", "Tabellen- und Heatmap-Ansicht mit Filter und Suche", "Geräte-Detail mit kompletten Hardware-Infos und Verlaufskurven", "Pop-out-Monitore als eigene Fenster je Gerät", "Netzwerk-Erkennung, Geräte-Notizen und CSV-Export", "Läuft auf Mac, Windows und Linux"], "technik": ["Electron", "Node.js", "systeminformation", "esbuild + Node SEA", "electron-builder"], "bild": "bilder/projekte/geraete-scanner.png", "icon": "bilder/icons/geraete-scanner.png", "fall": null}, "ki-ai-netz": {"name": "KI/AI-Netz", "sub": "Web·Wissen", "status": "online · öffentlich erreichbar", "text": "KI/AI-Netz ist eine eigenständige Web-Übersicht der großen KI-Anbieter und ihrer aktuellen Modelle, quellengeprüft und nach Typ sortiert (Text, Bild, Audio, Video, multimodal). Jede Modell-Kachel öffnet eine Detail-Maske mit Beschreibung, Preis, Kontextfenster, Lizenz und Links; Filter nach Anbieter und Typ machen den Markt auf einen Blick vergleichbar.", "punkte": ["Alle großen Anbieter mit ihren aktuellen Modellen, quellengeprüft", "Detail-Maske je Modell: Preis, Kontextfenster, Lizenz, Stärken", "Ansichten: Raster und Baumstruktur (Anbieter → Modelle nach Typ)", "Filter nach Typ (Text/Bild/Audio/Video/Multimodal) und Anbieter", "Hell-/Dunkel-Modus, feste Fußzeile, klare Quellen-Angabe", "Aktualisieren-Knopf für späteren Live-Abruf vorbereitet"], "technik": ["HTML/CSS/JavaScript", "Daten als data.js", "GitHub Pages (geplant)"], "bild": "bilder/projekte/ki-ai-netz-dunkel.jpg", "bildLight": "bilder/projekte/ki-ai-netz-hell.jpg", "bildDark": "bilder/projekte/ki-ai-netz-dunkel.jpg", "icon": "bilder/icons/ki-ai-netz.svg", "fall": null, "live": "https://cehha79.github.io/ki-ai-netz/"}, "norbert": {"name": "Norberts mobile Fußpflege", "sub": "Web·Kundenauftrag", "status": "in Arbeit", "text": "Ein vollständiger Web-Auftritt für Norberts mobile Fußpflege: kosmetische Fußpflege als Hausbesuch statt Ladengeschäft. Von der Startseite über Leistungen, Produkte und Kundenstimmen bis Kontakt entsteht ein mehrseitiger Auftritt in sieben Sprachen: rein statisch, ohne Fremdabrufe, mit lokal eingebetteten Schriften und Hell-/Dunkel-Umschaltung. Derzeit in Arbeit: Die Muster-Inhalte werden vor dem Livegang durch echte Kundendaten ersetzt, dann zieht die Seite auf die eigene Domain um.", "punkte": ["Mehrseitiger Auftritt: Start, Leistungen, Produkte, Kundenstimmen, Kontakt", "Sieben Sprachen mit umschaltbarer Oberfläche (DE, EN, PL, RU, AR u. a.)", "Statisches HTML/CSS/JS: kein Build, keine Fremdabrufe, Schriften lokal", "Hell-/Dunkel-Modus und responsives Layout für Handy, Tablet und Desktop", "Bild- und Video-Hintergründe, klar gegliederte Leistungs- und Produkt-Kacheln", "Impressum und Datenschutz rechtssicher angelegt (UWG/DSGVO)", "Ziel: eigene Domain norberts-mobile-fusspflege.de über GitHub Pages"], "technik": ["HTML/CSS/JavaScript (Vanilla)", "Statische Seite, kein Build", "Lokale Schriften", "Mehrsprachigkeit (7 Sprachen)", "GitHub Pages"], "icon": "bilder/icons/norbert.svg", "fall": null, "bilderLight": ["bilder/projekte/norbert/leistungen-hell.jpg", "bilder/projekte/norbert/preise-hell.jpg", "bilder/projekte/norbert/produkte-hell.jpg", "bilder/projekte/norbert/ber-werkzeug-hell.jpg", "bilder/projekte/norbert/ber-cremes-hell.jpg", "bilder/projekte/norbert/ber-fussbad-hell.jpg", "bilder/projekte/norbert/ber-nagel-hell.jpg", "bilder/projekte/norbert/ber-hornhaut-hell.jpg", "bilder/projekte/norbert/ber-komfort-hell.jpg", "bilder/projekte/norbert/ber-geschenke-hell.jpg", "bilder/projekte/norbert/warenkorb-hell.jpg", "bilder/projekte/norbert/kasse-hell.jpg", "bilder/projekte/norbert/kundenstimmen-hell.jpg", "bilder/projekte/norbert/kontakt-hell.jpg"], "bilderDunkel": ["bilder/projekte/norbert/leistungen-dunkel.jpg", "bilder/projekte/norbert/preise-dunkel.jpg", "bilder/projekte/norbert/produkte-dunkel.jpg", "bilder/projekte/norbert/ber-werkzeug-dunkel.jpg", "bilder/projekte/norbert/ber-cremes-dunkel.jpg", "bilder/projekte/norbert/ber-fussbad-dunkel.jpg", "bilder/projekte/norbert/ber-nagel-dunkel.jpg", "bilder/projekte/norbert/ber-hornhaut-dunkel.jpg", "bilder/projekte/norbert/ber-komfort-dunkel.jpg", "bilder/projekte/norbert/ber-geschenke-dunkel.jpg", "bilder/projekte/norbert/warenkorb-dunkel.jpg", "bilder/projekte/norbert/kasse-dunkel.jpg", "bilder/projekte/norbert/kundenstimmen-dunkel.jpg", "bilder/projekte/norbert/kontakt-dunkel.jpg"], "bilderCaps": ["Leistungen & Preise", "Preisliste & Anfahrt", "Produkte · Übersicht", "Werkzeuge & Hygiene", "Cremes & Balsame", "Fußbäder & Zusätze", "Nagelpflege", "Hornhaut & Peeling", "Komfort & Entlastung", "Geschenke & Gutscheine", "Warenkorb", "Kasse", "Kundenstimmen", "Kontakt & Termin"]}};
+  var DATEN = {};
+  document.querySelectorAll('#projDaten article').forEach(function (a) {
+    var ds = a.dataset;
+    function j(n) { return ds[n] ? JSON.parse(ds[n]) : null; }
+    DATEN[ds.proj] = {
+      name: a.querySelector('h3').textContent,
+      sub: ds.sub,
+      status: ds.status,
+      text: a.querySelector('p').textContent,
+      punkte: Array.prototype.map.call(a.querySelectorAll('.pd-punkte li'), function (x) { return x.textContent; }),
+      technik: Array.prototype.map.call(a.querySelectorAll('.pd-technik li'), function (x) { return x.textContent; }),
+      icon: ds.icon || null,
+      bild: ds.bild || null,
+      bildLight: ds.bildLight || null,
+      bildDark: ds.bildDark || null,
+      bilderLight: j('bilderLight'),
+      bilderDunkel: j('bilderDunkel'),
+      bilderCaps: j('caps') || [],
+      live: ds.live || null,
+      fall: ds.fall || null
+    };
+  });
   var modal = document.getElementById('projModal');
   var esc = function (s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
   var aktuP = null;
