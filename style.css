@@ -386,7 +386,7 @@ html[data-theme="dark"] .svc-group-head h2 { color: var(--teal-strong); }
 
 /* Gruppen-Container ohne Rahmen — Inhalt trägt sich selbst */
 .panel-group { padding: 0; }
-.panel-group .page-head { margin: 0 auto 26px; }
+.panel-group .page-head { margin: 0 0 26px; }
 
 /* ---- Timeline (Über MikaTec) ---- */
 .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: tl; }
@@ -525,7 +525,7 @@ a.cd-row:hover .cd-v { color: var(--teal); }
 }
 
 /* ---- Formular ---- */
-.form { margin: 0 auto; display: flex; flex-direction: column; gap: 18px; max-width: 860px; }
+.form { margin: 0; display: flex; flex-direction: column; gap: 18px; max-width: 860px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-field { display: flex; flex-direction: column; }
 .form label { font-size: .78rem; font-weight: 600; letter-spacing: .05em;
@@ -562,7 +562,7 @@ a.cd-row:hover .cd-v { color: var(--teal); }
 @media (max-width: 560px){ .form-row { grid-template-columns: 1fr; } }
 
 /* ---- FAQ ---- */
-.faq { max-width: 860px; margin: 0 auto; }
+.faq { max-width: 860px; margin: 0; }
 .faq details { background: var(--bg-panel); border: 0; box-shadow: var(--hairline); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
 .faq summary { cursor: pointer; padding: 16px 20px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
 .faq summary::-webkit-details-marker { display: none; }
